@@ -501,6 +501,10 @@ export interface BaseIndividualComponent {
   correctAnswer?: Answer[];
   /** Controls whether the component should provide feedback to the participant, such as in a training trial. If not provided, the default is false. */
   provideFeedback?: boolean;
+  /** The number of training attempts allowed for the component. The next button will be disabled until either the correct answer is given or the number of attempts is reached. When the number of attempts is reached, if the answer is incorrect still, the correct value will be shown to the participant. The default value is 2. Providing a value of -1 will allow infinite attempts and the participant must enter the correct answer to continue, and reVISit will not show the correct answer to the user.  */
+  trainingAttempts?: number;
+  /** Controls whether the component should allow failed training. If not provided, the default is true. */
+  allowFailedTraining?: boolean;
   /** The meta data for the component. This is used to identify and provide additional information for the component in the admin panel. */
   meta?: Record<string, unknown>;
   /** The description of the component. This is used to identify and provide additional information for the component in the admin panel. */
@@ -566,8 +570,8 @@ export default function CoolComponent({ parameters, setAnswer }: StimulusParams<
 ```
  *
  * For in depth examples, see the following studies, and their associated codebases.
- * https://revisit.dev/study/demo-click-accuracy-test (https://github.com/revisit-studies/study/tree/v1.0.1/src/public/demo-click-accuracy-test/assets)
- * https://revisit.dev/study/demo-brush-interactions (https://github.com/revisit-studies/study/tree/v1.0.1/src/public/demo-brush-interactions/assets)
+ * https://revisit.dev/study/demo-click-accuracy-test (https://github.com/revisit-studies/study/tree/v1.0.2/src/public/demo-click-accuracy-test/assets)
+ * https://revisit.dev/study/demo-brush-interactions (https://github.com/revisit-studies/study/tree/v1.0.2/src/public/demo-brush-interactions/assets)
  */
 export interface ReactComponent extends BaseIndividualComponent {
   type: 'react-component';
@@ -1161,7 +1165,7 @@ export type BaseComponents = Record<string, Partial<IndividualComponent>>;
 
 ```js
 {
-  "$schema": "https://raw.githubusercontent.com/revisit-studies/study/v1.0.1/src/parser/StudyConfigSchema.json",
+  "$schema": "https://raw.githubusercontent.com/revisit-studies/study/v1.0.2/src/parser/StudyConfigSchema.json",
   "studyMetadata": {
     ...
   },
