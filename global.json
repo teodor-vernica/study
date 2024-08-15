@@ -1,0 +1,11 @@
+{
+    "$schema": "https://raw.githubusercontent.com/revisit-studies/study/v1.0.2/src/parser/GlobalConfigSchema.json",
+    "configsList": [
+        "lcad-evaluation"
+    ],
+    "configs": {
+        "lcad-evaluation":{
+            "path": "lcad-evaluation/config.json"
+        }
+    }
+}
