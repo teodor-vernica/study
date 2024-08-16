@@ -26,11 +26,12 @@ jobs:
         if: ${{ vars.VITE_STORAGE_ENGINE == '' }}
         run: yarn build
 
-      - name: Build with github environment variables
+      - name: Build with GitHub environment variables
         if: ${{ vars.VITE_STORAGE_ENGINE != '' }}
-        run: VITE_STORAGE_ENGINE=$VITE_STORAGE_ENGINE yarn build
+        run: VITE_STORAGE_ENGINE=$VITE_STORAGE_ENGINE GOOGLE_API_KEY=$GOOGLE_API_KEY yarn build
         env:
           VITE_STORAGE_ENGINE: ${{ vars.VITE_STORAGE_ENGINE }}
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
 
       - uses: peaceiris/actions-gh-pages@v3
         name: Deploy
