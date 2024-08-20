@@ -1,10 +1,8 @@
 name: Deploy To GitHub Pages
-
 on:
   push:
     branches:
       - main
-
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -14,24 +12,25 @@ jobs:
       group: ${{ github.workflow }}-${{ github.ref }}
     steps:
       - uses: actions/checkout@v3
-
       - uses: actions/setup-node@v3
         with:
           node-version: lts/*
           cache: 'yarn'
-
       - run: yarn install --immutable
-
+      - name: Print environment variables
+        run: printenv
+      - name: Replace API Key in .env
+        run: |
+          sed -i 's/${GOOGLE_API_KEY}/${{ secrets.GOOGLE_API_KEY }}/g' .env
       - name: Build with .env file
         if: ${{ vars.VITE_STORAGE_ENGINE == '' }}
         run: yarn build
-
-      - name: Build with github environment variables
+      - name: Build with GitHub environment variables
         if: ${{ vars.VITE_STORAGE_ENGINE != '' }}
-        run: VITE_STORAGE_ENGINE=$VITE_STORAGE_ENGINE yarn build
+        run: VITE_STORAGE_ENGINE=$VITE_STORAGE_ENGINE GOOGLE_API_KEY=$GOOGLE_API_KEY yarn build
         env:
           VITE_STORAGE_ENGINE: ${{ vars.VITE_STORAGE_ENGINE }}
-
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
       - uses: peaceiris/actions-gh-pages@v3
         name: Deploy
         if: ${{ github.ref == 'refs/heads/main' }}
