@@ -149,16 +149,6 @@
                     "numItems": 5
                 },
                 {
-                    "id": "q1-sustainability-familiarity",
-                    "prompt": "What is your familiarity with sustainability assesment?",
-                    "required": true,
-                    "location": "aboveStimulus",
-                    "type": "likert",
-                    "leftLabel": "Not familiar",
-                    "rightLabel": "Very familiar",
-                    "numItems": 5
-                },
-                {
                     "id": "q2-sustainability-experience",
                     "prompt": "What is your experience with sustainability assesment experience?",
                     "required": true,

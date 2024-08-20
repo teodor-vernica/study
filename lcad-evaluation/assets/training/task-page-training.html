@@ -6,7 +6,7 @@
     <title>Task Page</title>
     <link rel="stylesheet" href="../page-templates/task-page.css">
     <script src="../../../revisitUtilities/revisit-communicate.js"></script>
-    <script type="module">
+    <!-- <script type="module">
         import {Registry, initializeTrrack} from 'https://cdn.jsdelivr.net/npm/@trrack/core@1.3.0/+esm'
 
         const initialState = {
@@ -28,13 +28,13 @@
             registry
         });
 
+        window.trrack = trrack;
+
         window.showContent = function(page, button) {
             document.querySelectorAll('.content').forEach(div => div.style.display = 'none');
             document.getElementById(page).style.display = 'block';
             document.querySelectorAll('.tab').forEach(btn => btn.classList.remove('active'));
             button.classList.add('active');
-
-            console.log('Button ID:', page);
 
             trrack.apply('Change data view', clickButton(page));
 
@@ -60,19 +60,39 @@
                 selectedButton: trrack.getState().selectedButton
             });
             Revisit.postProvenance(trrack.graph.backend);
+            // console.log(trrack.graph.backend)
         }
 
         // Call saveToReVISit when the page is about to unload (e.g., when closing the tab)
         window.addEventListener('beforeunload', saveToReVISit);
-    </script>
+    </script> -->
+    <script type="module" src="../page-templates/trrack-setup-main.js"></script>
 </head>
 <body>
     <div class="tabs">
         <div class="tab active" onclick="showContent('task-description', this)">Task description</div>
+        <div class="tab" onclick="showContent('lca-results', this)">LCA results</div>
+        <div class="tab" onclick="showContent('process-tree', this)">Process tree</div>
         <div class="tab" onclick="showContent('cad-model', this)">CAD model</div>
     </div>
     <div id="task-description" class="content">
         <iframe src="task-description-training.html" width="100%" height="500px"></iframe>
+    </div>
+    <div id="lca-results" class="content">
+        <!-- <iframe src="../page-templates/lca-results.html" width="100%" height="500px"></iframe> -->
+        <div class="subtabs">
+            <div class="subtab active" onclick="showContent('lca-results-processes', this)">Processes</div>
+            <div class="subtab" onclick="showContent('lca-results-components', this)">Components</div>
+        </div>
+        <div id="lca-results-processes" class="subcontent">
+            <h2>Add process level LCA results here.</h2>
+        </div>
+        <div id="lca-results-components" class="subcontent">
+            <h2>Add component level LCA results here.</h2>
+        </div>
+    </div>
+    <div id="process-tree" class="content">
+        <iframe src="" width="100%" height="500px"></iframe>
     </div>
     <div id="cad-model" class="content">
         <iframe src="model-viewer-training.html" width="100%" height="500px"></iframe>
