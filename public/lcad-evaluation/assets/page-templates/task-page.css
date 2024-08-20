@@ -2,6 +2,10 @@
     display: flex;
     border-bottom: 1px solid #ccc;
 }
+.subtabs {
+    display: flex;
+    border-bottom: 1px solid #ccc;
+}
 .tab {
     padding: 5px 20px;
     cursor: pointer;
@@ -10,7 +14,19 @@
     background-color: #f1f1f1;
     margin-right: 2px;
 }
+.subtab {
+    padding: 5px 20px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-bottom: none;
+    background-color: #f1f1f1;
+    margin-right: 2px;
+}
 .tab.active {
+    background-color: #fff;
+    border-bottom: 1px solid #fff;
+}
+.subtab.active {
     background-color: #fff;
     border-bottom: 1px solid #fff;
 }
