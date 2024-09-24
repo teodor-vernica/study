@@ -6,8 +6,10 @@ You will be given a series of task corresponding to typical decisions a product 
 
 For each task, multiple data sources (e.g., LCA results, CAD models and drawings) will be given in order to comple the task including an interactive 3D visualization of the model where LCA results are mapped to the product geometry.
 
-Use whatever data is necessary to complete the task.
-
-Note that not ALL data is relevant/necessary for every task.
+Use whatever data is necessary to complete the task. Note that not ALL data is relevant/necessary for every task.
 
 After each task, a short survey will ask how useful the 3D visualization was to achieve the task (if at all).
+
+Please complete this survey on a desktop computer or laptop.
+
+Take as much time as you need, but please do it in one sitting.

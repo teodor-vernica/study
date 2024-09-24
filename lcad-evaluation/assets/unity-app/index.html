@@ -6,13 +6,13 @@
     <title>Unity WebGL Player | unity-voxel</title>
   </head>
   <body style="text-align: center">
-    <canvas id="unity-canvas" width=960 height=600 style="width: 960px; height: 600px; background: #231F20"></canvas>
+    <canvas id="unity-canvas" width=1000 height=400 style="width: 1000px; height: 400px; background: #231F20"></canvas>
     <script src="Build/Unity App.loader.js"></script>
     <script>
       createUnityInstance(document.querySelector("#unity-canvas"), {
-        dataUrl: "Build/Unity App.data.gz",
-        frameworkUrl: "Build/Unity App.framework.js.gz",
-        codeUrl: "Build/Unity App.wasm.gz",
+        dataUrl: "Build/Unity App.data.unityweb",
+        frameworkUrl: "Build/Unity App.framework.js.unityweb",
+        codeUrl: "Build/Unity App.wasm.unityweb",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "Teo Vernica",
         productName: "unity-voxel",
