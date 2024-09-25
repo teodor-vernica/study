@@ -29,9 +29,17 @@
         directionalLight.position.set(1, 1, 1).normalize();
         scene.add(directionalLight);
 
+        // Create a material
+        const material = new THREE.MeshStandardMaterial({ color: 0xc5cfd6 });
+
         // Load .obj file
         const loader = new THREE.OBJLoader();
-        loader.load('../data/7977K11_High-Pressure Pipe Flange 304 304L Stainless Steel.obj', function (object) {
+        loader.load('../data/CAD/ScrewPumpShaft.obj', function (object) {
+            object.traverse(function (child) {
+                if (child.isMesh) {
+                    child.material = material;
+                }
+            });
             object.rotation.y = Math.PI; // Rotate the object 180 degrees around the Y-axis
             scene.add(object);
         });
