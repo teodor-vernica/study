@@ -12,6 +12,7 @@ const PREFIX = '@REVISIT_COMMS';
 
 const defaultStyle = {
   minHeight: '500px',
+  height: '80vh',
   width: '100%',
   border: 0,
 };

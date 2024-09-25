@@ -32,9 +32,15 @@
 }
 .content {
     display: none;
-    padding: 20px;
+    padding: 5px;
     border: 1px solid #ccc;
+    height: 90%;
 }
 #task-description {
     display: block;
+}
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }
