@@ -81,6 +81,24 @@
             "path": "lcad-evaluation/assets/introduction.md",
             "response": []
         },
+        "consent":{
+            "type": "questionnaire",
+            "response": [
+                {
+                    "id": "Consent",
+                    "prompt": "Looooooooooooooooooooooooooooong consent form.",
+                    "required": true,
+                    "location": "aboveStimulus",
+                    "type": "checkbox",
+                    "options": [
+                        {
+                            "label": "I agree.",
+                            "value": "agree"
+                        }
+                    ]
+                }
+            ]
+        },
         "demographics": {
             "type": "questionnaire",
             "response": [
@@ -190,22 +208,23 @@
                     "location": "sidebar",
                     "type": "shortText"
                 }
+                
             ],
             "path": "lcad-evaluation/assets/training/task-page-training.html"
-            
         },
         "task-1.1":{
-            "baseComponent": "task",
-            "instruction": "Identify the geometric features contributing to the environmental impacts of producing the given assembly/component.",
-            "description": "Task 1.3 - Geometric feature hotspot identification",
-            "path": "lcad-evaluation/assets/need-1/task-1.3/task-page.html",
+            "type": "website",
+            "instruction": "Identify the geometric features contributing to the environmental impacts of producing the given component.",
+            "instructionLocation": "sidebar",
+            "description": "Task 1.1 - Geometric feature hotspot identification",    
+            "provideFeedback": false,
             "response": [
                 {
-                    "id": "task-1.3-q1",
-                    "prompt": "What is the highest contributing geometric feature from the assembly?",
-                    "required": true,
+                    "id": "task-1.1-q1",
+                    "prompt": "What geometric feature of the presented shaft has the highest contribution to the component’s overall environmental impact?",
+                    "required": false,
                     "location": "sidebar",
-                    "type": "dropdown",
+                    "type": "radio",
                     "options": [
                         {
                             "label": "Feature A",
@@ -222,32 +241,32 @@
                     ]
                 },
                 {
-                    "id": "task-1.3-q2",
-                    "prompt": "What is the cause for the high impact of the highest contributing geometric feature?",
-                    "required": true,
+                    "id": "task-1.1-q2",
+                    "prompt": "What is the main cause for the high impact of the identified geometric feature?",
+                    "required": false,
                     "location": "sidebar",
-                    "type": "checkbox",
+                    "type": "radio",
                     "options": [
                         {
-                            "label": "High cost of material extraction",
+                            "label": "The chosen material, including extraction and primary production",
                             "value": "material-extraction"
                         },
                         {
-                            "label": "Large number of processing steps",
+                            "label": "The large number of processing steps required to manufacture the feature",
                             "value": "many-processes"
                         },
                         {
-                            "label": "High cost of a small number of processing steps",
+                            "label": "The high cost of one or more required processing steps",
                             "value": "high-process-cost"
                         }
                     ]
                 },
                 {
-                    "id": "task-1.3-q3",
-                    "prompt": "What is the highest contributing geometric feature from component X?",
-                    "required": true,
+                    "id": "task-1.1-q3",
+                    "prompt": "What is the second highest contributing geometric feature of the shaft?",
+                    "required": false,
                     "location": "sidebar",
-                    "type": "dropdown",
+                    "type": "radio",
                     "options": [
                         {
                             "label": "Feature A",
@@ -264,95 +283,42 @@
                     ]
                 },
                 {
-                    "id": "task-1.3-q4",
-                    "prompt": "What is the cause for the high impact of the geometric feature of component X?",
-                    "required": true,
+                    "id": "task-1.1-q4",
+                    "prompt": "What is the main cause for the impact of the second highest geometric feature of the component?",
+                    "required": false,
                     "location": "sidebar",
-                    "type": "checkbox",
+                    "type": "radio",
                     "options": [
                         {
-                            "label": "High cost of material extraction",
+                            "label": "The chosen material, including extraction and primary production",
                             "value": "material-extraction"
                         },
                         {
-                            "label": "Large number of processing steps",
+                            "label": "The large number of processing steps required to manufacture the feature",
                             "value": "many-processes"
                         },
                         {
-                            "label": "High cost of a small number of processing steps",
-                            "value": "high-process-cost"
-                        }
-                    ]
-                },
-                {
-                    "id": "task-1.3-q5",
-                    "prompt": "What is the lowest contributing geometric feature of component X?",
-                    "required": true,
-                    "location": "sidebar",
-                    "type": "dropdown",
-                    "options": [
-                        {
-                            "label": "Feature A",
-                            "value": "feature-a"
-                        },
-                        {
-                            "label": "Feature B",
-                            "value": "feature-b"
-                        },
-                        {
-                            "label": "Feature C",
-                            "value": "feature-c"
-                        }
-                    ]
-                },
-                {
-                    "id": "task-1.3-q6",
-                    "prompt": "What is the cause for the low impact of the geometric feature of component X?",
-                    "required": true,
-                    "location": "sidebar",
-                    "type": "checkbox",
-                    "options": [
-                        {
-                            "label": "High cost of material extraction",
-                            "value": "material-extraction"
-                        },
-                        {
-                            "label": "Large number of processing steps",
-                            "value": "many-processes"
-                        },
-                        {
-                            "label": "High cost of a small number of processing steps",
+                            "label": "The high cost of one or more required processing steps",
                             "value": "high-process-cost"
                         }
                     ]
                 }
-            ]
+            ],
+            "path": "lcad-evaluation/assets/training/task-page-training.html"
         },
         "task-2.1":{
             "baseComponent": "task",
-            "instruction": "Assuming that the manufacturing processes (and functionality) are fixed, identify possible opportunities to reduce the overall environmental impact of the assembly/component (e.g., material changes, geometric changes).",
-            "description": "Task 2.1 - High-impact (design) optimization opportunities identification (fixed processes)",
+            "instruction": "Assuming that you are only able to change the geometric features of the shaft, identify feasible opportunities to reduce the component’s overall environmental impact. Note that the highest contributing geometric feature may not necessarily be feasibly changed, in which case, you may focus on the second, third, etc. most impactful feature.",
+            "description": "Task 2.1 - Design optimization opportunity identification (geometric features)",
             "path": "lcad-evaluation/assets/need-2/task-2.1/task-page.html",
             "response": [
                 {
                     "id": "task-2.1-q1",
-                    "prompt": "What would you focus on first (highest impact/change) to reduce the overall environmental footprint of the assembly?",
-                    "required": true,
+                    "prompt": "What geometric feature would you consider changing (to have the highest impact per change) to reduce the overall environmental footprint of the shaft?",
+                    "required": false,
                     "location": "sidebar",
-                    "type": "checkbox",
+                    "type": "radio",
                     "options": [
-                        {
-                            "label": "Component A",
-                            "value": "component-a"
-                        },
-                        {
-                            "label": "Component B",
-                            "value": "component-b"
-                        },
-                        {
-                            "label": "Componet C",
-                            "value": "component-c"
-                        },
                         {
                             "label": "Feature A",
                             "value": "feature-a"
@@ -369,112 +335,22 @@
                 },
                 {
                     "id": "task-2.1-q2",
-                    "prompt": "Motivate your choice.",
-                    "required": true,
+                    "prompt": "Please give a brief motivation for choosing the selected geometric feature.",
+                    "required": false,
                     "location": "sidebar",
                     "type": "longText"
                 },
                 {
                     "id": "task-2.1-q3",
-                    "prompt": "What would you focus on first (highest impact/change) to reduce the overall environmental footprint of component X?",
-                    "required": true,
+                    "prompt": "What kind of geometric changes would you explore to potentially reduce the shaft’s overall environmental impact? (e.g., remove the feature, increase/decrease it’s radius/length, etc.)",
+                    "required": false,
                     "location": "sidebar",
-                    "type": "checkbox",
-                    "options": [
-                        {
-                            "label": "Feature A",
-                            "value": "feature-a"
-                        },
-                        {
-                            "label": "Feature B",
-                            "value": "feature-b"
-                        },
-                        {
-                            "label": "Feature C",
-                            "value": "feature-c"
-                        }
-                    ]
+                    "type": "longText"
                 },
                 {
                     "id": "task-2.1-q4",
-                    "prompt": "Motivate your choice.",
-                    "required": true,
-                    "location": "sidebar",
-                    "type": "longText"
-                }
-            ]
-        },
-        "task-2.2":{
-            "baseComponent": "task",
-            "instruction": "Assuming that the materials (and functionality) are fixed, identify possible opportunities to reduce the overall environmental impact of the assembly/component (e.g., process changes, geometric changes).",
-            "description": "Task 2.2 - High-impact (design) optimization opportunities identification (fixed materials)",
-            "path": "lcad-evaluation/assets/need-2/task-2.2/task-page.html",
-            "response": [
-                {
-                    "id": "task-2.2-q1",
-                    "prompt": "What would you focus on first (highest impact/change) to reduce the overall environmental footprint of the assembly?",
-                    "required": true,
-                    "location": "sidebar",
-                    "type": "checkbox",
-                    "options": [
-                        {
-                            "label": "Component A",
-                            "value": "component-a"
-                        },
-                        {
-                            "label": "Component B",
-                            "value": "component-b"
-                        },
-                        {
-                            "label": "Componet C",
-                            "value": "component-c"
-                        },
-                        {
-                            "label": "Feature A",
-                            "value": "feature-a"
-                        },
-                        {
-                            "label": "Feature B",
-                            "value": "feature-b"
-                        },
-                        {
-                            "label": "Feature C",
-                            "value": "feature-c"
-                        }
-                    ]
-                },
-                {
-                    "id": "task-2.2-q2",
-                    "prompt": "Motivate your choice.",
-                    "required": true,
-                    "location": "sidebar",
-                    "type": "longText"
-                },
-                {
-                    "id": "task-2.2-q3",
-                    "prompt": "What would you focus on first (highest impact/change) to reduce the overall environmental footprint of component X?",
-                    "required": true,
-                    "location": "sidebar",
-                    "type": "checkbox",
-                    "options": [
-                        {
-                            "label": "Feature A",
-                            "value": "feature-a"
-                        },
-                        {
-                            "label": "Feature B",
-                            "value": "feature-b"
-                        },
-                        {
-                            "label": "Feature C",
-                            "value": "feature-c"
-                        }
-                    ]
-                },
-                {
-                    "id": "task-2.2-q4",
-                    "prompt": "Motivate your choice.",
-                    "required": true,
+                    "prompt": "How do you anticipate the change to affect the shaft’s functional performance (e.g., load performance) or other geometric dependencies (e.g., required gear changes)?",
+                    "required": false,
                     "location": "sidebar",
                     "type": "longText"
                 }
@@ -482,71 +358,48 @@
         },
         "task-3.1":{
             "baseComponent": "task",
-            "instruction": "Given the X possible processes to manufacture features A, B and C, choose one to minimize environmental footprint, while preserving/maximizing functionality/stress requirements/durability.",
-            "description": "Task 3.1 - Process evaluation",
+            "instruction": "Compare the design of Shaft A to the design of Shaft B.",
+            "description": "Task 3.1 - Design evaluation",
             "path": "lcad-evaluation/assets/need-3/task-3.1/task-page.html",
             "response": [
                 {
                     "id": "task-3.1-q1",
-                    "prompt": "What process would you choose for component X?",
-                    "required": true,
+                    "prompt": "Is Shaft A performing better or worse compared to Shaft B in terms of anticipated CO2 emissions from manufacturing the component?",
+                    "required": false,
                     "location": "sidebar",
-                    "type": "dropdown",
-                    "options": [
-                        {
-                            "label": "Process A ",
-                            "value": "process-a"
-                        },
-                        {
-                            "label": "Process B",
-                            "value": "process-b"
-                        },
-                        {
-                            "label": "Process C",
-                            "value": "process-c"
-                        }
-                    ]
+                    "type": "likert",
+                    "leftLabel": "Much better",
+                    "rightLabel": "Much worse",
+                    "numItems": 5
                 },
                 {
                     "id": "task-3.1-q2",
-                    "prompt": "Motivate your choice.",
-                    "required": true,
+                    "prompt": "Please give a brief description of why you believe that Shaft A is performing better or worse compared to Shaft B.",
+                    "required": false,
                     "location": "sidebar",
                     "type": "longText"
-                }
-            ]
-        },
-        "task-4.1":{
-            "baseComponent": "task",
-            "instruction": "Given the X designs for feature A (e.g., parametric changes), choose one to minimize environmental footprint, while preserving/maximizing functionality/stress requirements/durability.",
-            "description": "Task 4.1 - Geometric feature evaluation",
-            "path": "lcad-evaluation/assets/need-4/task-4.1/task-page.html",
-            "response": [
-                {
-                    "id": "task-4.1-q1",
-                    "prompt": "What feature parameters would you choose for component X?",
-                    "required": true,
-                    "location": "sidebar",
-                    "type": "dropdown",
-                    "options": [
-                        {
-                            "label": "Option A ",
-                            "value": "option-a"
-                        },
-                        {
-                            "label": "Option B",
-                            "value": "option-b"
-                        },
-                        {
-                            "label": "Option C",
-                            "value": "option-c"
-                        }
-                    ]
                 },
                 {
-                    "id": "task-4.1-q2",
-                    "prompt": "Motivate your choice.",
-                    "required": true,
+                    "id": "task-3.1-q3",
+                    "prompt": "Is Shaft A performing better or worse compared to Shaft B in terms of structural performance under the anticipated load conditions?",
+                    "required": false,
+                    "location": "sidebar",
+                    "type": "likert",
+                    "leftLabel": "Much better",
+                    "rightLabel": "Much worse",
+                    "numItems": 5
+                },
+                {
+                    "id": "task-3.1-q4",
+                    "prompt": "Please give a brief description of why you believe that Shaft A is performing better or worse compared to Shaft B.",
+                    "required": false,
+                    "location": "sidebar",
+                    "type": "longText"
+                },
+                {
+                    "id": "task-3.1-q5",
+                    "prompt": "Which design do you believe is better overall (considering both sustainability and performance) and why?",
+                    "required": false,
                     "location": "sidebar",
                     "type": "longText"
                 }
@@ -559,9 +412,6 @@
             "baseComponent": "need-survey"
         },
         "need-3-survey":{
-            "baseComponent": "need-survey"
-        },
-        "need-4-survey":{
             "baseComponent": "need-survey"
         },
         "end-survey":{
@@ -659,17 +509,15 @@
         "order": "fixed",
         "components": [
             "introduction",
+            "consent",
             "demographics",
             "training",
             "task-1.1",
             "need-1-survey",
             "task-2.1",
-            "task-2.2",
             "need-2-survey",
             "task-3.1",
             "need-3-survey",
-            "task-4.1",
-            "need-4-survey",
             "end-survey"
         ]
     }
