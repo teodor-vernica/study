@@ -36,6 +36,12 @@
     border: 1px solid #ccc;
     height: 90%;
 }
+.subcontent {
+    display: none;
+    padding: 5px;
+    border: 1px solid #ccc;
+    height: 90%;
+}
 #task-description {
     display: block;
 }

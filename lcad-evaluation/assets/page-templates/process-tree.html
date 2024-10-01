@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, height=100%">
+    <title>LCA Results Page</title>
+    <link rel="stylesheet" href="../page-templates/task-page.css">
+    <script src="../../../revisitUtilities/revisit-communicate.js"></script>
+    <script type="module">
+
+        window.showSubContent = function(page, button) {
+
+          document.querySelectorAll('.subcontent').forEach(div => div.style.display = 'none');
+          document.querySelector(`#${page}`).style.display = 'block';
+          document.querySelectorAll('.subtab').forEach(btn => btn.classList.remove('active'));
+          button.classList.add('active');
+
+          // trrack.apply('Change data view', clickButton(page));
+
+          // Save the current state to ReVISit
+          // saveToReVISit();
+        }
+
+    </script>
+</head>
+<body>
+    <div class="subtabs">
+        <div class="subtab active" onclick="showSubContent('process-tree-A', this)">Design A</div>
+        <div class="subtab" onclick="showSubContent('process-tree-B', this)">Design B</div>
+    </div>
+    <div id="process-tree-A" class="subcontent" style="display: block;">
+      <h2>Tree</h2>
+      <img src="../data/LCA/Tree.BMP" style="width: 100%; height: auto;"></img>
+      <h2>Network</h2>
+      <img src="../data/LCA/Network.BMP" style="width: 100%; height: auto;"></img>
+    </div>
+    <div id="process-tree-B" class="subcontent">
+        <h2>Add process for Design B here.</h2>
+    </div>
+    
+</body>
+</html>

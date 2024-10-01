@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Mesh Viewer</title>
+    <style>
+        body { margin: 0; }
+        canvas { display: block; }
+        .subcontent {
+            display: block;
+            
+        }
+        .legend {
+            position: absolute;
+            top: 10px; /* Adjust the position as needed */
+            right: 10px; /* Adjust the position as needed */
+            width: 150px; /* Adjust the size as needed */
+            z-index: 10; /* Ensure the legend is on top of the canvas */
+            display: none; /* Hide legends by default */
+        }
+        .legend.active {
+            display: block; /* Show the active legend */
+        }
+    </style>
+    <link rel="stylesheet" href="../page-templates/task-page.css">
+</head>
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+    
+    <div class="subtabs">
+        <div class="subtab active" onclick="switchModel('fea-model-A')">Design A</div>
+        <div class="subtab" onclick="switchModel('fea-model-B')">Design B</div>
+    </div>
+    <div id="subcontent" class="subcontent"></div>
+    
+    <!-- Add the legend images -->
+    <img src="../data/FEA/ScrewPumpShaft - Design A - FEA Data/Design A Stress Legend.png" alt="Legend A" id="legend-A" class="legend active">
+    <img src="../data/FEA/ScrewPumpShaft - Design B - FEA Data/Design B Stress Legend.png" alt="Legend B" id="legend-B" class="legend">
+
+    <script>
+        let currentModel;
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.01, 1000);
+        const renderer = new THREE.WebGLRenderer();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setClearColor(0xffffff); // Set background color to white
+        // document.getElementById('subcontent').appendChild(renderer.domElement); // Append canvas to subcontent div
+        document.body.appendChild(renderer.domElement);
+
+        const ambientLight = new THREE.AmbientLight(0x404040);
+        scene.add(ambientLight);
+
+        const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
+        directionalLight.position.set(1, 1, 1).normalize();
+        scene.add(directionalLight);
+
+        const material = new THREE.MeshStandardMaterial({ color: 0xc5cfd6 });
+        material.ambientLight = material.color
+
+        loader = new THREE.GLTFLoader();
+
+        function loadModel(path) {
+            if (currentModel) {
+                scene.remove(currentModel);
+            }
+            loader.load(path, function (gltf) {
+                const object = gltf.scene;
+                // Adjust initial orientation
+                object.rotation.x = Math.PI / 2 + Math.PI; // Rotate 90 degrees around the X-axis
+                object.rotation.y = Math.PI; // Rotate 180 degrees around the Y-axis
+                scene.add(object);
+                currentModel = object;
+            });
+        }
+
+        loadModel('../data/FEA/ScrewPumpShaft - Design A - FEA Data/Stress Design A.glb'); // Load default model
+
+        camera.position.z = 0.2;
+
+        const controls = new THREE.OrbitControls(camera, renderer.domElement);
+
+        function animate() {
+            requestAnimationFrame(animate);
+            controls.update();
+            directionalLight.position.copy(camera.position);
+            directionalLight.target.position.copy(camera.position).add(camera.getWorldDirection(new THREE.Vector3()));
+            renderer.render(scene, camera);
+        }
+        animate();
+
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+
+        function switchModel(model) {
+            if (model === 'fea-model-A') {
+                loadModel('../data/FEA/ScrewPumpShaft - Design A - FEA Data/Stress Design A.glb');
+                document.getElementById('legend-A').classList.add('active');
+                document.getElementById('legend-B').classList.remove('active');
+            } else if (model === 'fea-model-B') {
+                loadModel('../data/FEA/ScrewPumpShaft - Design B - FEA Data/Stress Design B.glb'); // Update with the correct path for Design B
+                document.getElementById('legend-A').classList.remove('active');
+                document.getElementById('legend-B').classList.add('active');
+            }
+            document.querySelectorAll('.subtab').forEach(tab => tab.classList.remove('active'));
+            document.querySelector(`.subtab[onclick="switchModel('${model}')"]`).classList.add('active');
+        }
+    </script>
+</body>
+</html>
