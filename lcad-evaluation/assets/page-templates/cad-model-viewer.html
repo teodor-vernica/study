@@ -17,7 +17,6 @@
 <body>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/OBJLoader.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
     
     <div class="subtabs">
@@ -46,25 +45,7 @@
         const material = new THREE.MeshStandardMaterial({ color: 0xc5cfd6 });
         material.ambientLight = material.color
 
-        // const loader = new THREE.OBJLoader();
         loader = new THREE.GLTFLoader();
-
-        // function loadModel(path) {
-        //     if (currentModel) {
-        //         scene.remove(currentModel);
-        //     }
-        //     loader.load(path, function (object) {
-        //         object.traverse(function (child) {
-        //             if (child.isMesh) {
-        //                 child.material = material;
-        //             }
-        //         });
-        //         // object.rotation.y = Math.PI; // Rotate the object 180 degrees around the Y-axis
-        //         object.rotation.x = Math.PI + Math.PI/2;
-        //         scene.add(object);
-        //         currentModel = object;
-        //     });
-        // }
 
         function loadModel(path) {
             if (currentModel) {
