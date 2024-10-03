@@ -50,3 +50,22 @@ html, body {
     margin: 0;
     padding: 0;
 }
+.legend {
+    position: absolute;
+    top: 31px; /* Adjust the position as needed */
+    right: 10px; /* Adjust the position as needed */
+    width: 150px; /* Adjust the size as needed */
+    z-index: 10; /* Ensure the legend is on top of the canvas */
+    display: none; /* Hide legends by default */
+}
+.legend-relative {
+    position: absolute;
+    top: 10px; /* Adjust the position as needed */
+    right: 10px; /* Adjust the position as needed */
+    width: 150px; /* Adjust the size as needed */
+    z-index: 10; /* Ensure the legend is on top of the canvas */
+    display: block; /* Hide legends by default */
+}
+.legend.active {
+    display: block; /* Show the active legend */
+}

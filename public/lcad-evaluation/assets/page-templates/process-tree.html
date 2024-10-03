@@ -7,36 +7,62 @@
     <link rel="stylesheet" href="../page-templates/task-page.css">
     <script src="../../../revisitUtilities/revisit-communicate.js"></script>
     <script type="module">
-
         window.showSubContent = function(page, button) {
-
-          document.querySelectorAll('.subcontent').forEach(div => div.style.display = 'none');
-          document.querySelector(`#${page}`).style.display = 'block';
-          document.querySelectorAll('.subtab').forEach(btn => btn.classList.remove('active'));
-          button.classList.add('active');
-
-          // trrack.apply('Change data view', clickButton(page));
-
-          // Save the current state to ReVISit
-          // saveToReVISit();
+            document.querySelectorAll('.subcontent').forEach(div => div.style.display = 'none');
+            document.querySelector(`#${page}`).style.display = 'block';
+            document.querySelectorAll('.subtab').forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
         }
-
     </script>
+    <style>
+        .container {
+            position: relative;
+            width: 100%;
+            border: 10px;
+        }
+        .main-image {
+            width: 100%;
+            height: auto;
+        }
+        .legend-relative {
+            position: absolute;
+            top: 0%; /* Adjust as needed */
+            left: 87%; /* Adjust as needed */
+            width: 80px; /* Adjust as needed */
+            height: auto;
+        }
+    </style>
 </head>
 <body>
     <div class="subtabs">
         <div class="subtab active" onclick="showSubContent('process-tree-A', this)">Design A</div>
         <div class="subtab" onclick="showSubContent('process-tree-B', this)">Design B</div>
     </div>
+    
     <div id="process-tree-A" class="subcontent" style="display: block;">
-      <h2>Tree</h2>
-      <img src="../data/LCA/Tree.BMP" style="width: 100%; height: auto;"></img>
-      <h2>Network</h2>
-      <img src="../data/LCA/Network.BMP" style="width: 100%; height: auto;"></img>
-    </div>
-    <div id="process-tree-B" class="subcontent">
-        <h2>Add process for Design B here.</h2>
+        <!-- <h2>Tree</h2> -->
+        <div class="container">
+            <img src="../data/LCA/Design A/Tree.BMP" alt="Main Image A" class="main-image">
+            <img src="../data/LCA/Tree - network legend.png" alt="Legend A" class="legend-relative">
+        </div>
+        <!-- <h2>Network</h2>
+        <div class="container">
+            <img src="../data/LCA/Design A/Network.BMP" alt="Main Image A Network" class="main-image">
+            <img src="../data/LCA/Tree - network legend.png" alt="Legend A Network" class="legend-relative">
+        </div> -->
     </div>
     
+    <div id="process-tree-B" class="subcontent">
+      <!-- <h2>Tree</h2> -->
+      <div class="container">
+          <img src="../data/LCA/Design B/Tree.BMP" alt="Main Image A" class="main-image">
+          <img src="../data/LCA/Tree - network legend.png" alt="Legend B" class="legend-relative">
+      </div>
+      <!-- <h2>Network</h2>
+      <div class="container">
+          <img src="../data/LCA/Design B/Network.BMP" alt="Main Image B Network" class="main-image">
+          <img src="../data/LCA/Tree - network legend.png" alt="Legend B Network" class="legend-relative">
+      </div> -->
+    </div>
 </body>
 </html>
