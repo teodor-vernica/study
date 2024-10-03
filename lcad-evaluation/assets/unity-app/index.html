@@ -6,17 +6,17 @@
     <title>Unity WebGL Player | unity-voxel</title>
   </head>
   <body style="text-align: center">
-    <canvas id="unity-canvas" width=1000 height=400 style="width: 1000px; height: 400px; background: #231F20"></canvas>
-    <script src="Build/Unity App.loader.js"></script>
+    <canvas id="unity-canvas" width=1000 height=400 style="width: 100%; height: auto; background: #231F20"></canvas>
+    <script src="Build/Unity App v1.1.loader.js"></script>
     <script>
       createUnityInstance(document.querySelector("#unity-canvas"), {
-        dataUrl: "Build/Unity App.data.unityweb",
-        frameworkUrl: "Build/Unity App.framework.js.unityweb",
-        codeUrl: "Build/Unity App.wasm.unityweb",
+        dataUrl: "Build/Unity App v1.1.data.unityweb",
+        frameworkUrl: "Build/Unity App v1.1.framework.js.unityweb",
+        codeUrl: "Build/Unity App v1.1.wasm.unityweb",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "Teo Vernica",
         productName: "unity-voxel",
-        productVersion: "1",
+        productVersion: "1.1",
         // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
         // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
       });
