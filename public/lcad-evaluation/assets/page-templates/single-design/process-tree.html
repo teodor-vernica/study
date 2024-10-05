@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, height=100%">
     <title>LCA Results Page</title>
-    <link rel="stylesheet" href="../page-templates/task-page.css">
-    <script src="../../../revisitUtilities/revisit-communicate.js"></script>
+    <link rel="stylesheet" href="../../page-templates/task-page.css">
+    <!-- <script src="../../../revisitUtilities/revisit-communicate.js"></script> -->
     <script type="module">
         window.showSubContent = function(page, button) {
             document.querySelectorAll('.subcontent').forEach(div => div.style.display = 'none');
@@ -34,16 +34,16 @@
     </style>
 </head>
 <body>
-    <div class="subtabs">
+    <!-- <div class="subtabs">
         <div class="subtab active" onclick="showSubContent('process-tree-A', this)">Design A</div>
         <div class="subtab" onclick="showSubContent('process-tree-B', this)">Design B</div>
-    </div>
+    </div> -->
     
     <div id="process-tree-A" class="subcontent" style="display: block;">
         <!-- <h2>Tree</h2> -->
         <div class="container">
-            <img src="../data/LCA/Design A/Tree.BMP" alt="Main Image A" class="main-image">
-            <img src="../data/LCA/Tree - network legend.png" alt="Legend A" class="legend-relative">
+            <img src="../../data/LCA/Design A/Tree.BMP" alt="Main Image A" class="main-image">
+            <img src="../../data/LCA/Tree - network legend.png" alt="Legend A" class="legend-relative">
         </div>
         <!-- <h2>Network</h2>
         <div class="container">
@@ -52,17 +52,11 @@
         </div> -->
     </div>
     
-    <div id="process-tree-B" class="subcontent">
-      <!-- <h2>Tree</h2> -->
+    <!-- <div id="process-tree-B" class="subcontent">
       <div class="container">
           <img src="../data/LCA/Design B/Tree.BMP" alt="Main Image A" class="main-image">
           <img src="../data/LCA/Tree - network legend.png" alt="Legend B" class="legend-relative">
       </div>
-      <!-- <h2>Network</h2>
-      <div class="container">
-          <img src="../data/LCA/Design B/Network.BMP" alt="Main Image B Network" class="main-image">
-          <img src="../data/LCA/Tree - network legend.png" alt="Legend B Network" class="legend-relative">
-      </div> -->
-    </div>
+    </div> -->
 </body>
 </html>

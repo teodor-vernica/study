@@ -5,24 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>3D Mesh Viewer</title>
     <style>
-        body { margin: 0; }
-        canvas { display: block; }
+    body { margin: 0; 
+        overflow: hidden;
+    }
+        canvas { display: block;
+                width: 100vw;
+                height: 100vh; }
         .subcontent {
             display: block;
-            margin-top: 50px; /* Adjust this value if needed to avoid overlap with the subtabs */
         }
     </style>
-    <link rel="stylesheet" href="../page-templates/task-page.css">
+    <link rel="stylesheet" href="../../page-templates/task-page.css">
 </head>
 <body>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
     
-    <div class="subtabs">
+    <!-- <div class="subtabs">
         <div class="subtab active" onclick="switchModel('cad-model-A')">Design A</div>
         <div class="subtab" onclick="switchModel('cad-model-B')">Design B</div>
-    </div>
+    </div> -->
     <div id="subcontent" class="subcontent"></div>
 
     <script>
@@ -63,7 +66,7 @@
         }
 
         // loadModel('../data/CAD/ScrewPumpShaft.obj'); // Load default model
-        loadModel('../data/CAD/ScrewPumpShaft - Design A.gltf'); // Load default model
+        loadModel('../../data/CAD/ScrewPumpShaft - Design A.gltf'); // Load default model
 
         camera.position.z = 0.2;
 
@@ -86,9 +89,9 @@
 
         function switchModel(model) {
             if (model === 'cad-model-A') {
-                loadModel('../data/CAD/ScrewPumpShaft - Design A.gltf');
+                loadModel('../../data/CAD/ScrewPumpShaft - Design A.gltf');
             } else if (model === 'cad-model-B') {
-                loadModel('../data/CAD/ScrewPumpShaft - Design B.gltf');
+                loadModel('../../data/CAD/ScrewPumpShaft - Design B.gltf');
             }
             document.querySelectorAll('.subtab').forEach(tab => tab.classList.remove('active'));
             document.querySelector(`.subtab[onclick="switchModel('${model}')"]`).classList.add('active');

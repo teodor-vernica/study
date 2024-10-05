@@ -1,0 +1,2337 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, height=100%">
+      <title>LCA Results Page</title>
+      <link rel="stylesheet" href="../../page-templates/task-page.css">
+      <!-- <script src="../../../revisitUtilities/revisit-communicate.js"></script> -->
+      <script type="module">
+
+          window.showSubContent = function(page, button) {
+
+            document.querySelectorAll('.subcontent').forEach(div => div.style.display = 'none');
+            document.querySelector(`#${page}`).style.display = 'block';
+            document.querySelectorAll('.subtab').forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+
+            // trrack.apply('Change data view', clickButton(page));
+
+            // Save the current state to ReVISit
+            // saveToReVISit();
+          }
+
+      </script>
+      <style type="text/css">
+        .tg  {border-collapse:collapse;border-color:#9ABAD9;border-spacing:0;}
+        .tg td{background-color:#EBF5FF;border-color:#9ABAD9;border-style:solid;border-width:1px;color:#444;
+          font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;word-break:normal;}
+        .tg th{background-color:#409cff;border-color:#9ABAD9;border-style:solid;border-width:1px;color:#fff;
+          font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+        .tg .tg-5g05{font-weight:bold;position:-webkit-sticky;position:sticky;text-align:left;top:-1px;vertical-align:bottom;
+          will-change:transform}
+        .tg .tg-f0ep{background-color:#D2E4FC;text-align:left;vertical-align:bottom}
+        .tg .tg-7zrl{text-align:left;vertical-align:bottom}
+        @media screen and (max-width: 767px) {.tg {width: auto !important;}.tg col {width: auto !important;}.tg-wrap {overflow-x: auto;-webkit-overflow-scrolling: touch;}}</style>
+        </head>
+      <style>
+      .container {
+          display: flex;
+          flex-wrap: wrap;
+          align-items: stretch; /* Ensures all items have the same height */
+      }
+      .item1 {
+          flex: 1 1 30%; /* Adjusts the width of the first two items */
+          box-sizing: border-box;
+          padding: 1px;
+      }
+      .item2 {
+          flex: 1 1 70%; /* Adjusts the width of the first two items */
+          box-sizing: border-box;
+          padding: 1px;
+      }
+      .dropdown-content-a{
+        display:none;
+      }
+      .dropdown-content-b{
+        display:none;
+      }
+      .dropdown-content-a.active{
+        display: block;
+      }
+      .dropdown-content-b.active{
+        display: block;
+      }
+      </style>
+  <body>
+      <!-- <div class="subtabs">
+          <div class="subtab active" onclick="showSubContent('lca-results-A', this)">Design A</div>
+          <div class="subtab" onclick="showSubContent('lca-results-B', this)">Design B</div>
+      </div> -->
+      <div id="lca-results-A" class="subcontent" style="display: block;">
+      
+      <div style="padding-bottom: 40px;">
+      <label for="dropdown-a"><strong>Select data:</strong></label>
+      <select id="dropdown-a" onchange="showContent('dropdown-a')" class="dropdown">
+          <option value="option1-a">Impact Assessment</option>
+          <option value="option2-a">Process contribution - amount</option>
+          <option value="option3-a">Process contribution - characterization</option>
+      </select>
+    </div>
+
+      <div id="option1-a" class="dropdown-content-a active">
+        <div id="impact-assessment">   
+          <!-- <h2>Impact Assessment</h2> -->
+          <div class="container">
+            <div class="item1">
+          <p><strong>Calculation:</strong> Analyze</p>
+          <p><strong>Results:</strong> Impact assessment</p>
+          <p><strong>Product:</strong> 1 p Screw Pump Shaft (of project Screw Pump Shaft)</p>
+          <p><strong>Method:</strong> ReCiPe 2016 Midpoint (H) V1.00</p>
+          <p><strong>Indicator:</strong> Characterization</p>
+          <p><strong>Skip categories:</strong> With factor = 0</p>
+          <p><strong>Exclude infrastructure processes:</strong> No</p>
+          <p><strong>Exclude long-term emissions:</strong> No</p>
+          <p><strong>Sorted on item:</strong> Impact category</p>
+          <p><strong>Sort order:</strong> Ascending</p>
+        </div>
+        <div class="item2">
+          <img src="../../data/LCA/Design A/Impact Assessment Design A - GWP.BMP" style="width: auto; height: 100%;"></img>
+        </div>
+        </div>
+          <div class="tg-wrap"><table class="tg"><thead>
+            <tr>
+              <th class="tg-5g05">Impact category</th>
+              <th class="tg-5g05">Unit</th>
+              <th class="tg-5g05">Total</th>
+              <th class="tg-5g05">Primary Production Steel Billet</th>
+              <th class="tg-5g05">Turning Face 1</th>
+              <th class="tg-5g05">Turning Surface 2, Face 2</th>
+              <th class="tg-5g05">Turning Surface 1</th>
+              <th class="tg-5g05">Turning Groove 1</th>
+              <th class="tg-5g05">Turning Face 3</th>
+              <th class="tg-5g05">Turning Surface 4, Face 4, Bearing Surface 1</th>
+              <th class="tg-5g05">Turning Groove 2</th>
+              <th class="tg-5g05">Turning Surface 5, Face 5, Bearing Surface 2</th>
+              <th class="tg-5g05">Turning Surface 6</th>
+              <th class="tg-5g05">Turning Surface 7</th>
+              <th class="tg-5g05">Turning Top Hole</th>
+              <th class="tg-5g05">Turning Chamfers 1, 2, 3, 4, 5, 7</th>
+              <th class="tg-5g05">Turning Fillets 1, 2, 3, 4, 5, 6, 7, 8, 9</th>
+              <th class="tg-5g05">Drilling Bushing Holes</th>
+              <th class="tg-5g05">Milling Keyway</th>
+              <th class="tg-5g05">Turning Chamfer 6</th>
+              <th class="tg-5g05">Grinding Bearing Surfaces 1, 2</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="tg-f0ep">Global warming</td>
+              <td class="tg-f0ep">kg CO2 eq</td>
+              <td class="tg-f0ep">139.6141</td>
+              <td class="tg-f0ep">63.95893</td>
+              <td class="tg-f0ep">5.339331</td>
+              <td class="tg-f0ep">1.662727</td>
+              <td class="tg-f0ep">0.003252</td>
+              <td class="tg-f0ep">0.366201</td>
+              <td class="tg-f0ep">18.55001</td>
+              <td class="tg-f0ep">36.52781</td>
+              <td class="tg-f0ep">0.023899</td>
+              <td class="tg-f0ep">5.686171</td>
+              <td class="tg-f0ep">0.170243</td>
+              <td class="tg-f0ep">0.572368</td>
+              <td class="tg-f0ep">5.932574</td>
+              <td class="tg-f0ep">0.019966</td>
+              <td class="tg-f0ep">0.033655</td>
+              <td class="tg-f0ep">0.607949</td>
+              <td class="tg-f0ep">0.147162</td>
+              <td class="tg-f0ep">0.003252</td>
+              <td class="tg-f0ep">0.008596</td>
+            </tr>
+          </tbody></table></div>
+          
+      </div>
+      </div>
+      <div id="option2-a" class="dropdown-content-a">
+        <div id="process-contribution-amount">
+          <!-- <h2>Amount</h2> -->
+        <p><strong>Calculation:</strong> Analyze</p>
+        <p><strong>Results:</strong> Process contribution</p>
+        <p><strong>Product:</strong> 1 p Screw Pump Shaft (of project Screw Pump Shaft)</p>
+        <p><strong>Method:</strong> ReCiPe 2016 Midpoint (H) V1.00</p>
+        <p><strong>Indicator:</strong> Inventory</p>
+        <p><strong>Default units:</strong> No</p>
+        <p><strong>Exclude infrastructure processes:</strong> No</p>
+        <p><strong>Exclude long-term emissions:</strong> No</p>
+        <p><strong>Sorted on item:</strong> Process</p>
+        <p><strong>Sort order:</strong> Ascending</p>
+
+        <div class="tg-wrap"><table class="tg"><thead>
+          <tr>
+            <th class="tg-5g05">No</th>
+            <th class="tg-5g05">Process</th>
+            <th class="tg-5g05">Project</th>
+            <th class="tg-5g05">Unit</th>
+            <th class="tg-5g05">Total</th>
+            <th class="tg-5g05">Primary Production Steel Billet</th>
+            <th class="tg-5g05">Turning Face 1</th>
+            <th class="tg-5g05">Turning Surface 2, Face 2</th>
+            <th class="tg-5g05">Turning Surface 1</th>
+            <th class="tg-5g05">Turning Groove 1</th>
+            <th class="tg-5g05">Turning Face 3</th>
+            <th class="tg-5g05">Turning Surface 4, Face 4, Bearing Surface 1</th>
+            <th class="tg-5g05">Turning Groove 2</th>
+            <th class="tg-5g05">Turning Surface 5, Face 5, Bearing Surface 2</th>
+            <th class="tg-5g05">Turning Surface 6</th>
+            <th class="tg-5g05">Turning Surface 7</th>
+            <th class="tg-5g05">Turning Top Hole</th>
+            <th class="tg-5g05">Turning Chamfers 1, 2, 3, 4, 5, 7</th>
+            <th class="tg-5g05">Turning Fillets 1, 2, 3, 4, 5, 6, 7, 8, 9</th>
+            <th class="tg-5g05">Drilling Bushing Holes</th>
+            <th class="tg-5g05">Milling Keyway</th>
+            <th class="tg-5g05">Turning Chamfer 6</th>
+            <th class="tg-5g05">Grinding Bearing Surfaces 1, 2</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="tg-f0ep">1</td>
+            <td class="tg-f0ep">Drilling Bushing Holes</td>
+            <td class="tg-f0ep">Screw Pump Shaft</td>
+            <td class="tg-f0ep">g</td>
+            <td class="tg-f0ep">91.32</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">91.32</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+          </tr>
+          <tr>
+            <td class="tg-7zrl">2</td>
+            <td class="tg-7zrl">Grinding Bearing Surfaces 1, 2</td>
+            <td class="tg-7zrl">Screw Pump Shaft</td>
+            <td class="tg-7zrl">g</td>
+            <td class="tg-7zrl">1</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">1</td>
+          </tr>
+          <tr>
+            <td class="tg-f0ep">3</td>
+            <td class="tg-f0ep">Milling Keyway</td>
+            <td class="tg-f0ep">Screw Pump Shaft</td>
+            <td class="tg-f0ep">g</td>
+            <td class="tg-f0ep">22.24</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">22.24</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+          </tr>
+          <tr>
+            <td class="tg-7zrl">4</td>
+            <td class="tg-7zrl">Primary Production Steel Billet</td>
+            <td class="tg-7zrl">Screw Pump Shaft</td>
+            <td class="tg-7zrl">kg</td>
+            <td class="tg-7zrl">13.59001</td>
+            <td class="tg-7zrl">13.59001</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+          </tr>
+          <tr>
+            <td class="tg-f0ep">5</td>
+            <td class="tg-f0ep">Turning Chamfer 6</td>
+            <td class="tg-f0ep">Screw Pump Shaft</td>
+            <td class="tg-f0ep">mg</td>
+            <td class="tg-f0ep">430</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">430</td>
+            <td class="tg-f0ep">0</td>
+          </tr>
+          <tr>
+            <td class="tg-7zrl">6</td>
+            <td class="tg-7zrl">Turning Chamfers 1, 2, 3, 4, 5, 7</td>
+            <td class="tg-7zrl">Screw Pump Shaft</td>
+            <td class="tg-7zrl">g</td>
+            <td class="tg-7zrl">2.64</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">2.64</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+          </tr>
+          <tr>
+            <td class="tg-f0ep">7</td>
+            <td class="tg-f0ep">Turning Face 1</td>
+            <td class="tg-f0ep">Screw Pump Shaft</td>
+            <td class="tg-f0ep">g</td>
+            <td class="tg-f0ep">705.98</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">705.98</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+          </tr>
+          <tr>
+            <td class="tg-7zrl">8</td>
+            <td class="tg-7zrl">Turning Face 3</td>
+            <td class="tg-7zrl">Screw Pump Shaft</td>
+            <td class="tg-7zrl">kg</td>
+            <td class="tg-7zrl">2.45273</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">2.45273</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+          </tr>
+          <tr>
+            <td class="tg-f0ep">9</td>
+            <td class="tg-f0ep">Turning Fillets 1, 2, 3, 4, 5, 6, 7, 8, 9</td>
+            <td class="tg-f0ep">Screw Pump Shaft</td>
+            <td class="tg-f0ep">g</td>
+            <td class="tg-f0ep">4.45</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">4.45</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+          </tr>
+          <tr>
+            <td class="tg-7zrl">10</td>
+            <td class="tg-7zrl">Turning Groove 1</td>
+            <td class="tg-7zrl">Screw Pump Shaft</td>
+            <td class="tg-7zrl">g</td>
+            <td class="tg-7zrl">48.42</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">48.42</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+          </tr>
+          <tr>
+            <td class="tg-f0ep">11</td>
+            <td class="tg-f0ep">Turning Groove 2</td>
+            <td class="tg-f0ep">Screw Pump Shaft</td>
+            <td class="tg-f0ep">g</td>
+            <td class="tg-f0ep">3.16</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">3.16</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+          </tr>
+          <tr>
+            <td class="tg-7zrl">12</td>
+            <td class="tg-7zrl">Turning Surface 1</td>
+            <td class="tg-7zrl">Screw Pump Shaft</td>
+            <td class="tg-7zrl">mg</td>
+            <td class="tg-7zrl">430</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">430</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+          </tr>
+          <tr>
+            <td class="tg-f0ep">13</td>
+            <td class="tg-f0ep">Turning Surface 2, Face 2</td>
+            <td class="tg-f0ep">Screw Pump Shaft</td>
+            <td class="tg-f0ep">g</td>
+            <td class="tg-f0ep">219.85</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">219.85</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+          </tr>
+          <tr>
+            <td class="tg-7zrl">14</td>
+            <td class="tg-7zrl">Turning Surface 4, Face 4, Bearing Surface 1</td>
+            <td class="tg-7zrl">Screw Pump Shaft</td>
+            <td class="tg-7zrl">kg</td>
+            <td class="tg-7zrl">4.8298</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">4.8298</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+          </tr>
+          <tr>
+            <td class="tg-f0ep">15</td>
+            <td class="tg-f0ep">Turning Surface 5, Face 5, Bearing Surface 2</td>
+            <td class="tg-f0ep">Screw Pump Shaft</td>
+            <td class="tg-f0ep">g</td>
+            <td class="tg-f0ep">751.84</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">751.84</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+          </tr>
+          <tr>
+            <td class="tg-7zrl">16</td>
+            <td class="tg-7zrl">Turning Surface 6</td>
+            <td class="tg-7zrl">Screw Pump Shaft</td>
+            <td class="tg-7zrl">g</td>
+            <td class="tg-7zrl">22.51</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">22.51</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+          </tr>
+          <tr>
+            <td class="tg-f0ep">17</td>
+            <td class="tg-f0ep">Turning Surface 7</td>
+            <td class="tg-f0ep">Screw Pump Shaft</td>
+            <td class="tg-f0ep">g</td>
+            <td class="tg-f0ep">75.68</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">75.68</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+          </tr>
+          <tr>
+            <td class="tg-7zrl">18</td>
+            <td class="tg-7zrl">Turning Top Hole</td>
+            <td class="tg-7zrl">Screw Pump Shaft</td>
+            <td class="tg-7zrl">g</td>
+            <td class="tg-7zrl">784.42</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">784.42</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+          </tr>
+        </tbody></table></div>
+      </div>
+      </div>
+      <div id="option3-a" class="dropdown-content-a">
+        <div id="process-contribution-characterization">
+          <!-- <h2>Characterization</h2> -->
+          <div class="container">
+            <div class="item1">
+          <p><strong>Calculation:</strong> Analyze</p>
+          <p><strong>Results:</strong> Process contribution</p>
+          <p><strong>Product:</strong> 1 p Screw Pump Shaft (of project Screw Pump Shaft)</p>
+          <p><strong>Method:</strong> ReCiPe 2016 Midpoint (H) V1.00</p>
+          <p><strong>Indicator:</strong> Characterization</p>
+          <p><strong>Category:</strong> Global warming</p>
+          <p><strong>Cut-off:</strong> 0%</p>
+          <p><strong>Exclude infrastructure processes:</strong> No</p>
+          <p><strong>Exclude long-term emissions:</strong> No</p>
+          <p><strong>Sorted on item:</strong> Process</p>
+          <p><strong>Sort order:</strong> Ascending</p>
+        </div>
+        <div class="item2">
+          <img src="../../data/LCA/Design A/Process Contribution Design A - Characterization.BMP" style="width: 100%; height: auto;"></img>
+        </div>
+        </div>
+          <div class="tg-wrap"><table class="tg"><thead>
+            <tr>
+              <th class="tg-5g05">No</th>
+              <th class="tg-5g05">Process</th>
+              <th class="tg-5g05">Project</th>
+              <th class="tg-5g05">Unit</th>
+              <th class="tg-5g05">Total</th>
+              <th class="tg-5g05">Primary Production Steel Billet</th>
+              <th class="tg-5g05">Turning Face 1</th>
+              <th class="tg-5g05">Turning Surface 2, Face 2</th>
+              <th class="tg-5g05">Turning Surface 1</th>
+              <th class="tg-5g05">Turning Groove 1</th>
+              <th class="tg-5g05">Turning Face 3</th>
+              <th class="tg-5g05">Turning Surface 4, Face 4, Bearing Surface 1</th>
+              <th class="tg-5g05">Turning Groove 2</th>
+              <th class="tg-5g05">Turning Surface 5, Face 5, Bearing Surface 2</th>
+              <th class="tg-5g05">Turning Surface 6</th>
+              <th class="tg-5g05">Turning Surface 7</th>
+              <th class="tg-5g05">Turning Top Hole</th>
+              <th class="tg-5g05">Turning Chamfers 1, 2, 3, 4, 5, 7</th>
+              <th class="tg-5g05">Turning Fillets 1, 2, 3, 4, 5, 6, 7, 8, 9</th>
+              <th class="tg-5g05">Drilling Bushing Holes</th>
+              <th class="tg-5g05">Milling Keyway</th>
+              <th class="tg-5g05">Turning Chamfer 6</th>
+              <th class="tg-5g05">Grinding Bearing Surfaces 1, 2</th>
+              <th class="tg-5g05">Turning Chamfers 1, 2, 3, 4, 5, 7</th>
+              <th class="tg-5g05">Turning Fillets 1, 2, 3, 4, 5, 6, 7, 8, 9</th>
+              <th class="tg-5g05">Drilling Bushing Holes</th>
+              <th class="tg-5g05">Milling Keyway</th>
+              <th class="tg-5g05">Turning Chamfer 6</th>
+              <th class="tg-5g05">Grinding Bearing Surfaces 1, 2</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="tg-f0ep"></td>
+              <td class="tg-f0ep">Total of all processes</td>
+              <td class="tg-f0ep"></td>
+              <td class="tg-f0ep">kg CO2 eq</td>
+              <td class="tg-f0ep">139.6141</td>
+              <td class="tg-f0ep">63.95893</td>
+              <td class="tg-f0ep">5.339331</td>
+              <td class="tg-f0ep">1.662727</td>
+              <td class="tg-f0ep">0.003252</td>
+              <td class="tg-f0ep">0.366201</td>
+              <td class="tg-f0ep">18.55001</td>
+              <td class="tg-f0ep">36.52781</td>
+              <td class="tg-f0ep">0.023899</td>
+              <td class="tg-f0ep">5.686171</td>
+              <td class="tg-f0ep">0.170243</td>
+              <td class="tg-f0ep">0.572368</td>
+              <td class="tg-f0ep">5.932574</td>
+              <td class="tg-f0ep">0.019966</td>
+              <td class="tg-f0ep">0.033655</td>
+              <td class="tg-f0ep">0.607949</td>
+              <td class="tg-f0ep">0.147162</td>
+              <td class="tg-f0ep">0.003252</td>
+              <td class="tg-f0ep">0.008596</td>
+              <td class="tg-f0ep">0.019966</td>
+              <td class="tg-f0ep">0.033655</td>
+              <td class="tg-f0ep">0.607949</td>
+              <td class="tg-f0ep">0.147162</td>
+              <td class="tg-f0ep">0.003252</td>
+              <td class="tg-f0ep">0.008596</td>
+            </tr>
+            <tr>
+              <td class="tg-7zrl">1</td>
+              <td class="tg-7zrl">Drilling Bushing Holes</td>
+              <td class="tg-7zrl">Screw Pump Shaft</td>
+              <td class="tg-7zrl">kg CO2 eq</td>
+              <td class="tg-7zrl">0.607949</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0.607949</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0.607949</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+            </tr>
+            <tr>
+              <td class="tg-f0ep">2</td>
+              <td class="tg-f0ep">Grinding Bearing Surfaces 1, 2</td>
+              <td class="tg-f0ep">Screw Pump Shaft</td>
+              <td class="tg-f0ep">kg CO2 eq</td>
+              <td class="tg-f0ep">0.008596</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0.008596</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0.008596</td>
+            </tr>
+            <tr>
+              <td class="tg-7zrl">3</td>
+              <td class="tg-7zrl">Milling Keyway</td>
+              <td class="tg-7zrl">Screw Pump Shaft</td>
+              <td class="tg-7zrl">kg CO2 eq</td>
+              <td class="tg-7zrl">0.147162</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0.147162</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0.147162</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+            </tr>
+            <tr>
+              <td class="tg-f0ep">4</td>
+              <td class="tg-f0ep">Primary Production Steel Billet</td>
+              <td class="tg-f0ep">Screw Pump Shaft</td>
+              <td class="tg-f0ep">kg CO2 eq</td>
+              <td class="tg-f0ep">63.95893</td>
+              <td class="tg-f0ep">63.95893</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+            </tr>
+            <tr>
+              <td class="tg-7zrl">5</td>
+              <td class="tg-7zrl">Turning Chamfer 6</td>
+              <td class="tg-7zrl">Screw Pump Shaft</td>
+              <td class="tg-7zrl">kg CO2 eq</td>
+              <td class="tg-7zrl">0.003252</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0.003252</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0.003252</td>
+              <td class="tg-7zrl">0</td>
+            </tr>
+            <tr>
+              <td class="tg-f0ep">6</td>
+              <td class="tg-f0ep">Turning Chamfers 1, 2, 3, 4, 5, 7</td>
+              <td class="tg-f0ep">Screw Pump Shaft</td>
+              <td class="tg-f0ep">kg CO2 eq</td>
+              <td class="tg-f0ep">0.019966</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0.019966</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0.019966</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+            </tr>
+            <tr>
+              <td class="tg-7zrl">7</td>
+              <td class="tg-7zrl">Turning Face 1</td>
+              <td class="tg-7zrl">Screw Pump Shaft</td>
+              <td class="tg-7zrl">kg CO2 eq</td>
+              <td class="tg-7zrl">5.339331</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">5.339331</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+            </tr>
+            <tr>
+              <td class="tg-f0ep">8</td>
+              <td class="tg-f0ep">Turning Face 3</td>
+              <td class="tg-f0ep">Screw Pump Shaft</td>
+              <td class="tg-f0ep">kg CO2 eq</td>
+              <td class="tg-f0ep">18.55001</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">18.55001</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+            </tr>
+            <tr>
+              <td class="tg-7zrl">9</td>
+              <td class="tg-7zrl">Turning Fillets 1, 2, 3, 4, 5, 6, 7, 8, 9</td>
+              <td class="tg-7zrl">Screw Pump Shaft</td>
+              <td class="tg-7zrl">kg CO2 eq</td>
+              <td class="tg-7zrl">0.033655</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0.033655</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0.033655</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+            </tr>
+            <tr>
+              <td class="tg-f0ep">10</td>
+              <td class="tg-f0ep">Turning Groove 1</td>
+              <td class="tg-f0ep">Screw Pump Shaft</td>
+              <td class="tg-f0ep">kg CO2 eq</td>
+              <td class="tg-f0ep">0.366201</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0.366201</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+            </tr>
+            <tr>
+              <td class="tg-7zrl">11</td>
+              <td class="tg-7zrl">Turning Groove 2</td>
+              <td class="tg-7zrl">Screw Pump Shaft</td>
+              <td class="tg-7zrl">kg CO2 eq</td>
+              <td class="tg-7zrl">0.023899</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0.023899</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+            </tr>
+            <tr>
+              <td class="tg-f0ep">12</td>
+              <td class="tg-f0ep">Turning Surface 1</td>
+              <td class="tg-f0ep">Screw Pump Shaft</td>
+              <td class="tg-f0ep">kg CO2 eq</td>
+              <td class="tg-f0ep">0.003252</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0.003252</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+            </tr>
+            <tr>
+              <td class="tg-7zrl">13</td>
+              <td class="tg-7zrl">Turning Surface 2, Face 2</td>
+              <td class="tg-7zrl">Screw Pump Shaft</td>
+              <td class="tg-7zrl">kg CO2 eq</td>
+              <td class="tg-7zrl">1.662727</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">1.662727</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+            </tr>
+            <tr>
+              <td class="tg-f0ep">14</td>
+              <td class="tg-f0ep">Turning Surface 4, Face 4, Bearing Surface 1</td>
+              <td class="tg-f0ep">Screw Pump Shaft</td>
+              <td class="tg-f0ep">kg CO2 eq</td>
+              <td class="tg-f0ep">36.52781</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">36.52781</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+            </tr>
+            <tr>
+              <td class="tg-7zrl">15</td>
+              <td class="tg-7zrl">Turning Surface 5, Face 5, Bearing Surface 2</td>
+              <td class="tg-7zrl">Screw Pump Shaft</td>
+              <td class="tg-7zrl">kg CO2 eq</td>
+              <td class="tg-7zrl">5.686171</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">5.686171</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+            </tr>
+            <tr>
+              <td class="tg-f0ep">16</td>
+              <td class="tg-f0ep">Turning Surface 6</td>
+              <td class="tg-f0ep">Screw Pump Shaft</td>
+              <td class="tg-f0ep">kg CO2 eq</td>
+              <td class="tg-f0ep">0.170243</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0.170243</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+            </tr>
+            <tr>
+              <td class="tg-7zrl">17</td>
+              <td class="tg-7zrl">Turning Surface 7</td>
+              <td class="tg-7zrl">Screw Pump Shaft</td>
+              <td class="tg-7zrl">kg CO2 eq</td>
+              <td class="tg-7zrl">0.572368</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0.572368</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+            </tr>
+            <tr>
+              <td class="tg-f0ep">18</td>
+              <td class="tg-f0ep">Turning Top Hole</td>
+              <td class="tg-f0ep">Screw Pump Shaft</td>
+              <td class="tg-f0ep">kg CO2 eq</td>
+              <td class="tg-f0ep">5.932574</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">5.932574</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+            </tr>
+          </tbody></table></div>
+            
+            
+        </div>
+      </div>
+      
+      </div>
+      <!-- <div id="lca-results-B" class="subcontent">
+
+        <div style="padding-bottom: 40px;">
+        <label for="dropdown-b"><strong>Select data:</strong></label>
+        <select id="dropdown-b" onchange="showContent('dropdown-b')" class="dropdown">
+          <option value="option1-b">Impact Assessment</option>
+          <option value="option2-b">Process contribution - amount</option>
+          <option value="option3-b">Process contribution - characterization</option>
+        </select>
+      </div>
+
+      <div id="option1-b" class="dropdown-content-b active">
+        <div id="impact-assessment">   
+          <div class="container">
+
+          <div class="item1">
+          <p><strong>Calculation:</strong> Analyze</p>
+          <p><strong>Results:</strong> Impact assessment</p>
+          <p><strong>Product:</strong> 1 p Screw Pump Shaft - Design B (of project Screw Pump Shaft)</p>
+          <p><strong>Method:</strong> ReCiPe 2016 Midpoint (H) V1.00</p>
+          <p><strong>Indicator:</strong> Characterization</p>
+          <p><strong>Skip categories:</strong> With factor = 0</p>
+          <p><strong>Exclude infrastructure processes:</strong> No</p>
+          <p><strong>Exclude long-term emissions:</strong> No</p>
+          <p><strong>Sorted on item:</strong> Impact category</p>
+          <p><strong>Sort order:</strong> Ascending</p>
+        </div>
+        <div class="item2">
+          <img src="../../data/LCA/Design A/Impact Assessment Design A - GWP.BMP" style="width: auto; height: 100%;"></img>
+        </div>
+          </div>
+          <div class="tg-wrap"><table class="tg"><thead>
+            <tr>
+              <th class="tg-5g05">Impact category</th>
+              <th class="tg-5g05">Unit</th>
+              <th class="tg-5g05">Total</th>
+              <th class="tg-5g05">Primary Production Steel Billet</th>
+              <th class="tg-5g05">Turning Face 1</th>
+              <th class="tg-5g05">Turning Surface 2, Face 2</th>
+              <th class="tg-5g05">Turning Surface 1</th>
+              <th class="tg-5g05">Turning Groove 1</th>
+              <th class="tg-5g05">Turning Face 3</th>
+              <th class="tg-5g05">Turning Surface 4, Face 4, Bearing Surface 1</th>
+              <th class="tg-5g05">Turning Groove 2</th>
+              <th class="tg-5g05">Turning Surface 5, Face 5, Bearing Surface 2</th>
+              <th class="tg-5g05">Turning Surface 6</th>
+              <th class="tg-5g05">Turning Surface 7</th>
+              <th class="tg-5g05">Turning Top Hole</th>
+              <th class="tg-5g05">Turning Fillets 1, 2, 3, 4, 5, 6, 7, 8, 9,&nbsp;&nbsp;&nbsp;10, 11</th>
+              <th class="tg-5g05">Drilling Bushing Holes</th>
+              <th class="tg-5g05">Milling Keyway</th>
+              <th class="tg-5g05">Turning Chamfer 6</th>
+              <th class="tg-5g05">Grinding Bearing Surfaces 1, 2</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="tg-f0ep">Global warming</td>
+              <td class="tg-f0ep">kg CO2 eq</td>
+              <td class="tg-f0ep">140.3248</td>
+              <td class="tg-f0ep">63.95895</td>
+              <td class="tg-f0ep">5.339292</td>
+              <td class="tg-f0ep">1.6628</td>
+              <td class="tg-f0ep">0.003196</td>
+              <td class="tg-f0ep">0.366257</td>
+              <td class="tg-f0ep">18.54996</td>
+              <td class="tg-f0ep">36.52786</td>
+              <td class="tg-f0ep">0.023886</td>
+              <td class="tg-f0ep">5.982276</td>
+              <td class="tg-f0ep">0.351785</td>
+              <td class="tg-f0ep">0.763153</td>
+              <td class="tg-f0ep">5.932556</td>
+              <td class="tg-f0ep">0.021572</td>
+              <td class="tg-f0ep">0.607958</td>
+              <td class="tg-f0ep">0.224042</td>
+              <td class="tg-f0ep">0.003242</td>
+              <td class="tg-f0ep">0.006024</td>
+            </tr>
+          </tbody></table></div>
+        </div>
+      </div>
+
+      <div id="option2-b" class="dropdown-content-b">
+        <div id="process-contribution-amount">
+        <p><strong>Calculation:</strong> Analyze</p>
+        <p><strong>Results:</strong> Process contribution</p>
+        <p><strong>Product:</strong> 1 p Screw Pump Shaft - Design B (of project Screw Pump Shaft)</p>
+        <p><strong>Method:</strong> ReCiPe 2016 Midpoint (H) V1.00</p>
+        <p><strong>Indicator:</strong> Inventory</p>
+        <p><strong>Default units:</strong> No</p>
+        <p><strong>Exclude infrastructure processes:</strong> No</p>
+        <p><strong>Exclude long-term emissions:</strong> No</p>
+        <p><strong>Sorted on item:</strong> Process</p>
+        <p><strong>Sort order:</strong> Ascending</p>
+  
+        <div class="tg-wrap"><table class="tg"><thead>
+          <tr>
+            <th class="tg-5g05">No</th>
+            <th class="tg-5g05">Process</th>
+            <th class="tg-5g05">Project</th>
+            <th class="tg-5g05">Unit</th>
+            <th class="tg-5g05">Total</th>
+            <th class="tg-5g05">Primary Production Steel Billet</th>
+            <th class="tg-5g05">Turning Face 1</th>
+            <th class="tg-5g05">Turning Surface 2, Face 2</th>
+            <th class="tg-5g05">Turning Surface 1</th>
+            <th class="tg-5g05">Turning Groove 1</th>
+            <th class="tg-5g05">Turning Face 3</th>
+            <th class="tg-5g05">Turning Surface 4, Face 4, Bearing Surface 1</th>
+            <th class="tg-5g05">Turning Groove 2</th>
+            <th class="tg-5g05">Turning Surface 5, Face 5, Bearing Surface 2</th>
+            <th class="tg-5g05">Turning Surface 6</th>
+            <th class="tg-5g05">Turning Surface 7</th>
+            <th class="tg-5g05">Turning Top Hole</th>
+            <th class="tg-5g05">Turning Fillets 1, 2, 3, 4, 5, 6, 7, 8, 9,&nbsp;&nbsp;&nbsp;10, 11</th>
+            <th class="tg-5g05">Drilling Bushing Holes</th>
+            <th class="tg-5g05">Milling Keyway</th>
+            <th class="tg-5g05">Turning Chamfer 6</th>
+            <th class="tg-5g05">Grinding Bearing Surfaces 1, 2</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="tg-f0ep">1</td>
+            <td class="tg-f0ep">Drilling Bushing Holes</td>
+            <td class="tg-f0ep">Screw Pump Shaft</td>
+            <td class="tg-f0ep">g</td>
+            <td class="tg-f0ep">91.32135</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">91.32135</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+          </tr>
+          <tr>
+            <td class="tg-7zrl">2</td>
+            <td class="tg-7zrl">Grinding Bearing Surfaces 1, 2</td>
+            <td class="tg-7zrl">Screw Pump Shaft</td>
+            <td class="tg-7zrl">mg</td>
+            <td class="tg-7zrl">700.808</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">700.808</td>
+          </tr>
+          <tr>
+            <td class="tg-f0ep">3</td>
+            <td class="tg-f0ep">Milling Keyway</td>
+            <td class="tg-f0ep">Screw Pump Shaft</td>
+            <td class="tg-f0ep">g</td>
+            <td class="tg-f0ep">33.85865</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">33.85865</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+          </tr>
+          <tr>
+            <td class="tg-7zrl">4</td>
+            <td class="tg-7zrl">Primary Production Steel Billet</td>
+            <td class="tg-7zrl">Screw Pump Shaft</td>
+            <td class="tg-7zrl">kg</td>
+            <td class="tg-7zrl">13.59001</td>
+            <td class="tg-7zrl">13.59001</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+          </tr>
+          <tr>
+            <td class="tg-f0ep">5</td>
+            <td class="tg-f0ep">Turning Chamfer 6</td>
+            <td class="tg-f0ep">Screw Pump Shaft</td>
+            <td class="tg-f0ep">mg</td>
+            <td class="tg-f0ep">428.62</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">428.62</td>
+            <td class="tg-f0ep">0</td>
+          </tr>
+          <tr>
+            <td class="tg-7zrl">6</td>
+            <td class="tg-7zrl">Turning Face 1</td>
+            <td class="tg-7zrl">Screw Pump Shaft</td>
+            <td class="tg-7zrl">g</td>
+            <td class="tg-7zrl">705.9748</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">705.9748</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+          </tr>
+          <tr>
+            <td class="tg-f0ep">7</td>
+            <td class="tg-f0ep">Turning Face 3</td>
+            <td class="tg-f0ep">Screw Pump Shaft</td>
+            <td class="tg-f0ep">kg</td>
+            <td class="tg-f0ep">2.452723</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">2.452723</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+          </tr>
+          <tr>
+            <td class="tg-7zrl">8</td>
+            <td class="tg-7zrl">Turning Fillets 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11</td>
+            <td class="tg-7zrl">Screw Pump Shaft</td>
+            <td class="tg-7zrl">g</td>
+            <td class="tg-7zrl">2.85231</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">2.85231</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+          </tr>
+          <tr>
+            <td class="tg-f0ep">9</td>
+            <td class="tg-f0ep">Turning Groove 1</td>
+            <td class="tg-f0ep">Screw Pump Shaft</td>
+            <td class="tg-f0ep">g</td>
+            <td class="tg-f0ep">48.42746</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">48.42746</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+          </tr>
+          <tr>
+            <td class="tg-7zrl">10</td>
+            <td class="tg-7zrl">Turning Groove 2</td>
+            <td class="tg-7zrl">Screw Pump Shaft</td>
+            <td class="tg-7zrl">g</td>
+            <td class="tg-7zrl">3.15823</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">3.15823</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+          </tr>
+          <tr>
+            <td class="tg-f0ep">11</td>
+            <td class="tg-f0ep">Turning Surface 1</td>
+            <td class="tg-f0ep">Screw Pump Shaft</td>
+            <td class="tg-f0ep">mg</td>
+            <td class="tg-f0ep">422.54</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">422.54</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+          </tr>
+          <tr>
+            <td class="tg-7zrl">12</td>
+            <td class="tg-7zrl">Turning Surface 2, Face 2</td>
+            <td class="tg-7zrl">Screw Pump Shaft</td>
+            <td class="tg-7zrl">g</td>
+            <td class="tg-7zrl">219.8596</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">219.8596</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+          </tr>
+          <tr>
+            <td class="tg-f0ep">13</td>
+            <td class="tg-f0ep">Turning Surface 4, Face 4, Bearing Surface 1</td>
+            <td class="tg-f0ep">Screw Pump Shaft</td>
+            <td class="tg-f0ep">kg</td>
+            <td class="tg-f0ep">4.829807</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">4.829807</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+          </tr>
+          <tr>
+            <td class="tg-7zrl">14</td>
+            <td class="tg-7zrl">Turning Surface 5, Face 5, Bearing Surface 2</td>
+            <td class="tg-7zrl">Screw Pump Shaft</td>
+            <td class="tg-7zrl">g</td>
+            <td class="tg-7zrl">790.9918</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">790.9918</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+          </tr>
+          <tr>
+            <td class="tg-f0ep">15</td>
+            <td class="tg-f0ep">Turning Surface 6</td>
+            <td class="tg-f0ep">Screw Pump Shaft</td>
+            <td class="tg-f0ep">g</td>
+            <td class="tg-f0ep">46.51395</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">46.51395</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+          </tr>
+          <tr>
+            <td class="tg-7zrl">16</td>
+            <td class="tg-7zrl">Turning Surface 7</td>
+            <td class="tg-7zrl">Screw Pump Shaft</td>
+            <td class="tg-7zrl">g</td>
+            <td class="tg-7zrl">100.9061</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">100.9061</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+            <td class="tg-7zrl">0</td>
+          </tr>
+          <tr>
+            <td class="tg-f0ep">17</td>
+            <td class="tg-f0ep">Turning Top Hole</td>
+            <td class="tg-f0ep">Screw Pump Shaft</td>
+            <td class="tg-f0ep">g</td>
+            <td class="tg-f0ep">784.4177</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">784.4177</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+            <td class="tg-f0ep">0</td>
+          </tr>
+        </tbody></table></div>
+      </div>
+      </div>
+
+      <div id="option3-b" class="dropdown-content-b">
+        <div id="process-contribution-characterization">
+           <div class="container">
+            <div class="item1">
+              <p><strong>Calculation:</strong> Analyze</p>
+              <p><strong>Results:</strong> Process contribution</p>
+              <p><strong>Product:</strong> 1 p Screw Pump Shaft - Design B (of project Screw Pump Shaft)</p>
+              <p><strong>Method:</strong> ReCiPe 2016 Midpoint (H) V1.00</p>
+              <p><strong>Indicator:</strong> Characterization</p>
+              <p><strong>Category:</strong> Global warming</p>
+              <p><strong>Cut-off:</strong> 0%</p>
+              <p><strong>Exclude infrastructure processes:</strong> No</p>
+              <p><strong>Exclude long-term emissions:</strong> No</p>
+              <p><strong>Sorted on item:</strong> Process</p>
+              <p><strong>Sort order:</strong> Ascending</p>
+        </div>
+        <div class="item2">
+          <img src="../data/LCA/Design A/Process Contribution Design A - Characterization.BMP" style="width: 100%; height: auto;"></img>
+        </div>
+        </div>
+          <div class="tg-wrap"><table class="tg"><thead>
+            <tr>
+              <th class="tg-5g05">No</th>
+              <th class="tg-5g05">Process</th>
+              <th class="tg-5g05">Project</th>
+              <th class="tg-5g05">Unit</th>
+              <th class="tg-5g05">Total</th>
+              <th class="tg-5g05">Primary Production Steel Billet</th>
+              <th class="tg-5g05">Turning Face 1</th>
+              <th class="tg-5g05">Turning Surface 2, Face 2</th>
+              <th class="tg-5g05">Turning Surface 1</th>
+              <th class="tg-5g05">Turning Groove 1</th>
+              <th class="tg-5g05">Turning Face 3</th>
+              <th class="tg-5g05">Turning Surface 4, Face 4, Bearing Surface 1</th>
+              <th class="tg-5g05">Turning Groove 2</th>
+              <th class="tg-5g05">Turning Surface 5, Face 5, Bearing Surface 2</th>
+              <th class="tg-5g05">Turning Surface 6</th>
+              <th class="tg-5g05">Turning Surface 7</th>
+              <th class="tg-5g05">Turning Top Hole</th>
+              <th class="tg-5g05">Turning Fillets 1, 2, 3, 4, 5, 6, 7, 8, 9,&nbsp;&nbsp;&nbsp;10, 11</th>
+              <th class="tg-5g05">Drilling Bushing Holes</th>
+              <th class="tg-5g05">Milling Keyway</th>
+              <th class="tg-5g05">Turning Chamfer 6</th>
+              <th class="tg-5g05">Grinding Bearing Surfaces 1, 2</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="tg-f0ep"></td>
+              <td class="tg-f0ep">Total of all processes</td>
+              <td class="tg-f0ep"></td>
+              <td class="tg-f0ep">kg CO2 eq</td>
+              <td class="tg-f0ep">140.3248</td>
+              <td class="tg-f0ep">63.95895</td>
+              <td class="tg-f0ep">5.339292</td>
+              <td class="tg-f0ep">1.6628</td>
+              <td class="tg-f0ep">0.003196</td>
+              <td class="tg-f0ep">0.366257</td>
+              <td class="tg-f0ep">18.54996</td>
+              <td class="tg-f0ep">36.52786</td>
+              <td class="tg-f0ep">0.023886</td>
+              <td class="tg-f0ep">5.982276</td>
+              <td class="tg-f0ep">0.351785</td>
+              <td class="tg-f0ep">0.763153</td>
+              <td class="tg-f0ep">5.932556</td>
+              <td class="tg-f0ep">0.021572</td>
+              <td class="tg-f0ep">0.607958</td>
+              <td class="tg-f0ep">0.224042</td>
+              <td class="tg-f0ep">0.003242</td>
+              <td class="tg-f0ep">0.006024</td>
+            </tr>
+            <tr>
+              <td class="tg-7zrl">1</td>
+              <td class="tg-7zrl">Drilling Bushing Holes</td>
+              <td class="tg-7zrl">Screw Pump Shaft</td>
+              <td class="tg-7zrl">kg CO2 eq</td>
+              <td class="tg-7zrl">0.607958</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0.607958</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+            </tr>
+            <tr>
+              <td class="tg-f0ep">2</td>
+              <td class="tg-f0ep">Grinding Bearing Surfaces 1, 2</td>
+              <td class="tg-f0ep">Screw Pump Shaft</td>
+              <td class="tg-f0ep">kg CO2 eq</td>
+              <td class="tg-f0ep">0.006024</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0.006024</td>
+            </tr>
+            <tr>
+              <td class="tg-7zrl">3</td>
+              <td class="tg-7zrl">Milling Keyway</td>
+              <td class="tg-7zrl">Screw Pump Shaft</td>
+              <td class="tg-7zrl">kg CO2 eq</td>
+              <td class="tg-7zrl">0.224042</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0.224042</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+            </tr>
+            <tr>
+              <td class="tg-f0ep">4</td>
+              <td class="tg-f0ep">Primary Production Steel Billet</td>
+              <td class="tg-f0ep">Screw Pump Shaft</td>
+              <td class="tg-f0ep">kg CO2 eq</td>
+              <td class="tg-f0ep">63.95895</td>
+              <td class="tg-f0ep">63.95895</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+            </tr>
+            <tr>
+              <td class="tg-7zrl">5</td>
+              <td class="tg-7zrl">Turning Chamfer 6</td>
+              <td class="tg-7zrl">Screw Pump Shaft</td>
+              <td class="tg-7zrl">kg CO2 eq</td>
+              <td class="tg-7zrl">0.003242</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0.003242</td>
+              <td class="tg-7zrl">0</td>
+            </tr>
+            <tr>
+              <td class="tg-f0ep">6</td>
+              <td class="tg-f0ep">Turning Face 1</td>
+              <td class="tg-f0ep">Screw Pump Shaft</td>
+              <td class="tg-f0ep">kg CO2 eq</td>
+              <td class="tg-f0ep">5.339292</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">5.339292</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+            </tr>
+            <tr>
+              <td class="tg-7zrl">7</td>
+              <td class="tg-7zrl">Turning Face 3</td>
+              <td class="tg-7zrl">Screw Pump Shaft</td>
+              <td class="tg-7zrl">kg CO2 eq</td>
+              <td class="tg-7zrl">18.54996</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">18.54996</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+            </tr>
+            <tr>
+              <td class="tg-f0ep">8</td>
+              <td class="tg-f0ep">Turning Fillets 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11</td>
+              <td class="tg-f0ep">Screw Pump Shaft</td>
+              <td class="tg-f0ep">kg CO2 eq</td>
+              <td class="tg-f0ep">0.021572</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0.021572</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+            </tr>
+            <tr>
+              <td class="tg-7zrl">9</td>
+              <td class="tg-7zrl">Turning Groove 1</td>
+              <td class="tg-7zrl">Screw Pump Shaft</td>
+              <td class="tg-7zrl">kg CO2 eq</td>
+              <td class="tg-7zrl">0.366257</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0.366257</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+            </tr>
+            <tr>
+              <td class="tg-f0ep">10</td>
+              <td class="tg-f0ep">Turning Groove 2</td>
+              <td class="tg-f0ep">Screw Pump Shaft</td>
+              <td class="tg-f0ep">kg CO2 eq</td>
+              <td class="tg-f0ep">0.023886</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0.023886</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+            </tr>
+            <tr>
+              <td class="tg-7zrl">11</td>
+              <td class="tg-7zrl">Turning Surface 1</td>
+              <td class="tg-7zrl">Screw Pump Shaft</td>
+              <td class="tg-7zrl">kg CO2 eq</td>
+              <td class="tg-7zrl">0.003196</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0.003196</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+            </tr>
+            <tr>
+              <td class="tg-f0ep">12</td>
+              <td class="tg-f0ep">Turning Surface 2, Face 2</td>
+              <td class="tg-f0ep">Screw Pump Shaft</td>
+              <td class="tg-f0ep">kg CO2 eq</td>
+              <td class="tg-f0ep">1.6628</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">1.6628</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+            </tr>
+            <tr>
+              <td class="tg-7zrl">13</td>
+              <td class="tg-7zrl">Turning Surface 4, Face 4, Bearing Surface 1</td>
+              <td class="tg-7zrl">Screw Pump Shaft</td>
+              <td class="tg-7zrl">kg CO2 eq</td>
+              <td class="tg-7zrl">36.52786</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">36.52786</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+            </tr>
+            <tr>
+              <td class="tg-f0ep">14</td>
+              <td class="tg-f0ep">Turning Surface 5, Face 5, Bearing Surface 2</td>
+              <td class="tg-f0ep">Screw Pump Shaft</td>
+              <td class="tg-f0ep">kg CO2 eq</td>
+              <td class="tg-f0ep">5.982276</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">5.982276</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+            </tr>
+            <tr>
+              <td class="tg-7zrl">15</td>
+              <td class="tg-7zrl">Turning Surface 6</td>
+              <td class="tg-7zrl">Screw Pump Shaft</td>
+              <td class="tg-7zrl">kg CO2 eq</td>
+              <td class="tg-7zrl">0.351785</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0.351785</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+            </tr>
+            <tr>
+              <td class="tg-f0ep">16</td>
+              <td class="tg-f0ep">Turning Surface 7</td>
+              <td class="tg-f0ep">Screw Pump Shaft</td>
+              <td class="tg-f0ep">kg CO2 eq</td>
+              <td class="tg-f0ep">0.763153</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0.763153</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+              <td class="tg-f0ep">0</td>
+            </tr>
+            <tr>
+              <td class="tg-7zrl">17</td>
+              <td class="tg-7zrl">Turning Top Hole</td>
+              <td class="tg-7zrl">Screw Pump Shaft</td>
+              <td class="tg-7zrl">kg CO2 eq</td>
+              <td class="tg-7zrl">5.932556</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">5.932556</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+              <td class="tg-7zrl">0</td>
+            </tr>
+          </tbody></table></div>
+    
+        </div>
+      </div>
+        
+    </div> -->
+      
+      <script>
+        function showContent(dropdown_id) {
+              var dropdown = document.getElementById(dropdown_id);
+              var value = dropdown.value;
+              var contents = document.getElementsByClassName("dropdown-content-" + dropdown_id[dropdown_id.length-1]);
+
+              for (var i = 0; i < contents.length; i++) {
+                  contents[i].classList.remove("active");
+              }
+
+              if (value) {
+                  document.getElementById(value).classList.add("active");
+              }
+          }
+      </script>
+  </body>
+  </html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, height=100%">
+    <title>LCA Results Page</title>
+    <link rel="stylesheet" href="../task-page.css">
+    <!-- <script src="../../../revisitUtilities/revisit-communicate.js"></script> -->
+    <script type="module">
+        window.showSubContent = function(page, button) {
+            document.querySelectorAll('.subcontent').forEach(div => div.style.display = 'none');
+            document.querySelector(`#${page}`).style.display = 'block';
+            document.querySelectorAll('.subtab').forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+        }
+    </script>
+    <style>
+        .container {
+            position: relative;
+            width: 100%;
+            border: 10px;
+        }
+        .main-image {
+            width: 100%;
+            height: auto;
+        }
+        .legend-relative {
+            position: absolute;
+            top: 0%; /* Adjust as needed */
+            left: 87%; /* Adjust as needed */
+            width: 80px; /* Adjust as needed */
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="subtabs">
+        <div class="subtab active" onclick="showSubContent('process-tree-A', this)">Design A</div>
+        <div class="subtab" onclick="showSubContent('process-tree-B', this)">Design B</div>
+    </div>
+    
+    <div id="process-tree-A" class="subcontent" style="display: block;">
+        <div class="container">
+            <img src="../../data/LCA/Design A/Tree.BMP" alt="Main Image A" class="main-image">
+            <img src="../../data/LCA/Tree - network legend.png" alt="Legend A" class="legend-relative">
+        </div>
+    </div>
+    
+    <div id="process-tree-B" class="subcontent">
+      <div class="container">
+          <img src="../../data/LCA/Design B/Tree.BMP" alt="Main Image A" class="main-image">
+          <img src="../../data/LCA/Tree - network legend.png" alt="Legend B" class="legend-relative">
+      </div>
+    </div>
+</body>
+</html>

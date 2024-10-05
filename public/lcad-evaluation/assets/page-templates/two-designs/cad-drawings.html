@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, height=100%">
+    <title>CAD Drawings Page</title>
+    <link rel="stylesheet" href="../task-page.css">
+    <!-- <script src="../../../revisitUtilities/revisit-communicate.js"></script> -->
+    <script type="module">
+
+        window.showSubContent = function(page, button) {
+
+          document.querySelectorAll('.subcontent').forEach(div => div.style.display = 'none');
+          document.querySelector(`#${page}`).style.display = 'block';
+          document.querySelectorAll('.subtab').forEach(btn => btn.classList.remove('active'));
+          button.classList.add('active');
+
+          // trrack.apply('Change data view', clickButton(page));
+
+          // Save the current state to ReVISit
+          // saveToReVISit();
+        }
+
+    </script>
+</head>
+<body>
+    <div class="subtabs">
+        <div class="subtab active" onclick="showSubContent('cad-drawing-A', this)">Design A</div>
+        <div class="subtab" onclick="showSubContent('cad-drawing-B', this)">Design B</div>
+    </div>
+    <div id="cad-drawing-A" class="subcontent" style="display: block;">
+        <img src="../../data/CAD/ScrewPumpShaft - Design A Drawing.png" style="width: auto; height: 100%;"></img>
+    </div>
+    <div id="cad-drawing-B" class="subcontent">
+        <img src="../../data/CAD/ScrewPumpShaft - Design B Drawing.png" style="width: auto; height: 100%;"></img>
+    </div>
+</body>
+</html>

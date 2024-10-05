@@ -1,14 +1,14 @@
 {
     "$schema": "https://raw.githubusercontent.com/reVISit-studies/study/main/src/parser/StudyConfigSchema.json",
     "studyMetadata": {
-        "title": "Evaluation of three-dimensional visualizations for sustainable design",
+        "title": "Study of 3D visualizations for sustainable design",
         "version": "pilot",
         "authors": [
             "Teodor Vernica,",
             "Devarajan Ramanujan"
         ],
         "date": "2024-03-19",
-        "description": "Evaluation of three-dimensional visualizations for sustainable design.",
+        "description": "Study of 3D visualizations for sustainable design.",
         "organizations": [
             "Department of Mechanichal and Production Engineering, Aarhus University"
         ]
@@ -304,13 +304,13 @@
                     ]
                 }
             ],
-            "path": "lcad-evaluation/assets/training/task-page-training.html"
+            "path": "lcad-evaluation/assets/need-1/task-1.1/task-page-1.html"
         },
         "task-2.1":{
             "baseComponent": "task",
             "instruction": "Assuming that you are only able to change the geometric features of the shaft, identify feasible opportunities to reduce the component’s overall environmental impact. Note that the highest contributing geometric feature may not necessarily be feasibly changed, in which case, you may focus on the second, third, etc. most impactful feature.",
             "description": "Task 2.1 - Design optimization opportunity identification (geometric features)",
-            "path": "lcad-evaluation/assets/need-2/task-2.1/task-page.html",
+            "path": "lcad-evaluation/assets/need-2/task-2.1/task-page-2.html",
             "response": [
                 {
                     "id": "task-2.1-q1",
@@ -360,7 +360,7 @@
             "baseComponent": "task",
             "instruction": "Compare the design of Shaft A to the design of Shaft B.",
             "description": "Task 3.1 - Design evaluation",
-            "path": "lcad-evaluation/assets/need-3/task-3.1/task-page.html",
+            "path": "lcad-evaluation/assets/need-3/task-3.1/task-page-3.html",
             "response": [
                 {
                     "id": "task-3.1-q1",
