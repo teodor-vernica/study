@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Mesh Viewer</title>
+    <style>
+    body { margin: 0; 
+        overflow: hidden;
+    }
+    canvas { display: block;
+            width: 100vw;
+            height: 100vh; 
+    }
+    .subcontent {
+            display: block;
+    }
+    </style>
+    <link rel="stylesheet" href="../../page-templates/task-page.css">
+</head>
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+    
+    <!-- <div class="subtabs">
+        <div class="subtab active" onclick="showSubContent('fea-model-A', this)">Design A</div>
+        <div class="subtab" onclick="showSubContent('fea-model-B', this)">Design B</div>
+    </div> -->
+    <div id="fea-model-A" class="subcontent" style="display: block; position: absolute;">
+        <img src="../../data/FEA/ScrewPumpShaft - Design A - FEA Data/Design A Stress Legend.png" alt="Legend A" class="legend">
+        <button id="button-info-A" class="info-button">Show loading conditions</button>
+        <img src="../../data/FEA/ScrewPumpShaft - Design A - FEA Data/Loading conditions A.png" class="info">
+    </div>
+    <!-- <div id="fea-model-B" class="subcontent" style="position: absolute;">
+        <img src="../data/FEA/ScrewPumpShaft - Design B - FEA Data/Design B Stress Legend.png" alt="Legend B" class="legend">
+        <button id="button-info-B" class="info-button">Show loading conditions</button>
+        <img src="../data/FEA/ScrewPumpShaft - Design B - FEA Data/Loading conditions B.png" class="info">
+    </div> -->
+    
+    
+
+    <script>
+        let currentModel;
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.01, 1000);
+
+        const renderer = new THREE.WebGLRenderer();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setClearColor(0xffffff); // Set background color to white
+        document.body.appendChild(renderer.domElement);
+
+        const ambientLight = new THREE.AmbientLight(0x404040);
+        scene.add(ambientLight);
+
+        const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
+        directionalLight.position.set(1, 1, 1).normalize();
+        scene.add(directionalLight);
+
+        const material = new THREE.MeshStandardMaterial({ color: 0xc5cfd6 });
+        material.ambientLight = material.color
+
+        loader = new THREE.GLTFLoader();
+
+        function loadModel(path) {
+            if (currentModel) {
+                scene.remove(currentModel);
+            }
+            loader.load(path, function (gltf) {
+                const object = gltf.scene;
+                // Adjust initial orientation
+                object.rotation.x = Math.PI / 2 + Math.PI; // Rotate 90 degrees around the X-axis
+                object.rotation.y = Math.PI; // Rotate 180 degrees around the Y-axis
+                scene.add(object);
+                currentModel = object;
+            });
+        }
+
+        loadModel('../../data/FEA/ScrewPumpShaft - Design A - FEA Data/Stress Design A.glb'); // Load default model
+
+        camera.position.z = 0.2;
+
+        const controls = new THREE.OrbitControls(camera, renderer.domElement);
+
+        function animate() {
+            requestAnimationFrame(animate);
+            controls.update();
+            directionalLight.position.copy(camera.position);
+            directionalLight.target.position.copy(camera.position).add(camera.getWorldDirection(new THREE.Vector3()));
+            renderer.render(scene, camera);
+        }
+        animate();
+
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+
+        function switchModel(model) {
+            if (model === 'fea-model-A') {
+                loadModel('../../data/FEA/ScrewPumpShaft - Design A - FEA Data/Stress Design A.glb');
+                document.getElementById('legend-A').classList.add('active');
+                document.getElementById('legend-B').classList.remove('active');
+            } else if (model === 'fea-model-B') {
+                loadModel('../../data/FEA/ScrewPumpShaft - Design B - FEA Data/Stress Design B.glb'); // Update with the correct path for Design B
+                document.getElementById('legend-A').classList.remove('active');
+                document.getElementById('legend-B').classList.add('active');
+            }
+            document.querySelectorAll('.subtab').forEach(tab => tab.classList.remove('active'));
+            document.querySelector(`.subtab[onclick="switchModel('${model}')"]`).classList.add('active');
+        }
+
+        showSubContent = function(page, button) {
+
+        document.querySelectorAll('.subcontent').forEach(div => div.style.display = 'none');
+        document.querySelector(`#${page}`).style.display = 'block';
+        document.querySelectorAll('.subtab').forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+
+        if (page === 'fea-model-A') 
+        {
+            loadModel('../../data/FEA/ScrewPumpShaft - Design A - FEA Data/Stress Design A.glb');
+        } 
+        else if (page === 'fea-model-B') 
+        {
+            loadModel('../../data/FEA/ScrewPumpShaft - Design B - FEA Data/Stress Design B.glb');
+        }
+
+        }
+
+    document.querySelectorAll('.info-button').forEach(button => {
+    button.addEventListener('click', function() {
+        const infoImage = this.nextElementSibling;
+        if (infoImage.classList.contains('active')) {
+            infoImage.classList.remove('active');
+            this.textContent = 'Show loading conditions';
+        } else {
+            infoImage.classList.add('active');
+            this.textContent = 'Hide loading conditions';
+        }
+    });
+});
+
+    </script>
+</body>
+</html>
