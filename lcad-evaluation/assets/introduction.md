@@ -1,15 +1,27 @@
 # Introduction
 
-This study aims to evaluate the effectiveness of three-dimensional (3D) visualizations for sustainable design.
+## Goal
+The goal of this study is to evaluate the effectiveness of three-dimensional (3D) feature-level Life Cycle Assessment (LCA) visualizations as a tool for sustainable product design decision and sense-making.
 
-You will be given a series of task corresponding to typical decisions a product designer has to make during the design process to intergrate sustainability metric (such as LCA results).
+## Visualization description
 
-For each task, multiple data sources (e.g., LCA results, CAD models and drawings) will be given in order to comple the task including an interactive 3D visualization of the model where LCA results are mapped to the product geometry.
+![Visualization example](data/Figures/visualization-example.png)
+Similar to a Finite Element Analysis (FEA) visualization, the 3D LCA visualization maps the environmental impact of manufacturing a given design to the product geometry and its features. The visualization highlights regions of  
+![Allocation steps example](data/Figures/shaft-stages-example.png)
 
-Use whatever data is necessary to complete the task. Note that not ALL data is relevant/necessary for every task.
+## Study description
 
-After each task, a short survey will ask how useful the 3D visualization was to achieve the task (if at all).
+The study is a task-based survey which aims to gauge the use of 3D LCA visualizations in representative decision-making scenarios occurring during the product design process. 
 
-Please complete this survey on a desktop computer or laptop.
+You will be given three tasks that are based on typical designer needs when integrating LCA results into the design process.
 
-Take as much time as you need, but please do it in one sitting.
+During each task, all necessary data required to make an informed decision will be available. This includes, LCA results, CAD models and drawings, stress simulation results, in addition to the 3D LCA visualization.
+
+You may use whatever data you want to complete the task, but note that not **all** data is necessarily for every task.
+
+After each task, a short survey will ask how useful was the 3D LCA visualization for acomplishing the given task (if at all).
+
+## Study instructions
+Please complete the survey on a desktop computer or laptop, as it contains iteractive 3D model applications which will not be properly displayed on small screens (e.g., mobiles and tablets).
+
+You can take as much time as you need to complete the survey, but, if possible, complete it in one sitting as progress may not be saved. The survey should take approximately [ADD TIME HERE].
