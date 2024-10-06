@@ -5,15 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, height=100%">
     <title>LCA Results Page</title>
     <link rel="stylesheet" href="../task-page.css">
-    <!-- <script src="../../../revisitUtilities/revisit-communicate.js"></script> -->
-    <script type="module">
-        window.showSubContent = function(page, button) {
-            document.querySelectorAll('.subcontent').forEach(div => div.style.display = 'none');
-            document.querySelector(`#${page}`).style.display = 'block';
-            document.querySelectorAll('.subtab').forEach(btn => btn.classList.remove('active'));
-            button.classList.add('active');
-        }
-    </script>
     <style>
         .container {
             position: relative;
@@ -23,15 +14,48 @@
         .main-image {
             width: 100%;
             height: auto;
+            cursor: zoom-in;
+            transition: transform 0.25s ease, width 0.25s ease;
+        }
+        .main-image.zoomed {
+            cursor: zoom-out;
+            /* transform: scale(2); */
+            width: 200%; /* Adjust as needed */
         }
         .legend-relative {
-            position: absolute;
-            top: 0%; /* Adjust as needed */
-            left: 87%; /* Adjust as needed */
+            position: relative;
+            top: 1%; /* Adjust as needed */
+            left: 1%; /* Adjust as needed */
             width: 80px; /* Adjust as needed */
             height: auto;
         }
     </style>
+    <script type="module">
+        window.showSubContent = function(page, button) {
+            document.querySelectorAll('.subcontent').forEach(div => div.style.display = 'none');
+            document.querySelector(`#${page}`).style.display = 'block';
+            document.querySelectorAll('.subtab').forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.main-image').forEach(img => {
+                img.addEventListener('click', () => {
+                    if (img.classList.contains('zoomed')) {
+                        img.classList.remove('zoomed');
+                        img.style.width = '100%';
+                        img.style.height = 'auto';
+                        img.parentElement.style.overflow = 'hidden';
+                    } else {
+                        img.classList.add('zoomed');
+                        img.style.width = '200%'; /* Adjust as needed */
+                        img.style.height = 'auto';
+                        img.parentElement.style.overflow = 'auto';
+                    }
+                });
+            });
+        });
+    </script>
 </head>
 <body>
     <div class="subtabs">
@@ -42,8 +66,8 @@
     <div id="process-tree-A" class="subcontent" style="display: block;">
         <div class="container">
             <img src="../../data/LCA/Design A/Tree.BMP" alt="Main Image A" class="main-image">
-            <img src="../../data/LCA/Tree - network legend.png" alt="Legend A" class="legend-relative">
         </div>
+        <img src="../../data/LCA/Tree - network legend.png" alt="Legend A" class="legend-relative">
     </div>
     
     <div id="process-tree-B" class="subcontent">

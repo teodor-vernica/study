@@ -104,75 +104,95 @@
             "response": [
                 {
                     "id": "q1-ocupation",
-                    "prompt": "What is your ocupation?",
-                    "required": true,
-                    "location": "aboveStimulus",
-                    "type": "shortText",
-                    "placeholder": "Please enter your ocupation"
-                },
-                {
-                    "id": "q2-education",
-                    "prompt": "What is your education level?",
+                    "prompt": "What is your primary ocupation?",
                     "required": true,
                     "location": "aboveStimulus",
                     "type": "dropdown",
-                    "placeholder": "Please choose your education level",
+                    "placeholder": "Please select the option that best describes your ocupation",
                     "options": [
                         {
-                            "label": "High School.",
-                            "value": "hs"
+                            "label": "Student",
+                            "value": "student"
                         },
                         {
-                            "label": "BSc.",
-                            "value": "bsc"
+                            "label": "Teacher",
+                            "value": "teacher"
                         },
                         {
-                            "label": "MSc.",
-                            "value": "msc"
+                            "label": "Product Design Engineer",
+                            "value": "design-engineer"
                         },
                         {
-                            "label": "PhD",
-                            "value": "phd"
+                            "label": "Sustainability Expert",
+                            "value": "sustainability-expert"
+                        },
+                        {
+                            "label": "Other",
+                            "value": "other"
                         }
                     ]
                 },
                 {
-                    "id": "q1-design-familiarity",
-                    "prompt": "What is your familiarity with product design?",
+                    "id": "q1-ocupation-other",
+                    "prompt": "If other, please specify:",
+                    "required": false,
+                    "location": "aboveStimulus",
+                    "type": "shortText",
+                    "placeholder": "Occupation"
+                },
+                {
+                    "id": "q2-design-familiarity",
+                    "prompt": "How familiar are you with product design methods and tools?",
                     "required": true,
                     "location": "aboveStimulus",
                     "type": "likert",
-                    "leftLabel": "Not familiar",
-                    "rightLabel": "Very familiar",
-                    "numItems": 5
+                    "leftLabel": "Very familiar",
+                    "rightLabel": "Not familiar at all",
+                    "numItems": 7
                 },
                 {
-                    "id": "q1-sustainability-experience",
-                    "prompt": "What is your experience with sustainability assesment (years)?",
-                    "required": true,
-                    "location": "aboveStimulus",
-                    "type": "numerical",
-                    "min": 0,
-                    "max": 50,
-                    "placeholder": "Years of experience"
-                },
-                {
-                    "id": "q1-sustainability-familiarity",
-                    "prompt": "What is your familiarity with sustainability assesment?",
-                    "required": true,
-                    "location": "aboveStimulus",
-                    "type": "likert",
-                    "leftLabel": "Not familiar",
-                    "rightLabel": "Very familiar",
-                    "numItems": 5
-                },
-                {
-                    "id": "q2-sustainability-experience",
-                    "prompt": "What is your experience with sustainability assesment experience?",
+                    "id": "q3-design-experience",
+                    "prompt": "What is your experience in working with product design methods and tools (e.g., CAD modeling software)?",
                     "required": true,
                     "location": "aboveStimulus",
                     "type": "dropdown",
-                    "placeholder": "Please choose your experience level",
+                    "placeholder": "Please choose the option that best describes your experience with product design",
+                    "options": [
+                        {
+                            "label": "Less than 2 years.",
+                            "value": "<2"
+                        },
+                        {
+                            "label": "Between 2 and 5 years.",
+                            "value": "2-5"
+                        },
+                        {
+                            "label": "Between 5 and 10 years.",
+                            "value": "5-10"
+                        },
+                        {
+                            "label": "More than 10 years.",
+                            "value": "10+"
+                        }
+                    ]
+                },
+                {
+                    "id": "q4-sustainability-familiarity",
+                    "prompt": "How familiar are you with sustainability assesment methods and tools (e.g., Life Cycle Assessment)?",
+                    "required": true,
+                    "location": "aboveStimulus",
+                    "type": "likert",
+                    "leftLabel": "Very familiar",
+                    "rightLabel": "Not familiar at all",
+                    "numItems": 7
+                },
+                {
+                    "id": "q5-sustainability-experience",
+                    "prompt": "What is your experience in working with sustainability assessment methods and tools?",
+                    "required": true,
+                    "location": "aboveStimulus",
+                    "type": "dropdown",
+                    "placeholder": "Please choose the option that best describes your experience with sustainability assessment",
                     "options": [
                         {
                             "label": "Less than 2 years.",
@@ -203,10 +223,11 @@
             "response": [
                 {
                     "id": "training",
-                    "prompt": "Your selected answer:",
+                    "prompt": "Type 'ready' once you are done exploring the study interface and 3D LCA visualization.",
                     "required": true,
                     "location": "sidebar",
-                    "type": "shortText"
+                    "type": "shortText",
+                    "requiredValue": "ready"
                 }
                 
             ],
@@ -214,7 +235,6 @@
         },
         "task-1.1":{
             "type": "website",
-            "instruction": "Identify the geometric features contributing to the environmental impacts of producing the given component.",
             "instructionLocation": "sidebar",
             "description": "Task 1.1 - Geometric feature hotspot identification",    
             "provideFeedback": false,
@@ -308,7 +328,6 @@
         },
         "task-2.1":{
             "baseComponent": "task",
-            "instruction": "Assuming that you are only able to change the geometric features of the shaft, identify feasible opportunities to reduce the component’s overall environmental impact. Note that the highest contributing geometric feature may not necessarily be feasibly changed, in which case, you may focus on the second, third, etc. most impactful feature.",
             "description": "Task 2.1 - Design optimization opportunity identification (geometric features)",
             "path": "lcad-evaluation/assets/need-2/task-2.1/task-page-2.html",
             "response": [
@@ -358,7 +377,6 @@
         },
         "task-3.1":{
             "baseComponent": "task",
-            "instruction": "Compare the design of Shaft A to the design of Shaft B.",
             "description": "Task 3.1 - Design evaluation",
             "path": "lcad-evaluation/assets/need-3/task-3.1/task-page-3.html",
             "response": [

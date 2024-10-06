@@ -6,8 +6,10 @@ The goal of this study is to evaluate the effectiveness of three-dimensional (3D
 ## Visualization description
 
 ![Visualization example](data/Figures/visualization-example.png)
-Similar to a Finite Element Analysis (FEA) visualization, the 3D LCA visualization maps the environmental impact of manufacturing a given design to the product geometry and its features. The visualization highlights regions of  
+Similar to a Finite Element Analysis (FEA) visualization, the 3D LCA visualization maps the environmental impact of manufacturing a given design to the product geometry and its features. The visualization highlights regions of CO2 emission *concentration*, and values are expressed in kg CO2 eq. / cm3. Note that itermediate processing steps will not be presented during this study, but only the final results.
+
 ![Allocation steps example](data/Figures/shaft-stages-example.png)
+Data is allocated sequentially, based on the processes modeled in LCA software to manufacture the product (as shown in the image above). With each step, the environmental impact of the process is mapped to the geometric features created or affected by the process. The final result highlights the **total** environmental cost of manufacturing specific geometric features.
 
 ## Study description
 
@@ -21,7 +23,11 @@ You may use whatever data you want to complete the task, but note that not **all
 
 After each task, a short survey will ask how useful was the 3D LCA visualization for acomplishing the given task (if at all).
 
-## Study instructions
-Please complete the survey on a desktop computer or laptop, as it contains iteractive 3D model applications which will not be properly displayed on small screens (e.g., mobiles and tablets).
+You will be given the opportunity to explore the visualization and study interface before starting the actual tasks. Take as much time as you need to familiarize yourself with the interface. The same data will be available during the actual tasks.
 
-You can take as much time as you need to complete the survey, but, if possible, complete it in one sitting as progress may not be saved. The survey should take approximately [ADD TIME HERE].
+## Study instructions
+
++ Please complete the survey on a desktop computer or laptop, as it contains iteractive 3D model applications which will not be properly displayed on small screens (e.g., mobiles and tablets).
++ Please answer all questions to the best of your ability/knowledge, even if the question is not markes as mandatory.
++ You can take as much time as you need to complete the survey, but, if possible, complete it in one sitting as progress may not be saved. The survey should take approximately [ADD TIME HERE].
++ At the end of the survey, you will be prompted to download a file containing your answers. Please downalod the file and send it to us via email to either teodor.vernica@mpe.au.dk or devr@mpe.au.dk. You will be remided of this at the end of the survey.
