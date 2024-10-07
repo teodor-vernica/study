@@ -103,7 +103,7 @@
             "type": "questionnaire",
             "response": [
                 {
-                    "id": "q1-ocupation",
+                    "id": "dq1",
                     "prompt": "What is your primary ocupation?",
                     "required": true,
                     "location": "aboveStimulus",
@@ -133,7 +133,7 @@
                     ]
                 },
                 {
-                    "id": "q1-ocupation-other",
+                    "id": "dq1b",
                     "prompt": "If other, please specify:",
                     "required": false,
                     "location": "aboveStimulus",
@@ -141,7 +141,7 @@
                     "placeholder": "Occupation"
                 },
                 {
-                    "id": "q2-design-familiarity",
+                    "id": "dq2",
                     "prompt": "How familiar are you with product design methods and tools?",
                     "required": true,
                     "location": "aboveStimulus",
@@ -151,7 +151,7 @@
                     "numItems": 7
                 },
                 {
-                    "id": "q3-design-experience",
+                    "id": "dq3",
                     "prompt": "What is your experience in working with product design methods and tools (e.g., CAD modeling software)?",
                     "required": true,
                     "location": "aboveStimulus",
@@ -177,7 +177,7 @@
                     ]
                 },
                 {
-                    "id": "q4-sustainability-familiarity",
+                    "id": "dq4",
                     "prompt": "How familiar are you with sustainability assesment methods and tools (e.g., Life Cycle Assessment)?",
                     "required": true,
                     "location": "aboveStimulus",
@@ -187,7 +187,7 @@
                     "numItems": 7
                 },
                 {
-                    "id": "q5-sustainability-experience",
+                    "id": "dq5",
                     "prompt": "What is your experience in working with sustainability assessment methods and tools?",
                     "required": true,
                     "location": "aboveStimulus",
@@ -195,22 +195,72 @@
                     "placeholder": "Please choose the option that best describes your experience with sustainability assessment",
                     "options": [
                         {
-                            "label": "Less than 2 years.",
+                            "label": "Less than 2 years",
                             "value": "<2"
                         },
                         {
-                            "label": "Between 2 and 5 years.",
+                            "label": "Between 2 and 5 years",
                             "value": "2-5"
                         },
                         {
-                            "label": "Between 5 and 10 years.",
+                            "label": "Between 5 and 10 years",
                             "value": "5-10"
                         },
                         {
-                            "label": "More than 10 years.",
+                            "label": "More than 10 years",
                             "value": "10+"
                         }
                     ]
+                },
+                {
+                    "id": "dq6",
+                    "prompt": "How often do you consider the environmental impact of manufacturing when desiging a product? (in addition to cost, functional performance, durability, etc.)",
+                    "required": true,
+                    "location": "aboveStimulus",
+                    "type": "likert",
+                    "leftLabel": "Very often",
+                    "rightLabel": "Not at all",
+                    "numItems": 5
+                },
+                {
+                    "id": "dq7",
+                    "prompt": "In your opinion, what are the main barriers preventing you to consider sustainability in your designs more often? (select all that apply)",
+                    "required": true,
+                    "location": "aboveStimulus",
+                    "type": "checkbox",
+                    "options": [
+                        {
+                            "label": "Poor integration of LCA tools and CAD tools",
+                            "value": "poor-integration"
+                        },
+                        {
+                            "label": "Lack of expertese with LCA methods and tools",
+                            "value": "lack-of-expertese"
+                        },
+                        {
+                            "label": "Reliability of LCA results",
+                            "value": "result-reliability"
+                        },
+                        {
+                            "label": "Lack of interest from my organization",
+                            "value": "lack-of-interest"
+                        },
+                        {
+                            "label": "None. I am already considering sustainability in my designs often",
+                            "value": "none"
+                        },
+                        {
+                            "label": "Other",
+                            "value": "other"
+                        }
+                    ]
+                },
+                {
+                    "id": "dq7b",
+                    "prompt": "If other reasons, please mention them below:",
+                    "required": false,
+                    "location": "aboveStimulus",
+                    "type": "longText"     
                 }
             ]
         },
@@ -240,30 +290,102 @@
             "provideFeedback": false,
             "response": [
                 {
-                    "id": "task-1.1-q1",
+                    "id": "t1q1",
                     "prompt": "What geometric feature of the presented shaft has the highest contribution to the component’s overall environmental impact?",
-                    "required": false,
+                    "required": true,
                     "location": "sidebar",
-                    "type": "radio",
+                    "type": "dropdown",
                     "options": [
                         {
-                            "label": "Feature A",
-                            "value": "feature-a"
+                            "label": "Bearing Surface 1",
+                            "value": "bearing-surface-1"
                         },
                         {
-                            "label": "Feature B",
-                            "value": "feature-b"
+                            "label": "Bearing Surface 2",
+                            "value": "bearing-surface-2"
                         },
                         {
-                            "label": "Feature C",
-                            "value": "feature-c"
+                            "label": "Bushing Holes",
+                            "value": "bushing-holes"
+                        },
+                        {
+                            "label": "Chamfers",
+                            "value": "chamfers"
+                        },
+                        {
+                            "label": "Face 1",
+                            "value": "face-1"
+                        },
+                        {
+                            "label": "Face 2",
+                            "value": "face-2"
+                        },
+                        {
+                            "label": "Face 3",
+                            "value": "face-3"
+                        },
+                        {
+                            "label": "Face 4",
+                            "value": "face-4"
+                        },
+                        {
+                            "label": "Face 5",
+                            "value": "face-5"
+                        },
+                        {
+                            "label": "Fillets",
+                            "value": "fillets"
+                        },
+                        {
+                            "label": "Groove 1",
+                            "value": "groove-1"
+                        },
+                        {
+                            "label": "Groove 2",
+                            "value": "groove-2"
+                        },
+                        {
+                            "label": "Keyway",
+                            "value": "keyway"
+                        },
+                        {
+                            "label": "Surface 1",
+                            "value": "surface-1"
+                        },
+                        {
+                            "label": "Surface 2",
+                            "value": "surface-2"
+                        },
+                        {
+                            "label": "Surface 3",
+                            "value": "surface-3"
+                        },
+                        {
+                            "label": "Surface 4",
+                            "value": "surface-4"
+                        },
+                        {
+                            "label": "Surface 5",
+                            "value": "surface-5"
+                        },
+                        {
+                            "label": "Surface 6",
+                            "value": "surface-6"
+                        },
+                        {
+                            "label": "Surface 7",
+                            "value": "surface-7"
+                        },
+                        {
+                            "label": "Top Hole",
+                            "value": "top-hole"
                         }
                     ]
                 },
                 {
-                    "id": "task-1.1-q2",
+                    "id": "t1q2",
                     "prompt": "What is the main cause for the high impact of the identified geometric feature?",
-                    "required": false,
+                    "required": true,
                     "location": "sidebar",
                     "type": "radio",
                     "options": [
@@ -282,30 +404,102 @@
                     ]
                 },
                 {
-                    "id": "task-1.1-q3",
+                    "id": "t1q3",
                     "prompt": "What is the second highest contributing geometric feature of the shaft?",
-                    "required": false,
+                    "required": true,
                     "location": "sidebar",
-                    "type": "radio",
+                    "type": "dropdown",
                     "options": [
                         {
-                            "label": "Feature A",
-                            "value": "feature-a"
+                            "label": "Bearing Surface 1",
+                            "value": "bearing-surface-1"
                         },
                         {
-                            "label": "Feature B",
-                            "value": "feature-b"
+                            "label": "Bearing Surface 2",
+                            "value": "bearing-surface-2"
                         },
                         {
-                            "label": "Feature C",
-                            "value": "feature-c"
+                            "label": "Bushing Holes",
+                            "value": "bushing-holes"
+                        },
+                        {
+                            "label": "Chamfers",
+                            "value": "chamfers"
+                        },
+                        {
+                            "label": "Face 1",
+                            "value": "face-1"
+                        },
+                        {
+                            "label": "Face 2",
+                            "value": "face-2"
+                        },
+                        {
+                            "label": "Face 3",
+                            "value": "face-3"
+                        },
+                        {
+                            "label": "Face 4",
+                            "value": "face-4"
+                        },
+                        {
+                            "label": "Face 5",
+                            "value": "face-5"
+                        },
+                        {
+                            "label": "Fillets",
+                            "value": "fillets"
+                        },
+                        {
+                            "label": "Groove 1",
+                            "value": "groove-1"
+                        },
+                        {
+                            "label": "Groove 2",
+                            "value": "groove-2"
+                        },
+                        {
+                            "label": "Keyway",
+                            "value": "keyway"
+                        },
+                        {
+                            "label": "Surface 1",
+                            "value": "surface-1"
+                        },
+                        {
+                            "label": "Surface 2",
+                            "value": "surface-2"
+                        },
+                        {
+                            "label": "Surface 3",
+                            "value": "surface-3"
+                        },
+                        {
+                            "label": "Surface 4",
+                            "value": "surface-4"
+                        },
+                        {
+                            "label": "Surface 5",
+                            "value": "surface-5"
+                        },
+                        {
+                            "label": "Surface 6",
+                            "value": "surface-6"
+                        },
+                        {
+                            "label": "Surface 7",
+                            "value": "surface-7"
+                        },
+                        {
+                            "label": "Top Hole",
+                            "value": "top-hole"
                         }
                     ]
                 },
                 {
-                    "id": "task-1.1-q4",
+                    "id": "t1q4",
                     "prompt": "What is the main cause for the impact of the second highest geometric feature of the component?",
-                    "required": false,
+                    "required": true,
                     "location": "sidebar",
                     "type": "radio",
                     "options": [
@@ -332,44 +526,116 @@
             "path": "lcad-evaluation/assets/need-2/task-2.1/task-page-2.html",
             "response": [
                 {
-                    "id": "task-2.1-q1",
+                    "id": "t2q1",
                     "prompt": "What geometric feature would you consider changing (to have the highest impact per change) to reduce the overall environmental footprint of the shaft?",
-                    "required": false,
+                    "required": true,
                     "location": "sidebar",
-                    "type": "radio",
+                    "type": "dropdown",
                     "options": [
                         {
-                            "label": "Feature A",
-                            "value": "feature-a"
+                            "label": "Bearing Surface 1",
+                            "value": "bearing-surface-1"
                         },
                         {
-                            "label": "Feature B",
-                            "value": "feature-b"
+                            "label": "Bearing Surface 2",
+                            "value": "bearing-surface-2"
                         },
                         {
-                            "label": "Feature C",
-                            "value": "feature-c"
+                            "label": "Bushing Holes",
+                            "value": "bushing-holes"
+                        },
+                        {
+                            "label": "Chamfers",
+                            "value": "chamfers"
+                        },
+                        {
+                            "label": "Face 1",
+                            "value": "face-1"
+                        },
+                        {
+                            "label": "Face 2",
+                            "value": "face-2"
+                        },
+                        {
+                            "label": "Face 3",
+                            "value": "face-3"
+                        },
+                        {
+                            "label": "Face 4",
+                            "value": "face-4"
+                        },
+                        {
+                            "label": "Face 5",
+                            "value": "face-5"
+                        },
+                        {
+                            "label": "Fillets",
+                            "value": "fillets"
+                        },
+                        {
+                            "label": "Groove 1",
+                            "value": "groove-1"
+                        },
+                        {
+                            "label": "Groove 2",
+                            "value": "groove-2"
+                        },
+                        {
+                            "label": "Keyway",
+                            "value": "keyway"
+                        },
+                        {
+                            "label": "Surface 1",
+                            "value": "surface-1"
+                        },
+                        {
+                            "label": "Surface 2",
+                            "value": "surface-2"
+                        },
+                        {
+                            "label": "Surface 3",
+                            "value": "surface-3"
+                        },
+                        {
+                            "label": "Surface 4",
+                            "value": "surface-4"
+                        },
+                        {
+                            "label": "Surface 5",
+                            "value": "surface-5"
+                        },
+                        {
+                            "label": "Surface 6",
+                            "value": "surface-6"
+                        },
+                        {
+                            "label": "Surface 7",
+                            "value": "surface-7"
+                        },
+                        {
+                            "label": "Top Hole",
+                            "value": "top-hole"
                         }
                     ]
                 },
                 {
-                    "id": "task-2.1-q2",
+                    "id": "t2q2",
                     "prompt": "Please give a brief motivation for choosing the selected geometric feature.",
-                    "required": false,
+                    "required": true,
                     "location": "sidebar",
                     "type": "longText"
                 },
                 {
-                    "id": "task-2.1-q3",
+                    "id": "t2q3",
                     "prompt": "What kind of geometric changes would you explore to potentially reduce the shaft’s overall environmental impact? (e.g., remove the feature, increase/decrease it’s radius/length, etc.)",
-                    "required": false,
+                    "required": true,
                     "location": "sidebar",
                     "type": "longText"
                 },
                 {
-                    "id": "task-2.1-q4",
+                    "id": "t2q4",
                     "prompt": "How do you anticipate the change to affect the shaft’s functional performance (e.g., load performance) or other geometric dependencies (e.g., required gear changes)?",
-                    "required": false,
+                    "required": true,
                     "location": "sidebar",
                     "type": "longText"
                 }
@@ -381,9 +647,9 @@
             "path": "lcad-evaluation/assets/need-3/task-3.1/task-page-3.html",
             "response": [
                 {
-                    "id": "task-3.1-q1",
+                    "id": "t3q1",
                     "prompt": "Is Shaft A performing better or worse compared to Shaft B in terms of anticipated CO2 emissions from manufacturing the component?",
-                    "required": false,
+                    "required": true,
                     "location": "sidebar",
                     "type": "likert",
                     "leftLabel": "Much better",
@@ -391,16 +657,16 @@
                     "numItems": 5
                 },
                 {
-                    "id": "task-3.1-q2",
+                    "id": "t3q2",
                     "prompt": "Please give a brief description of why you believe that Shaft A is performing better or worse compared to Shaft B.",
-                    "required": false,
+                    "required": true,
                     "location": "sidebar",
                     "type": "longText"
                 },
                 {
-                    "id": "task-3.1-q3",
+                    "id": "t3q3",
                     "prompt": "Is Shaft A performing better or worse compared to Shaft B in terms of structural performance under the anticipated load conditions?",
-                    "required": false,
+                    "required": true,
                     "location": "sidebar",
                     "type": "likert",
                     "leftLabel": "Much better",
@@ -408,36 +674,192 @@
                     "numItems": 5
                 },
                 {
-                    "id": "task-3.1-q4",
+                    "id": "t3q4",
                     "prompt": "Please give a brief description of why you believe that Shaft A is performing better or worse compared to Shaft B.",
-                    "required": false,
+                    "required": true,
                     "location": "sidebar",
                     "type": "longText"
                 },
                 {
-                    "id": "task-3.1-q5",
+                    "id": "t3q5",
                     "prompt": "Which design do you believe is better overall (considering both sustainability and performance) and why?",
-                    "required": false,
+                    "required": true,
                     "location": "sidebar",
                     "type": "longText"
                 }
             ]
         },
         "need-1-survey":{
-           "baseComponent": "need-survey"
+            "type": "questionnaire",
+            "response": [
+                {
+                    "id": "t1eq1",
+                    "prompt": "What data did you use for accomplishing the task? (select all that apply)",
+                    "required": true,
+                    "location": "aboveStimulus",
+                    "type": "checkbox",
+                    "options": [
+                        {
+                            "label": "LCA results",
+                            "value": "lca-results"
+                        },
+                        {
+                            "label": "Process tree",
+                            "value": "process-tree"
+                        },
+                        {
+                            "label": "CAD drawings",
+                            "value": "cad-drawings"
+                        },
+                        {
+                            "label": "CAD model",
+                            "value": "cad-model"
+                        },
+                        {
+                            "label": "FEA results",
+                            "value": "fea-results"
+                        },
+                        {
+                            "label": "3D LCA visualization",
+                            "value": "3d-lca-vis"
+                        }
+                    ]
+                },
+                {
+                    "id": "t1eq2",
+                    "prompt": "How useful was the 3D LCA visualization for identifying the heighest contributing geometric features?",
+                    "required": true,
+                    "location": "aboveStimulus",
+                    "type": "likert",
+                    "leftLabel": "Very useful",
+                    "rightLabel": "Not useful at all",
+                    "numItems": 7
+                },
+                {
+                    "id": "t1eq3",
+                    "prompt": "If you have any suggestions on how the visualization can improved to better support the given task, please write it below.",
+                    "required": false,
+                    "location": "aboveStimulus",
+                    "type": "longText"
+                }
+            ]
         },
         "need-2-survey":{
-            "baseComponent": "need-survey"
+            "type": "questionnaire",
+            "response": [
+                {
+                    "id": "t2eq1",
+                    "prompt": "What data did you use for accomplishing the task? (select all that apply)",
+                    "required": true,
+                    "location": "aboveStimulus",
+                    "type": "checkbox",
+                    "options": [
+                        {
+                            "label": "LCA results",
+                            "value": "lca-results"
+                        },
+                        {
+                            "label": "Process tree",
+                            "value": "process-tree"
+                        },
+                        {
+                            "label": "CAD drawings",
+                            "value": "cad-drawings"
+                        },
+                        {
+                            "label": "CAD model",
+                            "value": "cad-model"
+                        },
+                        {
+                            "label": "FEA results",
+                            "value": "fea-results"
+                        },
+                        {
+                            "label": "3D LCA visualization",
+                            "value": "3d-lca-vis"
+                        }
+                    ]
+                },
+                {
+                    "id": "t2eq2",
+                    "prompt": "How useful was the 3D LCA visualization for identifying feasible redesign opportunities?",
+                    "required": true,
+                    "location": "aboveStimulus",
+                    "type": "likert",
+                    "leftLabel": "Very useful",
+                    "rightLabel": "Not useful at all",
+                    "numItems": 7
+                },
+                {
+                    "id": "t2eq3",
+                    "prompt": "If you have any suggestions on how the visualization can improved to better support the given task, please write it below.",
+                    "required": false,
+                    "location": "aboveStimulus",
+                    "type": "longText"
+                }
+            ]
         },
         "need-3-survey":{
-            "baseComponent": "need-survey"
+            "type": "questionnaire",
+            "response": [
+                {
+                    "id": "t3eq1",
+                    "prompt": "What data did you use for accomplishing the task? (select all that apply)",
+                    "required": true,
+                    "location": "aboveStimulus",
+                    "type": "checkbox",
+                    "options": [
+                        {
+                            "label": "LCA results",
+                            "value": "lca-results"
+                        },
+                        {
+                            "label": "Process tree",
+                            "value": "process-tree"
+                        },
+                        {
+                            "label": "CAD drawings",
+                            "value": "cad-drawings"
+                        },
+                        {
+                            "label": "CAD model",
+                            "value": "cad-model"
+                        },
+                        {
+                            "label": "FEA results",
+                            "value": "fea-results"
+                        },
+                        {
+                            "label": "3D LCA visualization",
+                            "value": "3d-lca-vis"
+                        }
+                    ]
+                },
+                {
+                    "id": "t3eq2",
+                    "prompt": "How useful was the 3D LCA visualization for evaluating and comparing between different designs?",
+                    "required": true,
+                    "location": "aboveStimulus",
+                    "type": "likert",
+                    "leftLabel": "Very useful",
+                    "rightLabel": "Not useful at all",
+                    "numItems": 7
+                },
+                {
+                    "id": "t3eq3",
+                    "prompt": "If you have any suggestions on how the visualization can improved to better support the given task, please write it below.",
+                    "required": false,
+                    "location": "aboveStimulus",
+                    "type": "longText"
+                }
+            ]
         },
         "end-survey":{
             "type": "questionnaire",
             "response": [
                 {
-                    "id": "end-survey-q1",
-                    "prompt": "Overall, how useful did you find the 3D visualization for the design process decision -making support?",
+                    "id": "esq1",
+                    "prompt": "Overall, how useful do you find the 3D LCA visualization for supporting the design process?",
                     "required": true,
                     "location": "aboveStimulus",
                     "type": "likert",
@@ -446,8 +868,8 @@
                     "rightLabel": "Not useful at all"
                 },
                 {
-                    "id": "end-survey-q2",
-                    "prompt": "Overall, how useful did you find the 3D visualization for the design process sense-making support?",
+                    "id": "esq2",
+                    "prompt": "Overall, how useful do you find the 3D LCA visualization for understanding the environmental impact of a design?",
                     "required": true,
                     "location": "aboveStimulus",
                     "type": "likert",
@@ -456,28 +878,8 @@
                     "rightLabel": "Not useful at all"
                 },
                 {
-                    "id": "end-survey-q3",
-                    "prompt": "If the 3D LCA visualization would be simulated and visualized directly within the CAD software you currently use (like Finite Element Analysis (FEA) simulations), how likely would you be to use it during the design process?",
-                    "required": true,
-                    "location": "aboveStimulus",
-                    "type": "likert",
-                    "numItems": 7,
-                    "leftLabel": "Very likely",
-                    "rightLabel": "Not likely at all"
-                },
-                {
-                    "id": "end-survey-q4",
-                    "prompt": "If the 3D LCA visualization would be simulated and visualized directly within the CAD software you currently use (like Finite Element Analysis (FEA) simulations), would it make you more likely to consider sustainability parameters during the design process?",
-                    "required": true,
-                    "location": "aboveStimulus",
-                    "type": "likert",
-                    "numItems": 7,
-                    "leftLabel": "Very likely",
-                    "rightLabel": "Not likely at all"
-                },
-                {
-                    "id": "end-survey-q5",
-                    "prompt": "How useful/impactful is it to understand the environmental impact at an individual feature level?",
+                    "id": "esq3",
+                    "prompt": "In your opinion, how useful is it to understand the environmental impact of features of the product geometry?",
                     "required": true,
                     "location": "aboveStimulus",
                     "type": "likert",
@@ -486,35 +888,45 @@
                     "rightLabel": "Not useful at all"
                 },
                 {
-                    "id": "end-survey-q6",
-                    "prompt": "Please elaborate on your answer.",
+                    "id": "esq4",
+                    "prompt": "Please elaborate on your answer to the previous question. Why is it / isn't it useful?",
                     "required": true,
                     "location": "aboveStimulus",
                     "type": "longText"
                 },
                 {
-                    "id": "end-survey-q7",
+                    "id": "esq5",
+                    "prompt": "If the 3D LCA visualization would be simulated and visualized directly within the CAD software you regularly use (like Finite Element Analysis (FEA) simulations), would it make you more likely to consider sustainability performance during the design process?",
+                    "required": true,
+                    "location": "aboveStimulus",
+                    "type": "likert",
+                    "numItems": 7,
+                    "leftLabel": "Very likely",
+                    "rightLabel": "Not likely at all"
+                },
+                {
+                    "id": "esq6",
                     "prompt": "In your opinion, what are the strengths of the 3D LCA visualization (as applied to your current workflow)?",
                     "required": true,
                     "location": "aboveStimulus",
                     "type": "longText"
                 },
                 {
-                    "id": "end-survey-q8",
+                    "id": "esq7",
                     "prompt": "In your opinion, what are the drawbacks of the 3D LCA visualization (as applied to your current workflow)?",
                     "required": true,
                     "location": "aboveStimulus",
                     "type": "longText"
                 },
                 {
-                    "id": "end-survey-q9",
+                    "id": "esq8",
                     "prompt": "What changes would you require for the visualization to be (more) useful in your current workflow?",
                     "required": true,
                     "location": "aboveStimulus",
                     "type": "longText"
                 },
                 {
-                    "id": "end-survey-q10",
+                    "id": "esq9",
                     "prompt": "Additional comments",
                     "required": false,
                     "location": "aboveStimulus",

@@ -1,10 +1,12 @@
 .tabs {
     display: flex;
     border-bottom: 1px solid #ccc;
+    overflow-x: auto; /* Enable horizontal scrolling */
 }
 .subtabs {
     display: flex;
     border-bottom: 1px solid #ccc;
+    overflow-x: auto; /* Enable horizontal scrolling */
 }
 /* .tab {
     padding: 5px 20px;
@@ -114,6 +116,7 @@ html, body {
 .info-button{
     height: auto;
     padding: 0.875rem;
+    margin-top: 8px;
     background-color: rgba(34, 139, 230, 0.1);
     font-size: 0.875rem;
     font-weight: 600;
@@ -143,4 +146,9 @@ html, body {
     border-radius: 0.25rem;
     color: #228be6;
     cursor: pointer;
+}
+.text-container{
+    width:90vw;
+    max-width: 800px;
+    text-align: justify;
 }
