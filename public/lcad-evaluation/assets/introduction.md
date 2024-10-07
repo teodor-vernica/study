@@ -5,15 +5,10 @@ The goal of this study is to evaluate the effectiveness of three-dimensional (3D
 
 ## Visualization description
 
-![Visualization example](data/Figures/visualization-example.png)
+![Visualization example](assets/data/Figures/visualization-example.png)
 Similar to a Finite Element Analysis (FEA) visualization, the 3D LCA visualization maps the environmental impact of manufacturing a given design to the product geometry and its features. The visualization highlights regions of CO2 emission *concentration*, and values are expressed in kg CO2 eq. / cm3. Note that itermediate processing steps will not be presented during this study, but only the final results.
 
-![Allocation steps example](data/Figures/shaft-stages-example.png)
-![Allocation steps example](./data/Figures/shaft-stages-example.png)
-![Allocation steps example](file://data/Figures/shaft-stages-example.png)
-![Allocation steps example](/data/Figures/shaft-stages-example.png)
-![Allocation steps example](data\Figures\shaft-stages-example.png)
-![Allocation steps example](shaft-stages-example.png)
+![Allocation steps example](assets/data/Figures/shaft-stages-example.png)
 Data is allocated sequentially, based on the processes modeled in LCA software to manufacture the product (as shown in the image above). With each step, the environmental impact of the process is mapped to the geometric features created or affected by the process. The final result highlights the **total** environmental cost of manufacturing specific geometric features.
 
 ## Study description
