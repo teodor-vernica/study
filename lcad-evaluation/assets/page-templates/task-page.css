@@ -125,7 +125,8 @@ html, body {
     text-align: center;
     width: auto;
     border-radius: 0.25rem;
-    color: #228be6;
+    /* color: #228be6; */
+    color: #000000;
     cursor: pointer;
 }
 
@@ -144,11 +145,13 @@ html, body {
     text-align: center;
     width: auto;
     border-radius: 0.25rem;
-    color: #228be6;
+    /* color: #228be6; */
+    color: #0b0c0c;
     cursor: pointer;
 }
 .text-container{
     width:90vw;
     max-width: 800px;
+    padding: 20px;
     text-align: justify;
 }
