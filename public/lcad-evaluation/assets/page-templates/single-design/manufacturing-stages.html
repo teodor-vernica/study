@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Process legend</title>
+    <link rel="stylesheet" href="../task-page.css">
+    <style>
+        .carousel-container {
+            display: flex;
+            /* justify-content: center; */
+            align-items: center;
+            flex-direction: column;
+            max-height: 100vh;
+            margin: 0;
+        }
+
+        .carousel {
+            position: relative;
+            /* width: 60%; */
+            width: 90vw;
+            max-height:80vh;
+            max-width: 800px;
+            /* max-height: 60vh; */
+        }
+
+        .carousel img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0);
+            color: #228be6;
+            border: none;
+            /* padding: 10px; */
+            cursor: pointer;
+            font-size: 100px;
+            z-index: 10;
+        }
+
+        .arrow.left {
+            left: 0px;
+        }
+
+        .arrow.right {
+            right: 0px;
+        }
+
+        .arrow.disabled {
+            color: grey;
+            cursor: not-allowed;
+        }
+
+        .thumbnails {
+            display: flex;
+            /* justify-content: center; */
+            margin-top: 10px;
+            overflow-x: auto; /* Enable horizontal scrolling */
+            overflow-y: hidden; /* Hide vertical scrolling */
+            position: relative;
+            border: 5px; /* Add border */
+            width: 90%; /* Match the width of the carousel */
+            max-width: 800px;
+        } 
+
+        .thumbnail {
+            margin: 0 5px;
+            cursor: pointer;
+            opacity: 0.7;
+        }
+
+        .thumbnail img {
+            width: 50px;
+            height: auto;
+        }
+
+        .thumbnail.active img {
+            width: 100px;
+            opacity: 1;
+            border-color: #228be6;
+            border: 5px;
+        }
+
+        .title {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+        .thumbnail-title {
+            font-size: 10px;
+            /* margin-bottom: 10px; */
+        }
+        .progress-arrow {
+            font-size: 10px;
+            margin: 0 1px;
+            padding-top: 5px;
+            color: rgb(0, 0, 0);
+        }
+    </style>
+</head>
+<body>
+  
+    <div id="process-legend-A" class="subcontent" style="display: block;">
+        <div class="carousel-container">
+        <button class="arrow left" id="prev-A" onclick="prevImageA()"><</button>
+        <button class="arrow right" id="next-A" onclick="nextImageA()">></button>
+        <div class="carousel">
+            <div class="title" id="carousel-title-A">Image 1</div>
+            
+            <img id="carousel-image-A" src="../../data/Shaft Stages/Design A/0.png" alt="Carousel Image">
+            
+        </div>
+        <div class="thumbnails" id="thumbnails-A">
+            <div class="thumbnail" onclick="goToImageA(0)">
+                <img src="../../data/Shaft Stages/Design A/0.png" alt="Thumbnail">
+                <div class="thumbnail-title">Stage 0</div>
+            </div>
+            <div class="progress-arrow">→</div>
+            <div class="thumbnail" onclick="goToImageA(1)">
+                <img src="../../data/Shaft Stages/Design A/1.png" alt="Thumbnail">
+                <div class="thumbnail-title">Stage 1</div>
+            </div>
+            <div class="progress-arrow">→</div>
+            <div class="thumbnail" onclick="goToImageA(2)">
+                <img src="../../data/Shaft Stages/Design A/2.png" alt="Thumbnail">
+                <div class="thumbnail-title">Stage 2</div>
+            </div>
+            <div class="progress-arrow">→</div>
+            <div class="thumbnail" onclick="goToImageA(3)">
+                <img src="../../data/Shaft Stages/Design A/3.png" alt="Thumbnail">
+                <div class="thumbnail-title">Stage 3</div>
+            </div>
+            <div class="progress-arrow">→</div>
+            <div class="thumbnail" onclick="goToImageA(4)">
+                <img src="../../data/Shaft Stages/Design A/4.png" alt="Thumbnail">
+                <div class="thumbnail-title">Stage 4</div>
+            </div>
+            <div class="progress-arrow">→</div>
+            <div class="thumbnail" onclick="goToImageA(5)">
+                <img src="../../data/Shaft Stages/Design A/5.png" alt="Thumbnail">
+                <div class="thumbnail-title">Stage 5</div>
+            </div>
+            <div class="progress-arrow">→</div>
+            <div class="thumbnail" onclick="goToImageA(6)">
+                <img src="../../data/Shaft Stages/Design A/6.png" alt="Thumbnail">
+                <div class="thumbnail-title">Stage 6</div>
+            </div>
+            <div class="progress-arrow">→</div>
+            <div class="thumbnail" onclick="goToImageA(7)">
+                <img src="../../data/Shaft Stages/Design A/7.png" alt="Thumbnail">
+                <div class="thumbnail-title">Stage 7</div>
+            </div>
+            <div class="progress-arrow">→</div>
+            <div class="thumbnail" onclick="goToImageA(8)">
+                <img src="../../data/Shaft Stages/Design A/8.png" alt="Thumbnail">
+                <div class="thumbnail-title">Stage 8</div>
+            </div>
+            <div class="progress-arrow">→</div>
+            <div class="thumbnail" onclick="goToImageA(9)">
+                <img src="../../data/Shaft Stages/Design A/9.png" alt="Thumbnail">
+                <div class="thumbnail-title">Stage 9</div>
+            </div>
+            <div class="progress-arrow">→</div>
+            <div class="thumbnail" onclick="goToImageA(10)">
+                <img src="../../data/Shaft Stages/Design A/10.png" alt="Thumbnail">
+                <div class="thumbnail-title">Stage 10</div>
+            </div>
+            <div class="progress-arrow">→</div>
+            <div class="thumbnail" onclick="goToImageA(11)">
+                <img src="../../data/Shaft Stages/Design A/11.png" alt="Thumbnail">
+                <div class="thumbnail-title">Stage 11</div>
+            </div>
+            <div class="progress-arrow">→</div>
+            <div class="thumbnail" onclick="goToImageA(12)">
+                <img src="../../data/Shaft Stages/Design A/12.png" alt="Thumbnail">
+                <div class="thumbnail-title">Stage 12</div>
+            </div>
+            <div class="progress-arrow">→</div>
+            <div class="thumbnail" onclick="goToImageA(13)">
+                <img src="../../data/Shaft Stages/Design A/13.png" alt="Thumbnail">
+                <div class="thumbnail-title">Stage 13</div>
+            </div>
+            <div class="progress-arrow">→</div>
+            <div class="thumbnail" onclick="goToImageA(14)">
+                <img src="../../data/Shaft Stages/Design A/14.png" alt="Thumbnail">
+                <div class="thumbnail-title">Stage 14</div>
+            </div>
+            <div class="progress-arrow">→</div>
+            <div class="thumbnail" onclick="goToImageA(15)">
+                <img src="../../data/Shaft Stages/Design A/15.png" alt="Thumbnail">
+                <div class="thumbnail-title">Stage 15</div>
+            </div>
+            <div class="progress-arrow">→</div>
+            <div class="thumbnail" onclick="goToImageA(16)">
+                <img src="../../data/Shaft Stages/Design A/16.png" alt="Thumbnail">
+                <div class="thumbnail-title">Stage 16</div>
+            </div>
+            <div class="progress-arrow">→</div>
+            <div class="thumbnail" onclick="goToImageA(17)">
+                <img src="../../data/Shaft Stages/Design A/17.png" alt="Thumbnail">
+                <div class="thumbnail-title">Stage 17</div>
+            </div>
+            <div class="progress-arrow">→</div>
+            <div class="thumbnail" onclick="goToImageA(18)">
+                <img src="../../data/Shaft Stages/Design A/18.png" alt="Thumbnail">
+                <div class="thumbnail-title">Stage 18</div>
+            </div>
+    </div>
+    </div>
+    </div>
+    
+</div>
+
+    <script>
+        const imagesA = [
+            { src: '../../data/Shaft Stages/Design A/0.png', title: 'Stage 0: Primary Production Steel (316) Billet' },
+            { src: '../../data/Shaft Stages/Design A/1.png', title: 'Stage 1: Turning 1' },
+            { src: '../../data/Shaft Stages/Design A/2.png', title: 'Stage 2: Turning 2' },
+            { src: '../../data/Shaft Stages/Design A/3.png', title: 'Stage 3: Turning 3' },
+            { src: '../../data/Shaft Stages/Design A/4.png', title: 'Stage 4: Turning 4' },
+            { src: '../../data/Shaft Stages/Design A/5.png', title: 'Stage 5: Turning 5' },
+            { src: '../../data/Shaft Stages/Design A/6.png', title: 'Stage 6: Turning 6' },
+            { src: '../../data/Shaft Stages/Design A/7.png', title: 'Stage 7: Turning 7' },
+            { src: '../../data/Shaft Stages/Design A/8.png', title: 'Stage 8: Turning 8' },
+            { src: '../../data/Shaft Stages/Design A/9.png', title: 'Stage 9: Turning 9' },
+            { src: '../../data/Shaft Stages/Design A/10.png', title: 'Stage 10: Turning 10' },
+            { src: '../../data/Shaft Stages/Design A/11.png', title: 'Stage 11: Turning 11 (interior hole)' },
+            { src: '../../data/Shaft Stages/Design A/12.png', title: 'Stage 12: Turning 12' },
+            { src: '../../data/Shaft Stages/Design A/13.png', title: 'Stage 13: Turning 13' },
+            { src: '../../data/Shaft Stages/Design A/14.png', title: 'Stage 14: Drilling' },
+            { src: '../../data/Shaft Stages/Design A/15.png', title: 'Stage 15: Milling' },
+            { src: '../../data/Shaft Stages/Design A/16.png', title: 'Stage 16: Turning 14' },
+            { src: '../../data/Shaft Stages/Design A/17.png', title: 'Stage 17: Surface Grinding (bearing surfaces)' },
+            { src: '../../data/Shaft Stages/Design A/18.png', title: 'Stage 18: Induction Hardening (bearing surfaces)' }
+        ];
+        
+        let currentIndexA = 0;
+
+        const carouselImageA = document.getElementById('carousel-image-A');
+        const carouselTitleA = document.getElementById('carousel-title-A');
+        const prevButtonA = document.getElementById('prev-A');
+        const nextButtonA = document.getElementById('next-A');
+        const thumbnailsA = document.getElementById('thumbnails-A').children;
+        const selectedThumbnailsA = Array.from(thumbnailsA).filter(thumbnail => thumbnail.classList.contains('thumbnail'));
+
+        function updateCarousel(design) {
+            if(design === 'A')
+            {
+                carouselImageA.src = imagesA[currentIndexA].src;
+                carouselTitleA.textContent = imagesA[currentIndexA].title;
+                prevButtonA.classList.toggle('disabled', currentIndexA === 0);
+                nextButtonA.classList.toggle('disabled', currentIndexA === imagesA.length - 1);
+                updateThumbnails('A');
+            }
+            else if (design === 'B')
+            {
+                carouselImageB.src = imagesB[currentIndexB].src;
+                carouselTitleB.textContent = imagesB[currentIndexB].title;
+                prevButtonB.classList.toggle('disabled', currentIndexB === 0);
+                nextButtonB.classList.toggle('disabled', currentIndexB === imagesB.length - 1);
+                updateThumbnails('B');
+            }
+            
+        }
+
+        function updateThumbnails(design) {
+            if(design === 'A')
+            {
+                for (let i = 0; i < selectedThumbnailsA.length; i++) {
+                selectedThumbnailsA[i].classList.toggle('active', i === currentIndexA);
+                }
+                centerActiveThumbnail('A');
+            }
+            else if (design === 'B')
+            {
+                for (let i = 0; i < selectedThumbnailsB.length; i++) {
+                selectedThumbnailsB[i].classList.toggle('active', i === currentIndexB);
+                }
+                centerActiveThumbnail('B');
+            }
+        }
+
+        function centerActiveThumbnail(design) {
+            if(design === 'A')
+            {
+                const thumbnailsContainer = document.getElementById('thumbnails-A');
+                const activeThumbnail = thumbnailsContainer.querySelector('.thumbnail.active');
+                if (activeThumbnail) {
+                    const containerWidth = thumbnailsContainer.offsetWidth;
+                    const thumbnailWidth = activeThumbnail.offsetWidth;
+                    const thumbnailOffset = activeThumbnail.offsetLeft;
+                    const scrollPosition = thumbnailOffset - (containerWidth / 2) + (thumbnailWidth / 2);
+
+                    thumbnailsContainer.scrollLeft = scrollPosition;
+                }
+            }
+            else if (design === 'B')
+            {
+                const thumbnailsContainer = document.getElementById('thumbnails-B');
+                const activeThumbnail = thumbnailsContainer.querySelector('.thumbnail.active');
+                if (activeThumbnail) {
+                    const containerWidth = thumbnailsContainer.offsetWidth;
+                    const thumbnailWidth = activeThumbnail.offsetWidth;
+                    const thumbnailOffset = activeThumbnail.offsetLeft;
+                    const scrollPosition = thumbnailOffset - (containerWidth / 2) + (thumbnailWidth / 2);
+
+                    thumbnailsContainer.scrollLeft = scrollPosition;
+                }
+            }  
+        }
+
+        function prevImageA() {
+            if (currentIndexA > 0) {
+                currentIndexA--;
+                updateCarousel('A');
+            }
+        }
+        function prevImageB() {
+            if (currentIndexB > 0) {
+                currentIndexB--;
+                updateCarousel('B');
+            }
+        }
+
+        function nextImageA() {
+            if (currentIndexA < imagesA.length - 1) {
+                currentIndexA++;
+                updateCarousel('A');
+            }
+        }
+        function nextImageB() {
+            if (currentIndexB < imagesB.length - 1) {
+                currentIndexB++;
+                updateCarousel('B');
+            }
+        }
+
+        function goToImageA(index) {
+            currentIndexA = index;
+            updateCarousel('A');
+        }
+        function goToImageB(index) {
+            currentIndexB = index;
+            updateCarousel('B');
+        }
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'ArrowLeft') {
+                prevImageA();
+                prevImageB();
+            } else if (event.key === 'ArrowRight') {
+                nextImageA();
+                nextImageB();
+            }
+        });
+
+        updateCarousel('A');
+
+        window.showSubContent = function(page, button) {
+
+            document.querySelectorAll('.subcontent').forEach(div => div.style.display = 'none');
+            document.querySelector(`#${page}`).style.display = 'block';
+            document.querySelectorAll('.subtab').forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+
+            updateCarousel(page[page.length-1]);
+
+            // trrack.apply('Change data view', clickButton(page));
+
+            // Save the current state to ReVISit
+            // saveToReVISit();
+            }
+    </script>
+</body>
+</html>

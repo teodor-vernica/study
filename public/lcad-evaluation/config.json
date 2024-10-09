@@ -142,13 +142,13 @@
                 },
                 {
                     "id": "dq2",
-                    "prompt": "How familiar are you with product design methods and tools?",
+                    "prompt": "Are you aware of product design methods and tools?",
                     "required": true,
                     "location": "aboveStimulus",
                     "type": "likert",
-                    "leftLabel": "Very familiar",
-                    "rightLabel": "Not familiar at all",
-                    "numItems": 7
+                    "leftLabel": "Very aware",
+                    "rightLabel": "Not aware at all",
+                    "numItems": 4
                 },
                 {
                     "id": "dq3",
@@ -178,13 +178,13 @@
                 },
                 {
                     "id": "dq4",
-                    "prompt": "How familiar are you with sustainability assesment methods and tools (e.g., Life Cycle Assessment)?",
+                    "prompt": "Are you aware of sustainability assesment methods and tools (e.g., Life Cycle Assessment)?",
                     "required": true,
                     "location": "aboveStimulus",
                     "type": "likert",
-                    "leftLabel": "Very familiar",
-                    "rightLabel": "Not familiar at all",
-                    "numItems": 7
+                    "leftLabel": "Very aware",
+                    "rightLabel": "Not aware at all",
+                    "numItems": 4
                 },
                 {
                     "id": "dq5",
@@ -234,15 +234,15 @@
                             "value": "poor-integration"
                         },
                         {
-                            "label": "Lack of expertese with LCA methods and tools",
-                            "value": "lack-of-expertese"
+                            "label": "Lack of expertise with LCA methods and tools",
+                            "value": "lack-of-expertise"
                         },
                         {
                             "label": "Reliability of LCA results",
                             "value": "result-reliability"
                         },
                         {
-                            "label": "Lack of interest from my organization",
+                            "label": "Lack of regulatory or organizational requirements",
                             "value": "lack-of-interest"
                         },
                         {
@@ -682,7 +682,7 @@
                 },
                 {
                     "id": "t3q5",
-                    "prompt": "Which design do you believe is better overall (considering both sustainability and performance) and why?",
+                    "prompt": "Which design do you believe is better overall (considering both sustainability and structural performance) and why?",
                     "required": true,
                     "location": "sidebar",
                     "type": "longText"
@@ -896,6 +896,31 @@
                 },
                 {
                     "id": "esq5",
+                    "prompt": "In you optinion, in what design phase do you belive the 3D LCA visualization to be most useful? (choose all that apply)",
+                    "required": true,
+                    "location": "aboveStimulus",
+                    "type": "checkbox",
+                    "options": [
+                        {
+                            "label": "Concept design",
+                            "value": "concept-design"
+                        },
+                        {
+                            "label": "System-level Design",
+                            "value": "system-level-design"
+                        },
+                        {
+                            "label": "Detail design",
+                            "value": "detail-design"
+                        },
+                        {
+                            "label": "Testing and refinement",
+                            "value": "testing-refinement"
+                        }
+                    ]
+                },
+                {
+                    "id": "esq6",
                     "prompt": "If the 3D LCA visualization would be simulated and visualized directly within the CAD software you regularly use (like Finite Element Analysis (FEA) simulations), would it make you more likely to consider sustainability performance during the design process?",
                     "required": true,
                     "location": "aboveStimulus",
@@ -905,28 +930,28 @@
                     "rightLabel": "Not likely at all"
                 },
                 {
-                    "id": "esq6",
+                    "id": "esq7",
                     "prompt": "In your opinion, what are the strengths of the 3D LCA visualization (as applied to your current workflow)?",
                     "required": true,
                     "location": "aboveStimulus",
                     "type": "longText"
                 },
                 {
-                    "id": "esq7",
+                    "id": "esq8",
                     "prompt": "In your opinion, what are the drawbacks of the 3D LCA visualization (as applied to your current workflow)?",
                     "required": true,
                     "location": "aboveStimulus",
                     "type": "longText"
                 },
                 {
-                    "id": "esq8",
+                    "id": "esq9",
                     "prompt": "What changes would you require for the visualization to be (more) useful in your current workflow?",
                     "required": true,
                     "location": "aboveStimulus",
                     "type": "longText"
                 },
                 {
-                    "id": "esq9",
+                    "id": "esq10",
                     "prompt": "Additional comments",
                     "required": false,
                     "location": "aboveStimulus",
