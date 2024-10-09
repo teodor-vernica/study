@@ -6,7 +6,8 @@
     <title>Unity WebGL Player | unity-voxel</title>
   </head>
   <body style="text-align: center">
-    <canvas id="unity-canvas" width=1000 height=500 style="width: 1000px; height: 500px; background: #231F20"></canvas>
+    <!-- <canvas id="unity-canvas" width=1000 height=500 style="width: 1000px; height: 500px; background: #231F20"></canvas> -->
+    <canvas id="unity-canvas" width=1000 height=500 style="width: 100%; height: auto; max-height: 90vh; background: #231F20"></canvas>
     <script src="Build/Unity App v1.2 (hardening).loader.js"></script>
     <script>
       createUnityInstance(document.querySelector("#unity-canvas"), {
