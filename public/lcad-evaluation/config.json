@@ -86,7 +86,7 @@
             "response": [
                 {
                     "id": "Consent",
-                    "prompt": "Looooooooooooooooooooooooooooong consent form.",
+                    "prompt":"<h1>Consent to Participate in Research</h1> <br> <strong>Title of the research project:</strong> Evaluation of 3D visualizations for sustainable design <br> <strong>Purpose of the Study:</strong>  <br> You are invited to participate in a research study conducted by Teodor Vernica at Aarhus University. The purpose of this study is to evaluate the effectiveness of 3D Life Cycle Assessment (LCA) visualizations in various sustainable product design tasks. <br> <strong>What will you do in the study?</strong>  <br> Participants will complete three tasks that simulate different aspects of the product design process while incorporating sustainability metrics. The tasks will involve using a 3D visualization tool developed by the researcher. <br> <strong>Data Collection:</strong>  <br> No personal data such as names, organization affiliations, age, or other identifying information will be collected during this study. <br> <strong>Voluntary Participation:</strong>  <br> Your participation in this study is entirely voluntary. You may withdraw from the study at any time without any consequences. <br> <strong>Confidentiality:</strong>  <br> All data collected will be kept confidential and used solely for the purpose of this research. Since no personal data is collected, there is no risk of identifying participants. <br> <strong>Publication of Results:</strong>  <br> The results of this survey may be published in academic journals, conference proceedings, or other scientific publications. However, since no personal data is collected, individual participants will not be identifiable in any publications. <br> <strong>Contact Information:</strong>  <br> If you have any questions about the study, please contact Teodor Vernica, PhD Student, teodor.vernica@mpe.au.dk or Devarajan Ramanujan, Associate Professor, devr@mpe.au.dk. <br> <strong>Consent:</strong>  <br> By participating in this study, you acknowledge that you have read and understood the information provided above and agree to participate in the research.",
                     "required": true,
                     "location": "aboveStimulus",
                     "type": "checkbox",
@@ -187,6 +187,13 @@
                     "numItems": 4
                 },
                 {
+                    "id": "dq4b",
+                    "prompt": "What sustainability assessment methods and tools have you previously used? (e.g., Life Cycle Assessment, EcoInvent, GaBi)",
+                    "required": false,
+                    "location": "aboveStimulus",
+                    "type": "longText"
+                },
+                {
                     "id": "dq5",
                     "prompt": "What is your experience in working with sustainability assessment methods and tools?",
                     "required": true,
@@ -236,6 +243,10 @@
                         {
                             "label": "Lack of expertise with LCA methods and tools",
                             "value": "lack-of-expertise"
+                        },
+                        {
+                            "label": "Considering environmental impact adds additional complexity to the design process",
+                            "value": "additional-complexity"
                         },
                         {
                             "label": "Reliability of LCA results",
