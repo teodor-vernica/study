@@ -19,7 +19,8 @@
         "logoPath": "lcad-evaluation/assets/MPE-da-blaa.png",
         "withProgressBar": true,
         "autoDownloadStudy": true,
-        "sidebar": true
+        "sidebar": true,
+        "studyEndMsg": "Thank you for completing this study. Please download the results file when prompted and send it to teodor.vernica@mpe.au.dk or devr@mpe.au.dk."
     },
     "baseComponents": {
         "task":{
@@ -187,14 +188,14 @@
                     "numItems": 4
                 },
                 {
-                    "id": "dq4b",
+                    "id": "dq5",
                     "prompt": "What sustainability assessment methods and tools have you previously used? (e.g., Life Cycle Assessment, EcoInvent, GaBi)",
                     "required": false,
                     "location": "aboveStimulus",
                     "type": "longText"
                 },
                 {
-                    "id": "dq5",
+                    "id": "dq6",
                     "prompt": "What is your experience in working with sustainability assessment methods and tools?",
                     "required": true,
                     "location": "aboveStimulus",
@@ -220,7 +221,7 @@
                     ]
                 },
                 {
-                    "id": "dq6",
+                    "id": "dq7",
                     "prompt": "How often do you consider the environmental impact of manufacturing when desiging a product? (in addition to cost, functional performance, durability, etc.)",
                     "required": true,
                     "location": "aboveStimulus",
@@ -230,7 +231,7 @@
                     "numItems": 5
                 },
                 {
-                    "id": "dq7",
+                    "id": "dq8",
                     "prompt": "In your opinion, what are the main barriers preventing you to consider sustainability in your designs more often? (select all that apply)",
                     "required": true,
                     "location": "aboveStimulus",
@@ -267,7 +268,7 @@
                     ]
                 },
                 {
-                    "id": "dq7b",
+                    "id": "dq8b",
                     "prompt": "If other reasons, please mention them below:",
                     "required": false,
                     "location": "aboveStimulus",
