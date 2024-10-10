@@ -14,7 +14,7 @@ export interface ParticipantMetadata {
   /** The language of the participants browser. */
   language: string;
   /** The IP address of the participant. */
-  // ip: string | null;
+  ip: string | null;
 }
 
 export type TrrackedProvenance = ProvenanceGraph<any, any>;
