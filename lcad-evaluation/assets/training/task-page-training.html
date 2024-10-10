@@ -28,7 +28,7 @@
             registry
         });
 
-        window.trrack = trrack;
+        // window.trrack = trrack;
 
         window.showContent = function(page, button) {
           document.querySelectorAll('.content').forEach(div => div.style.display = 'none');
@@ -37,7 +37,7 @@
           button.classList.add('active');
 
           trrack.apply('Change data view', clickButton(page));
-
+          console.log("Saving:" + page);
           // Save the current state to ReVISit
           saveToReVISit();
         }
@@ -69,6 +69,7 @@
         });
 
         function saveToReVISit() {
+           
             Revisit.postAnswers({
                 selectedButton: trrack.getState().selectedButton
             });
