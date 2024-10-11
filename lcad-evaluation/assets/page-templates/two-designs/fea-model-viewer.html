@@ -75,6 +75,8 @@
                 object.rotation.y = Math.PI; // Rotate 180 degrees around the Y-axis
                 scene.add(object);
                 currentModel = object;
+                renderer.render(scene, camera); // Force render
+                window.dispatchEvent(new Event('resize')); // Trigger resize
             });
         }
 
