@@ -67,7 +67,7 @@
             });
         }
 
-        loadModel('../../data/CAD/ScrewPumpShaft - Design A.gltf'); // Load default model
+        // loadModel('../../data/CAD/ScrewPumpShaft - Design A.gltf'); // Load default model
 
         camera.position.z = 0.2;
 
@@ -97,6 +97,11 @@
             document.querySelectorAll('.subtab').forEach(tab => tab.classList.remove('active'));
             document.querySelector(`.subtab[onclick="switchModel('${model}')"]`).classList.add('active');
         }
+
+        // Trigger loadModel with Design A on page load
+        window.onload = function() {
+            loadModel('../../data/CAD/ScrewPumpShaft - Design A.gltf');
+        };
     </script>
 </body>
 </html>
