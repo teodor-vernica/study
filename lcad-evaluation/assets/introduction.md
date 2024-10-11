@@ -12,7 +12,7 @@ All necessary data for making informed decisions will be available during each t
 ## Study instructions
 
 + Please complete the survey on a desktop computer or laptop in landscape mode, as it contains interactive 3D model applications which may not display properly on small screens (e.g., mobiles and tablets).
-+ Please complete the survey in the Google Chrome or Microsoft Edge web browser to ensure proper functionality.
++ Please complete the survey in the **Google Chrome** or **Microsoft Edge** web browser to ensure proper functionality.
 + You can take as much time as you need to complete the survey, but please complete it in one sitting as progress may not be saved between sessions. The survey should take approximately [ADD TIME HERE].
 <!-- + At the end of the survey, you will be prompted to download a file containing your answers. Please download the file and send it to us via email to either [teodor.vernica@mpe.au.dk](mailto:teodor.vernica@mpe.au.dk) or [devr@mpe.au.dk](mailto:devr@mpe.au.dk). You will be reminded of this at the end of the survey. -->
 
