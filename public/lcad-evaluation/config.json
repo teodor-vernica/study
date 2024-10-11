@@ -18,9 +18,9 @@
         "helpTextPath": "lcad-evaluation/assets/help.md",
         "logoPath": "lcad-evaluation/assets/MPE-da-blaa.png",
         "withProgressBar": true,
-        "autoDownloadStudy": true,
+        "autoDownloadStudy": false,
         "sidebar": true,
-        "studyEndMsg": "Thank you for completing this study! <br> Please download the results file when prompted and send it to either teodor.vernica@mpe.au.dk or devr@mpe.au.dk with the title '3D LCA Survey Results'."
+        "studyEndMsg": "Thank you for completing this study! <br><br> Please feel free to contact us at <a href='mailto:teodor.vernica@mpe.au.dk'>teodor.vernica@mpe.au.dk</a> or <a href='mailto:devr@mpe.au.dk'>devr@mpe.au.dk</a> for any comments or concerns. <br><br> You may now close this window."
     },
     "baseComponents": {
         "task":{
@@ -87,7 +87,7 @@
             "response": [
                 {
                     "id": "Consent",
-                    "prompt":"<h1>Consent to Participate in Research Study</h1> <br> <strong>Title of the research project:</strong> Evaluation of 3D visualizations for sustainable design <br> <strong>Purpose of the Study:</strong>  <br> You are invited to participate in a research study conducted by Teodor Vernica at Aarhus University. The purpose of this study is to evaluate the effectiveness of 3D Life Cycle Assessment (LCA) visualizations in various sustainable product design tasks. <br> <strong>What will you do in the study?</strong>  <br> Participants will complete three tasks that simulate different aspects of the product design process while incorporating sustainability metrics. The tasks will involve using a 3D visualization tool developed by the researcher. <br> <strong>Data Collection:</strong>  <br> No personal data such as names, organization affiliations, age, or other identifying information will be collected during this study. <br> <strong>Voluntary Participation:</strong>  <br> Your participation in this study is entirely voluntary. You may withdraw from the study at any time without any consequences. <br> <strong>Confidentiality:</strong>  <br> All data collected will be kept confidential and used solely for the purpose of this research. Since no personal data is collected, there is no risk of identifying participants. <br> <strong>Publication of Results:</strong>  <br> The results of this survey may be published in academic journals, conference proceedings, or other scientific publications. However, since no personal data is collected, individual participants will not be identifiable in any publications. <br> <strong>Contact Information:</strong>  <br> If you have any questions about the study, please contact Teodor Vernica, PhD Student, teodor.vernica@mpe.au.dk or Devarajan Ramanujan, Associate Professor, devr@mpe.au.dk. <br> <strong>Consent:</strong>  <br> By participating in this study, you acknowledge that you have read and understood the information provided above and agree to participate in the research.",
+                    "prompt":"<h1>Consent to Participate in Research Study</h1> <br> <strong>Title of the research project:</strong> <br> Evaluation of 3D visualizations for sustainable design <br><br> <strong>Purpose of the Study:</strong>  <br> You are invited to participate in a research study conducted by Teodor Vernica at Aarhus University. The purpose of this study is to evaluate the effectiveness of 3D Life Cycle Assessment (LCA) visualizations in various sustainable product design tasks. <br><br> <strong>What will you do in the study?</strong>  <br> Participants will complete three tasks that simulate different aspects of the product design process while incorporating sustainability metrics. The tasks will involve using a 3D visualization tool developed by the researcher. <br><br> <strong>Data Collection:</strong>  <br> No personal data such as names, organization affiliations, age, or other identifying information will be collected during this study. <br><br> <strong>Voluntary Participation:</strong>  <br> Your participation in this study is entirely voluntary. You may withdraw from the study at any time without any consequences. <br><br> <strong>Confidentiality:</strong>  <br> All data collected will be kept confidential and used solely for the purpose of this research. Since no personal data is collected, there is no risk of identifying participants. <br><br> <strong>Publication of Results:</strong>  <br> The results of this survey may be published in academic journals, conference proceedings, or other scientific publications. However, since no personal data is collected, individual participants will not be identifiable in any publications. <br><br> <strong>Contact Information:</strong>  <br> If you have any questions about the study, please contact Teodor Vernica, PhD Student at teodor.vernica@mpe.au.dk or Devarajan Ramanujan, Associate Professor at devr@mpe.au.dk. <br><br> <strong>Consent:</strong>  <br> By participating in this study, you acknowledge that you have read and understood the information provided above and agree to participate in the research study.",
                     "required": true,
                     "location": "aboveStimulus",
                     "type": "checkbox",
@@ -249,6 +249,7 @@
                     "prompt": "How often do you consider the environmental impact of manufacturing when designing a product? (in addition to cost, functional performance, durability, etc.)",
                     "required": true,
                     "location": "aboveStimulus",
+                    "placeholder": "Please choose the option that best describes how often you consider sustainability in your designs",
                     "type": "dropdown",
                     "options": [
                         {
@@ -270,6 +271,10 @@
                         {
                             "label": "Always",
                             "value": "always"
+                        },
+                        {
+                            "label": "Not applicable",
+                            "value": "na"
                         }
                     ]
                 },
@@ -291,16 +296,16 @@
                     "type": "checkbox",
                     "options": [
                         {
-                            "label": "Poor integration of LCA and CAD tools",
-                            "value": "poor-integration"
-                        },
-                        {
-                            "label": "Considering environmental impact adds additional complexity to the design process",
+                            "label": "Added complexity to the design process",
                             "value": "additional-complexity"
                         },
                         {
                             "label": "Reliability of LCA results",
                             "value": "result-reliability"
+                        },
+                        {
+                            "label": "Poor integration of LCA and CAD tools",
+                            "value": "poor-integration"
                         },
                         {
                             "label": "Lack of regulatory or organizational requirements",
@@ -393,7 +398,7 @@
             "response": [
                 {
                     "id": "t1q1",
-                    "prompt": "What is the geometric feature with the highest environmental impact contribution to Shaft Design A?",
+                    "prompt": "What is the geometric feature with the highest environmental impact (measured in kg CO2 eq.) contribution to Shaft Design A?",
                     "required": true,
                     "location": "sidebar",
                     "type": "dropdown",
@@ -651,7 +656,7 @@
             "response": [
                 {
                     "id": "t2q1",
-                    "prompt": "Considering the FEA results and expected loading conditions, what geometric change to Shaft Design A would you explore to achieve the highest reduction in environmental impact, without significantly affecting its stress performance?",
+                    "prompt": "Considering the FEA results and expected loading conditions, what geometric change to Shaft Design A would you explore to achieve the highest reduction in environmental impact (measured in kg CO2 eq.), without significantly affecting its stress performance?",
                     "required": true,
                     "location": "sidebar",
                     "type": "longText"
@@ -917,7 +922,7 @@
             "response": [
                 {
                     "id": "t1eq1",
-                    "prompt": "What data did you use for identifying the heighest contributing geometric features? (select all that apply)",
+                    "prompt": "What data did you use for identifying the highest contributing geometric features? (select all that apply)",
                     "required": true,
                     "location": "aboveStimulus",
                     "type": "checkbox",
@@ -950,7 +955,7 @@
                 },
                 {
                     "id": "t1eq2",
-                    "prompt": "What data did you find most useful for identifying the heighest contributing geometric features?",
+                    "prompt": "What data did you find most useful for identifying the highest contributing geometric features?",
                     "required": true,
                     "location": "aboveStimulus",
                     "type": "dropdown",
@@ -983,7 +988,7 @@
                 },
                 {
                     "id": "t1eq3",
-                    "prompt": "How useful was the 3D LCA visualization for identifying the heighest contributing geometric features?",
+                    "prompt": "How useful was the 3D LCA visualization for identifying the highest contributing geometric features?",
                     "required": true,
                     "location": "aboveStimulus",
                     "type": "likert",

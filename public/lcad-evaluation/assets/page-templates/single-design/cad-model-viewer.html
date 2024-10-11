@@ -57,15 +57,16 @@
             loader.load(path, function (gltf) {
                 const object = gltf.scene;
                 // Adjust initial orientation
-                object.rotation.x = Math.PI / 2 + Math.PI; // Rotate 90 degrees around the X-axis
+                object.rotation.x = Math.PI/2; // Rotate 90 degrees around the X-axis
                 object.rotation.y = Math.PI; // Rotate 180 degrees around the Y-axis
                 object.rotation.z = Math.PI
                 scene.add(object);
                 currentModel = object;
+                renderer.render(scene, camera); // Force render
+                window.dispatchEvent(new Event('resize')); // Trigger resize
             });
         }
 
-        // loadModel('../data/CAD/ScrewPumpShaft.obj'); // Load default model
         loadModel('../../data/CAD/ScrewPumpShaft - Design A.gltf'); // Load default model
 
         camera.position.z = 0.2;
