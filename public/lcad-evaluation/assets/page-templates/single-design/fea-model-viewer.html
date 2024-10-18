@@ -16,7 +16,7 @@
             display: block;
     }
     </style>
-    <link rel="stylesheet" href="../../page-templates/task-page.css">
+    <link rel="stylesheet" href="../task-page.css">
 </head>
 <body>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
@@ -33,21 +33,34 @@
         <img src="../../data/FEA/ScrewPumpShaft - Design A - FEA Data/Loading conditions A.png" class="info">
     </div>
     <!-- <div id="fea-model-B" class="subcontent" style="position: absolute;">
-        <img src="../data/FEA/ScrewPumpShaft - Design B - FEA Data/Design B Stress Legend.png" alt="Legend B" class="legend">
+        <img src="../../data/FEA/ScrewPumpShaft - Design B - FEA Data/Design B Stress Legend.png" alt="Legend B" class="legend">
         <button id="button-info-B" class="info-button">Show loading conditions</button>
-        <img src="../data/FEA/ScrewPumpShaft - Design B - FEA Data/Loading conditions B.png" class="info">
+        <img src="../../data/FEA/ScrewPumpShaft - Design B - FEA Data/Loading conditions B.png" class="info">
     </div> -->
-    
-    
 
     <script>
         let currentModel;
         const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.01, 1000);
+        
+        // Create orthographic camera
+        const aspect = window.innerWidth / window.innerHeight;
+        const viewSize = 0.15;
+        const camera = new THREE.OrthographicCamera(
+            -viewSize * aspect,
+            viewSize * aspect,
+            viewSize,
+            -viewSize,
+            0.01,
+            1000
+        );
 
-        const renderer = new THREE.WebGLRenderer();
+        // Set camera position as specified
+        camera.position.set(0, 0, 1);
+        camera.lookAt(0, 0, 0);
+
+        const renderer = new THREE.WebGLRenderer({ antialias: true });
         renderer.setSize(window.innerWidth, window.innerHeight);
-        renderer.setClearColor(0xffffff); // Set background color to white
+        renderer.setClearColor(0xffffff);
         document.body.appendChild(renderer.domElement);
 
         const ambientLight = new THREE.AmbientLight(0x404040);
@@ -58,31 +71,44 @@
         scene.add(directionalLight);
 
         const material = new THREE.MeshStandardMaterial({ color: 0xc5cfd6 });
-        material.ambientLight = material.color
+        material.ambientLight = material.color;
 
-        loader = new THREE.GLTFLoader();
+        const loader = new THREE.GLTFLoader();
 
         function loadModel(path) {
             if (currentModel) {
                 scene.remove(currentModel);
             }
-            loader.load(path, function (gltf) {
-                const object = gltf.scene;
-                // Adjust initial orientation
-                object.rotation.x = Math.PI / 2 + Math.PI; // Rotate 90 degrees around the X-axis
-                object.rotation.y = Math.PI; // Rotate 180 degrees around the Y-axis
-                scene.add(object);
-                currentModel = object;
-                renderer.render(scene, camera); // Force render
-                window.dispatchEvent(new Event('resize')); // Trigger resize
-            });
+            
+            loader.load(
+                path,
+                function (gltf) {
+                    const object = gltf.scene;
+                    object.rotation.x = Math.PI / 2 + Math.PI;
+                    object.rotation.y = Math.PI;
+                    
+                    // Center the model
+                    const box = new THREE.Box3().setFromObject(object);
+                    const center = box.getCenter(new THREE.Vector3());
+                    object.position.sub(center);
+                    
+                    scene.add(object);
+                    currentModel = object;
+                    
+                    // Force render and update controls
+                    controls.update();
+                    renderer.render(scene, camera);
+                },
+                undefined,
+                function (error) {
+                    console.error('Error loading model:', error);
+                }
+            );
         }
 
-        // loadModel('../../data/FEA/ScrewPumpShaft - Design A - FEA Data/Stress Design A.glb'); // Load default model
-
-        camera.position.z = 0.2;
-
         const controls = new THREE.OrbitControls(camera, renderer.domElement);
+        controls.enableDamping = true;
+        controls.dampingFactor = 1;
 
         function animate() {
             requestAnimationFrame(animate);
@@ -91,64 +117,52 @@
             directionalLight.target.position.copy(camera.position).add(camera.getWorldDirection(new THREE.Vector3()));
             renderer.render(scene, camera);
         }
-        animate();
 
-        window.addEventListener('resize', () => {
-            camera.aspect = window.innerWidth / window.innerHeight;
+        function onWindowResize() {
+            const aspect = window.innerWidth / window.innerHeight;
+            camera.left = -viewSize * aspect;
+            camera.right = viewSize * aspect;
+            camera.top = viewSize;
+            camera.bottom = -viewSize;
             camera.updateProjectionMatrix();
             renderer.setSize(window.innerWidth, window.innerHeight);
-        });
-
-        function switchModel(model) {
-            if (model === 'fea-model-A') {
-                loadModel('../../data/FEA/ScrewPumpShaft - Design A - FEA Data/Stress Design A.glb');
-                document.getElementById('legend-A').classList.add('active');
-                document.getElementById('legend-B').classList.remove('active');
-            } else if (model === 'fea-model-B') {
-                loadModel('../../data/FEA/ScrewPumpShaft - Design B - FEA Data/Stress Design B.glb'); // Update with the correct path for Design B
-                document.getElementById('legend-A').classList.remove('active');
-                document.getElementById('legend-B').classList.add('active');
-            }
-            document.querySelectorAll('.subtab').forEach(tab => tab.classList.remove('active'));
-            document.querySelector(`.subtab[onclick="switchModel('${model}')"]`).classList.add('active');
         }
+
+        window.addEventListener('resize', onWindowResize);
 
         showSubContent = function(page, button) {
+            document.querySelectorAll('.subcontent').forEach(div => div.style.display = 'none');
+            document.querySelector(`#${page}`).style.display = 'block';
+            document.querySelectorAll('.subtab').forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
 
-        document.querySelectorAll('.subcontent').forEach(div => div.style.display = 'none');
-        document.querySelector(`#${page}`).style.display = 'block';
-        document.querySelectorAll('.subtab').forEach(btn => btn.classList.remove('active'));
-        button.classList.add('active');
+            if (page === 'fea-model-A') {
+                loadModel('../../data/FEA/ScrewPumpShaft - Design A - FEA Data/Stress Design A.glb');
+            } else if (page === 'fea-model-B') {
+                loadModel('../../data/FEA/ScrewPumpShaft - Design B - FEA Data/Stress Design B.glb');
+            }
+        }
 
-        if (page === 'fea-model-A') 
-        {
+        document.querySelectorAll('.info-button').forEach(button => {
+            button.addEventListener('click', function() {
+                const infoImage = this.nextElementSibling;
+                if (infoImage.classList.contains('active')) {
+                    infoImage.classList.remove('active');
+                    this.textContent = 'Show loading conditions';
+                } else {
+                    infoImage.classList.add('active');
+                    this.textContent = 'Hide loading conditions';
+                }
+            });
+        });
+
+        // Start animation loop
+        animate();
+
+        // Initialize with Design A after DOM is fully loaded
+        document.addEventListener('DOMContentLoaded', function() {
             loadModel('../../data/FEA/ScrewPumpShaft - Design A - FEA Data/Stress Design A.glb');
-        } 
-        else if (page === 'fea-model-B') 
-        {
-            loadModel('../../data/FEA/ScrewPumpShaft - Design B - FEA Data/Stress Design B.glb');
-        }
-
-        }
-
-    document.querySelectorAll('.info-button').forEach(button => {
-    button.addEventListener('click', function() {
-        const infoImage = this.nextElementSibling;
-        if (infoImage.classList.contains('active')) {
-            infoImage.classList.remove('active');
-            this.textContent = 'Show loading conditions';
-        } else {
-            infoImage.classList.add('active');
-            this.textContent = 'Hide loading conditions';
-        }
-    });
-});
-
-    // Trigger loadModel with Design A on page load
-    window.onload = function() {
-        loadModel('../../data/FEA/ScrewPumpShaft - Design A - FEA Data/Stress Design A.glb');
-        };
-
+        });
     </script>
 </body>
 </html>

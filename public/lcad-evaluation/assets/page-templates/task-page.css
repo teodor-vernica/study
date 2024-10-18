@@ -46,14 +46,18 @@
     cursor: pointer;
 }
 .tab.active {
-    background-color: #efefefb6;
+    /* background-color: #efefefb6; */
+    background-color: rgba(34, 139, 230, 0.1);
+    font-weight: bold;
     border-bottom: 1px solid #fff;
     border-color: #228be6;
     border-width: 0 0 calc(0.125rem * 1);
     cursor: default;
 }
 .subtab.active {
-    background-color: #efefefb6;
+    /* background-color: #efefefb6; */
+    background-color: rgba(34, 139, 230, 0.1);
+    font-weight: bold;
     border-bottom: 1px solid #fff;
     border-color: #228be6;
     border-width: 0 0 calc(0.125rem * 1);
@@ -67,7 +71,7 @@
 }
 .subcontent {
     display: none;
-    padding: 5px;
+    padding: 3px;
     /* border: 1px solid #ccc; */
     height: 90%;
 }
@@ -107,7 +111,7 @@ html, body {
     left: 10px;
     top:15%;
     z-index: 20;
-    display:none
+    display:none;
 }
 .info.active{
     display: block;
@@ -121,6 +125,7 @@ html, body {
     font-size: 0.875rem;
     font-weight: 600;
     border: 0.0625rem;
+    border: 1px solid #000000;
     display: inline-block;
     text-align: center;
     width: auto;
@@ -141,6 +146,7 @@ html, body {
     font-size: 0.875rem;
     font-weight: 600;
     border: 0.0625rem;
+    border: 1px solid #000000;
     display: inline-block;
     text-align: center;
     width: auto;
@@ -155,3 +161,13 @@ html, body {
     padding: 20px;
     text-align: justify;
 }
+figcaption {
+    width: 100%;
+    text-align: center; /* Center the caption text */
+    font-size: small;
+  }
+caption {
+    width: 100%;
+    text-align: left; /* Center the caption text */
+    font-size: small;
+  }

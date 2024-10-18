@@ -31,11 +31,26 @@
     <script>
         let currentModel;
         const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.01, 1000);
-        const renderer = new THREE.WebGLRenderer();
+        
+        // Create orthographic camera for isometric view
+        const aspect = window.innerWidth / window.innerHeight;
+        const viewSize = 0.15; // Adjust this value to control zoom level
+        const camera = new THREE.OrthographicCamera(
+            -viewSize * aspect,
+            viewSize * aspect,
+            viewSize,
+            -viewSize,
+            0.01,
+            1000
+        );
+
+        // Set up isometric view position
+        camera.position.set(0, 0, 1);
+        camera.lookAt(0, 0, 0);
+
+        const renderer = new THREE.WebGLRenderer({ antialias: true });
         renderer.setSize(window.innerWidth, window.innerHeight);
-        renderer.setClearColor(0xffffff); // Set background color to white
-        // document.getElementById('subcontent').appendChild(renderer.domElement); // Append canvas to subcontent div
+        renderer.setClearColor(0xffffff);
         document.body.appendChild(renderer.domElement);
 
         const ambientLight = new THREE.AmbientLight(0x404040);
@@ -46,32 +61,52 @@
         scene.add(directionalLight);
 
         const material = new THREE.MeshStandardMaterial({ color: 0xc5cfd6 });
-        material.ambientLight = material.color
+        material.ambientLight = material.color;
 
-        loader = new THREE.GLTFLoader();
+        const loader = new THREE.GLTFLoader();
+
+        // Add loading manager
+        const loadingManager = new THREE.LoadingManager();
+        loadingManager.onError = function(url) {
+            console.error('Error loading:', url);
+        };
 
         function loadModel(path) {
             if (currentModel) {
                 scene.remove(currentModel);
             }
-            loader.load(path, function (gltf) {
-                const object = gltf.scene;
-                // Adjust initial orientation
-                object.rotation.x = Math.PI/2; // Rotate 90 degrees around the X-axis
-                object.rotation.y = Math.PI; // Rotate 180 degrees around the Y-axis
-                object.rotation.z = Math.PI
-                scene.add(object);
-                currentModel = object;
-                renderer.render(scene, camera); // Force render
-                window.dispatchEvent(new Event('resize')); // Trigger resize
-            });
+            
+            loader.load(
+                path,
+                function (gltf) {
+                    const object = gltf.scene;
+                    // Adjust initial orientation
+                    object.rotation.x = Math.PI/2;
+                    object.rotation.y = Math.PI;
+                    object.rotation.z = Math.PI;
+                    
+                    // Center the model
+                    const box = new THREE.Box3().setFromObject(object);
+                    const center = box.getCenter(new THREE.Vector3());
+                    object.position.sub(center);
+                    
+                    scene.add(object);
+                    currentModel = object;
+                    
+                    // Force render and update controls
+                    controls.update();
+                    renderer.render(scene, camera);
+                },
+                undefined,
+                function (error) {
+                    console.error('Error loading model:', error);
+                }
+            );
         }
 
-        // loadModel('../../data/CAD/ScrewPumpShaft - Design A.gltf'); // Load default model
-
-        camera.position.z = 0.2;
-
         const controls = new THREE.OrbitControls(camera, renderer.domElement);
+        controls.enableDamping = true;
+        controls.dampingFactor = 1;
 
         function animate() {
             requestAnimationFrame(animate);
@@ -80,29 +115,37 @@
             directionalLight.target.position.copy(camera.position).add(camera.getWorldDirection(new THREE.Vector3()));
             renderer.render(scene, camera);
         }
-        animate();
 
-        window.addEventListener('resize', () => {
-            camera.aspect = window.innerWidth / window.innerHeight;
+        function onWindowResize() {
+            const aspect = window.innerWidth / window.innerHeight;
+            camera.left = -viewSize * aspect;
+            camera.right = viewSize * aspect;
+            camera.top = viewSize;
+            camera.bottom = -viewSize;
             camera.updateProjectionMatrix();
             renderer.setSize(window.innerWidth, window.innerHeight);
-        });
+        }
+
+        window.addEventListener('resize', onWindowResize);
 
         function switchModel(model) {
-            if (model === 'cad-model-A') {
-                loadModel('../../data/CAD/ScrewPumpShaft - Design A.gltf');
-            } else if (model === 'cad-model-B') {
-                loadModel('../../data/CAD/ScrewPumpShaft - Design B.gltf');
-            }
+            const path = model === 'cad-model-A' 
+                ? '../../data/CAD/ScrewPumpShaft - Design A.gltf'
+                : '../../data/CAD/ScrewPumpShaft - Design B.gltf';
+            
+            loadModel(path);
+            
             document.querySelectorAll('.subtab').forEach(tab => tab.classList.remove('active'));
             document.querySelector(`.subtab[onclick="switchModel('${model}')"]`).classList.add('active');
         }
 
-        // Trigger loadModel with Design A on page load
-        window.onload = function() {
-            loadModel('../../data/CAD/ScrewPumpShaft - Design A.gltf');
-        };
-        
+        // Start animation loop
+        animate();
+
+        // Initialize with Design A after DOM is fully loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            switchModel('cad-model-A');
+        });
     </script>
 </body>
 </html>
