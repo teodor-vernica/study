@@ -5,9 +5,9 @@
 
 The goal of this study is to evaluate the effectiveness of three-dimensional (3D) feature-level Life Cycle Assessment (LCA) visualizations as a tool for sustainable product design decision-making.
 
-In this study, you will be given three tasks based on typical designer needs when integrating LCA results into the design process. Throughout all three tasks, you will be working with a Shaft design as a case study. The goal is to understand the component’s environmental footprint, identify redesign opportunities to reduce its footprint, and compare it to a different product from the same product family.
+In this study, you will be given three tasks based on typical designer needs when integrating LCA results into the design process. Throughout all three tasks, you will be working with a Screw Pump Shaft design as a case study. The goal is to understand the component’s environmental footprint, identify redesign opportunities to reduce its footprint, and compare it to a different product from the same product family.
 
-All necessary data for making informed decisions will be available during each task. This includes LCA results, CAD models and drawings, stress simulation results, and the 3D LCA visualization. You may use whatever data you want to complete the task, but note that **not all data may be necessary for every task**.
+All necessary data for making informed decisions will be available during each task. This includes LCA results (Global Warming Potential), CAD models and drawings, stress simulation results, and the 3D LCA visualization. You may use whatever data you want to complete the task, but note that **not all data may be necessary for every task**.
 
 ## Study instructions
 

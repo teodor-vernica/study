@@ -21,6 +21,7 @@
             width: 90vw;
             max-height:80vh;
             max-width: 800px;
+            padding-bottom: 5px;
             /* max-height: 60vh; */
         }
 
@@ -28,6 +29,7 @@
             width: 100%;
             height: auto;
             display: block;
+            padding-bottom: 1px;
         }
 
         .arrow {
@@ -77,27 +79,33 @@
         .thumbnail img {
             width: 50px;
             height: auto;
+            border: 1px solid #000000; /* Include border style and width */
+            /* transition: all 0.3s ease; */
         }
 
         .thumbnail.active img {
             width: 100px;
-            opacity: 1;
-            border-color: #228be6;
-            border: 5px;
+            opacity: 1 !important; /* Ensure opacity is applied */
+            border: 2px solid #228be6; /* Include border style and width */
         }
 
         .title {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
+            font-size: 1.25rem;
+            margin-bottom: 3px;
+        }
+        .subtitle {
+            font-size: 0.75rem;
+            margin-bottom: 3px;
         }
         .thumbnail-title {
-            font-size: 10px;
+            font-size: 0.5rem;
+            text-align: center;
             /* margin-bottom: 10px; */
         }
         .progress-arrow {
-            font-size: 10px;
+            font-size: 1rem;
             margin: 0 1px;
-            padding-top: 5px;
+            /* padding-top: 2px; */
             color: rgb(0, 0, 0);
         }
     </style>
@@ -115,9 +123,8 @@
         <button class="arrow right" id="next-A" onclick="nextImageA()">></button>
         <div class="carousel">
             <div class="title" id="carousel-title-A">Image 1</div>
-            
+            <div class="subtitle" id="carousel-subtitle-A">Affected features: </div>
             <img id="carousel-image-A" src="../../data/Shaft Stages/Design A/0.png" alt="Carousel Image">
-            
         </div>
         <div class="thumbnails" id="thumbnails-A">
             <div class="thumbnail" onclick="goToImageA(0)">
@@ -223,7 +230,7 @@
         <button class="arrow right" id="next-B" onclick="nextImageB()">></button>
         <div class="carousel">
             <div class="title" id="carousel-title-B">Image B</div>
-            
+            <div class="subtitle" id="carousel-subtitle-B">Affected features: </div>
             <img id="carousel-image-B" src="../../data/Shaft Stages/Design B/0.png" alt="Carousel Image">
             
         </div>
@@ -323,51 +330,52 @@
 
     <script>
         const imagesA = [
-            { src: '../../data/Shaft Stages/Design A/0.png', title: 'Stage 0: Primary Production Steel (316) Billet' },
-            { src: '../../data/Shaft Stages/Design A/1.png', title: 'Stage 1: Turning 1' },
-            { src: '../../data/Shaft Stages/Design A/2.png', title: 'Stage 2: Turning 2' },
-            { src: '../../data/Shaft Stages/Design A/3.png', title: 'Stage 3: Turning 3' },
-            { src: '../../data/Shaft Stages/Design A/4.png', title: 'Stage 4: Turning 4' },
-            { src: '../../data/Shaft Stages/Design A/5.png', title: 'Stage 5: Turning 5' },
-            { src: '../../data/Shaft Stages/Design A/6.png', title: 'Stage 6: Turning 6' },
-            { src: '../../data/Shaft Stages/Design A/7.png', title: 'Stage 7: Turning 7' },
-            { src: '../../data/Shaft Stages/Design A/8.png', title: 'Stage 8: Turning 8' },
-            { src: '../../data/Shaft Stages/Design A/9.png', title: 'Stage 9: Turning 9' },
-            { src: '../../data/Shaft Stages/Design A/10.png', title: 'Stage 10: Turning 10' },
-            { src: '../../data/Shaft Stages/Design A/11.png', title: 'Stage 11: Turning 11 (top hole)' },
-            { src: '../../data/Shaft Stages/Design A/12.png', title: 'Stage 12: Turning 12' },
-            { src: '../../data/Shaft Stages/Design A/13.png', title: 'Stage 13: Turning 13' },
-            { src: '../../data/Shaft Stages/Design A/14.png', title: 'Stage 14: Drilling' },
-            { src: '../../data/Shaft Stages/Design A/15.png', title: 'Stage 15: Milling' },
-            { src: '../../data/Shaft Stages/Design A/16.png', title: 'Stage 16: Turning 14' },
-            { src: '../../data/Shaft Stages/Design A/17.png', title: 'Stage 17: Surface Grinding (bearing surfaces)' },
-            { src: '../../data/Shaft Stages/Design A/18.png', title: 'Stage 18: Induction Hardening (bearing surfaces)' }
+            { src: '../../data/Shaft Stages/Design A/0.png', title: 'Stage 0 - Process: Primary Production ', subtitle:"Steel (316) Billet"},
+            { src: '../../data/Shaft Stages/Design A/1.png', title: 'Stage 1 - Process: Turning 1', subtitle:"Affected final features: Face 1" },
+            { src: '../../data/Shaft Stages/Design A/2.png', title: 'Stage 2 - Process: Turning 2', subtitle:"Affected final features: Surface 2, Face 2" },
+            { src: '../../data/Shaft Stages/Design A/3.png', title: 'Stage 3 - Process: Turning 3', subtitle:"Affected final features: Surface 1" },
+            { src: '../../data/Shaft Stages/Design A/4.png', title: 'Stage 4 - Process: Turning 4', subtitle:"Affected final features: Groove 1" },
+            { src: '../../data/Shaft Stages/Design A/5.png', title: 'Stage 5 - Process: Turning 5', subtitle:"Affected final features: Face 3 (+ intermediate features)" },
+            { src: '../../data/Shaft Stages/Design A/6.png', title: 'Stage 6 - Process: Turning 6', subtitle:"Affected final features: Surface 4, Face 4, Bearing Surface 1 (+ intermediate features)" },
+            { src: '../../data/Shaft Stages/Design A/7.png', title: 'Stage 7 - Process: Turning 7', subtitle:"Affected final features: Groove 2" },
+            { src: '../../data/Shaft Stages/Design A/8.png', title: 'Stage 8 - Process: Turning 8', subtitle:"Affected final features: Surface 5, Face 5, Bearing Surface 2 (+ intermediate features)" },
+            { src: '../../data/Shaft Stages/Design A/9.png', title: 'Stage 9 - Process: Turning 9', subtitle:"Affected final features: Surface 6"},
+            { src: '../../data/Shaft Stages/Design A/10.png', title: 'Stage 10 - Process: Turning 10', subtitle:"Affected final features: Surface 7" },
+            { src: '../../data/Shaft Stages/Design A/11.png', title: 'Stage 11 - Process: Turning 11', subtitle:"Affected final features: Top Hole" },
+            { src: '../../data/Shaft Stages/Design A/12.png', title: 'Stage 12 - Process: Turning 12', subtitle:"Affected final features: Chamfers 1, 2, 3, 4, 5, 7"  },
+            { src: '../../data/Shaft Stages/Design A/13.png', title: 'Stage 13 - Process: Turning 13', subtitle:"Affected final features: Fillets 1, 2, 3, 4, 5, 6, 7, 8, 9" },
+            { src: '../../data/Shaft Stages/Design A/14.png', title: 'Stage 14 - Process: Drilling', subtitle:"Affected final features: Bushing Holes" },
+            { src: '../../data/Shaft Stages/Design A/15.png', title: 'Stage 15 - Process: Milling', subtitle:"Affected final features: Keyway" },
+            { src: '../../data/Shaft Stages/Design A/16.png', title: 'Stage 16 - Process: Turning 14', subtitle:"Affected final features: Chamfer 6" },
+            { src: '../../data/Shaft Stages/Design A/17.png', title: 'Stage 17 - Process: Surface Grinding', subtitle:"Affected final features: Bearing Surfaces 1, 2" },
+            { src: '../../data/Shaft Stages/Design A/18.png', title: 'Stage 18 - Process: Induction Hardening', subtitle:"Affected final features: Bearing Surfaces 1, 2" }
         ];
         const imagesB = [
-            { src: '../../data/Shaft Stages/Design B/0.png', title: 'Stage 0: Primary Production Steel (316) Billet' },
-            { src: '../../data/Shaft Stages/Design B/1.png', title: 'Stage 1: Turning 1' },
-            { src: '../../data/Shaft Stages/Design B/2.png', title: 'Stage 2: Turning 2' },
-            { src: '../../data/Shaft Stages/Design B/3.png', title: 'Stage 3: Turning 3' },
-            { src: '../../data/Shaft Stages/Design B/4.png', title: 'Stage 4: Turning 4' },
-            { src: '../../data/Shaft Stages/Design B/5.png', title: 'Stage 5: Turning 5' },
-            { src: '../../data/Shaft Stages/Design B/6.png', title: 'Stage 6: Turning 6' },
-            { src: '../../data/Shaft Stages/Design B/7.png', title: 'Stage 7: Turning 7' },
-            { src: '../../data/Shaft Stages/Design B/8.png', title: 'Stage 8: Turning 8' },
-            { src: '../../data/Shaft Stages/Design B/9.png', title: 'Stage 9: Turning 9' },
-            { src: '../../data/Shaft Stages/Design B/10.png', title: 'Stage 10: Turning 10' },
-            { src: '../../data/Shaft Stages/Design B/11.png', title: 'Stage 11: Turning 11 (top hole)' },
-            { src: '../../data/Shaft Stages/Design B/12.png', title: 'Stage 12: Turning 12' },
-            { src: '../../data/Shaft Stages/Design B/13.png', title: 'Stage 13: Drilling' },
-            { src: '../../data/Shaft Stages/Design B/14.png', title: 'Stage 14: Milling' },
-            { src: '../../data/Shaft Stages/Design B/15.png', title: 'Stage 15: Turning' },
-            { src: '../../data/Shaft Stages/Design B/16.png', title: 'Stage 16: Surface Grinding (bearing surfaces)' },
-            { src: '../../data/Shaft Stages/Design B/17.png', title: 'Stage 17: Induction Hardening (bearing surfaces)' }
+            { src: '../../data/Shaft Stages/Design B/0.png', title: 'Stage 0 - Process: Primary Production', subtitle:"Steel (316) Billet" },
+            { src: '../../data/Shaft Stages/Design B/1.png', title: 'Stage 1 - Process: Turning 1', subtitle:"Affected final features: Face 1" },
+            { src: '../../data/Shaft Stages/Design B/2.png', title: 'Stage 2 - Process: Turning 2', subtitle:"Affected final features: Surface 2, Face 2" },
+            { src: '../../data/Shaft Stages/Design B/3.png', title: 'Stage 3 - Process: Turning 3', subtitle:"Affected final features: Surface 1" },
+            { src: '../../data/Shaft Stages/Design B/4.png', title: 'Stage 4 - Process: Turning 4', subtitle:"Affected final features: Groove 1" },
+            { src: '../../data/Shaft Stages/Design B/5.png', title: 'Stage 5 - Process: Turning 5', subtitle:"Affected final features: Face 3 (+ intermediate features)" },
+            { src: '../../data/Shaft Stages/Design B/6.png', title: 'Stage 6 - Process: Turning 6', subtitle:"Affected final features: Surface 4, Face 4, Bearing Surface 1 (+ intermediate features)" },
+            { src: '../../data/Shaft Stages/Design B/7.png', title: 'Stage 7 - Process: Turning 7', subtitle:"Affected final features: Groove 2" },
+            { src: '../../data/Shaft Stages/Design B/8.png', title: 'Stage 8 - Process: Turning 8', subtitle:"Affected final features: Surface 5, Face 5, Bearing Surface 2 (+ intermediate features)" },
+            { src: '../../data/Shaft Stages/Design B/9.png', title: 'Stage 9 - Process: Turning 9', subtitle:"Affected final features: Surface 6" },
+            { src: '../../data/Shaft Stages/Design B/10.png', title: 'Stage 10 - Process: Turning 10', subtitle:"Affected final features: Surface 7" },
+            { src: '../../data/Shaft Stages/Design B/11.png', title: 'Stage 11 - Process: Turning 11', subtitle:"Affected final features: Top Hole" },
+            { src: '../../data/Shaft Stages/Design B/12.png', title: 'Stage 12 - Process: Turning 13b', subtitle:"Affected final features: Fillets 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11"},
+            { src: '../../data/Shaft Stages/Design B/13.png', title: 'Stage 13 - Process: Drilling', subtitle:"Affected final features: Bushing Holes" },
+            { src: '../../data/Shaft Stages/Design B/14.png', title: 'Stage 14 - Process: Milling', subtitle:"Affected final features: Keyway" },
+            { src: '../../data/Shaft Stages/Design B/15.png', title: 'Stage 15 - Process: Turning', subtitle:"Affected final features: Chamfer 6" },
+            { src: '../../data/Shaft Stages/Design B/16.png', title: 'Stage 16 - Process: Surface Grinding', subtitle:"Affected final features: Bearing Surfaces 1, 2" },
+            { src: '../../data/Shaft Stages/Design B/17.png', title: 'Stage 17 - Process: Induction Hardening', subtitle:"Affected final features: Bearing Surfaces 1, 2" }
         ];
         let currentIndexA = 0;
         let currentIndexB = 0;
 
         const carouselImageA = document.getElementById('carousel-image-A');
         const carouselTitleA = document.getElementById('carousel-title-A');
+        const carouselSubTitleA = document.getElementById('carousel-subtitle-A');
         const prevButtonA = document.getElementById('prev-A');
         const nextButtonA = document.getElementById('next-A');
         const thumbnailsA = document.getElementById('thumbnails-A').children;
@@ -375,6 +383,7 @@
 
         const carouselImageB = document.getElementById('carousel-image-B');
         const carouselTitleB = document.getElementById('carousel-title-B');
+        const carouselSubTitleB = document.getElementById('carousel-subtitle-B');
         const prevButtonB = document.getElementById('prev-B');
         const nextButtonB = document.getElementById('next-B');
         const thumbnailsB = document.getElementById('thumbnails-B').children;
@@ -385,6 +394,7 @@
             {
                 carouselImageA.src = imagesA[currentIndexA].src;
                 carouselTitleA.textContent = imagesA[currentIndexA].title;
+                carouselSubTitleA.textContent = imagesA[currentIndexA].subtitle;
                 prevButtonA.classList.toggle('disabled', currentIndexA === 0);
                 nextButtonA.classList.toggle('disabled', currentIndexA === imagesA.length - 1);
                 updateThumbnails('A');
@@ -393,6 +403,7 @@
             {
                 carouselImageB.src = imagesB[currentIndexB].src;
                 carouselTitleB.textContent = imagesB[currentIndexB].title;
+                carouselSubTitleB.textContent = imagesB[currentIndexB].subtitle;
                 prevButtonB.classList.toggle('disabled', currentIndexB === 0);
                 nextButtonB.classList.toggle('disabled', currentIndexB === imagesB.length - 1);
                 updateThumbnails('B');
