@@ -398,7 +398,7 @@
             "response": [
                 {
                     "id": "t1q1",
-                    "prompt": "What is the geometric feature with the highest environmental impact (measured in kg CO2 eq.) contribution to Shaft Design A?",
+                    "prompt": "What is the geometric feature with the highest contribution to Shaft Design A's environmental impact?",
                     "required": true,
                     "location": "sidebar",
                     "type": "dropdown",
