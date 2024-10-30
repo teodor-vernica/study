@@ -928,6 +928,10 @@
                     "type": "checkbox",
                     "options": [
                         {
+                            "label": "Manufacturing stages",
+                            "value": "manufacturing-stages"
+                        },
+                        {
                             "label": "LCA results",
                             "value": "lca-results"
                         },
@@ -1016,6 +1020,10 @@
                     "type": "checkbox",
                     "options": [
                         {
+                            "label": "Manufacturing stages",
+                            "value": "manufacturing-stages"
+                        },
+                        {
                             "label": "LCA results",
                             "value": "lca-results"
                         },
@@ -1103,6 +1111,10 @@
                     "location": "aboveStimulus",
                     "type": "checkbox",
                     "options": [
+                        {
+                            "label": "Manufacturing stages",
+                            "value": "manufacturing-stages"
+                        },
                         {
                             "label": "LCA results",
                             "value": "lca-results"
